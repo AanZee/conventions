@@ -1,11 +1,12 @@
  
-# CSS & CSS Preprocessor Coding Conventions
+# CSS & CSS Preprocessor Conventions
 
 ## Grouping & Ordering
 
 ### Rules should be ordered based on specificity.
 
 **Order should be:**
+
 1. vendors (e.g. Bootstrap, jQuery UI)
 2. vendor-overrides (to re-declare some vendor CSS, if needed)
 3. settings (variables and configs, e.g. colors, fonts, font-sizes)
@@ -23,6 +24,7 @@
 - SASS or LESS includes should be placed above all properties within a rule. This is to improve readability and to make sure properties from includes cannot override specific properties.
 
 **Order should be:**
+
 1. Positioning
 2. Box behavior and properties
 3. Sizing
