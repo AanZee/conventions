@@ -1,1 +1,2 @@
 # JavaScript
+- [Angular](angular.md)
