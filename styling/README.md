@@ -1,3 +1,3 @@
 # Styling
 
-- * [CSS](/CSS.md)
+- * [CSS](CSS.md)

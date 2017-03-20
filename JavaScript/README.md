@@ -1,3 +1,3 @@
 # JavaScript
 
-- * [General](/general.md)
+- * [General](general.md)
