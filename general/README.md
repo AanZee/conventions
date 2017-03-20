@@ -1,5 +1,5 @@
 # General conventions
-This conventions are best practice in all our programming languages.
+This conventions are best practices in all our programming languages.
 
 ## Write in US English
 Write your code in US English instead of British English.
@@ -8,7 +8,7 @@ Write your code in US English instead of British English.
 Use tabs instead of spaces when possible in your language. Everyone can use different tab widths in there own editor.
 
 ## Don't use author comments
-Persons will switching projects, clients and jobs. You can better use GIT, humans.txt or a README file.
+Persons will be switching projects, clients and jobs. You can better use GIT, humans.txt or a README file.
 
 ## Be consistent in naming components
 Name your files like your components. A SCSS component selector e.g. .blog {} will have the filename _blog.scss. A SCSS mixin beautifulGradient will have the filename _beautiful-gradient.scss. 
@@ -88,7 +88,7 @@ In some (template) languages you will have a different indention in your output 
 ```
 
 ## Magic numbers
-Don't use numbers in your code that doesn't tell directly what they will do.
+Don't use numbers in your code that don't tell directly what they will do.
 
 **Right:**
 ```javascript
@@ -106,7 +106,7 @@ if (index < 3) {
 ```
 
 ## Remove code, don't comment
-When you want to remove some code, remove it. Don't comment it. You can use GIT if you want it back or you can recopy it from Stack Overflow. Use comments for useful comments instead.
+When you want to remove some code, remove it. Don't disable it with a comment tag. To reverse the removal, you can use GIT.
 
 **Right:**
 ```javascript
