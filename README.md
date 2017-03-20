@@ -3,7 +3,7 @@
 
 - [General](general/README.md)
 - [Styling languages](styling/README.md)
-- [JavaScript](JavaScript/README.md)
+- [JavaScript](javascript/README.md)
 
 ## Contributing
 We love pull requests. If you have something you want to add or remove, please open a new pull request. Please read the contribution guidelines before submitting a pull request.
