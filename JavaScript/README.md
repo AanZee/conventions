@@ -1,4 +1,4 @@
-# JavaScript conventions
+# JavaScript
 
 ## Framework specific
 - [Angular](angular.md)

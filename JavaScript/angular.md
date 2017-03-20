@@ -1,4 +1,4 @@
-# Angular conventions
+# Angular
 
 ## [ngIf] as second HTML attribute
 Write a [ngIf] tag as second HTML attribute after the class attribute. Or as first attribute when there is no class available.

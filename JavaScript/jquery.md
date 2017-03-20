@@ -1,4 +1,4 @@
-# jQuery conventions
+# jQuery
 
 ## Prefix jQuery objects with dollar sign
 Prefix jQuery objects with dollar sign to recognize them in your code
