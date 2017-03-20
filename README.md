@@ -3,8 +3,8 @@ Styleguides
 
 [Aan Zee](http://www.aanzee.nl)'s (opiniated) styleguides for creating web stuff, and doing it in style.
 
-* [CSS](/CSS.md)
-* [JavaScript](/javascript.md)
+* [Styling languages](styling/README.md)
+* [JavaScript](/JavaScript/README.md)
 
 
 Contributing
