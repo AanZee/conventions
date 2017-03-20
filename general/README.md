@@ -145,25 +145,3 @@ function superAwesomeFunction() {
 function sprWsmFnctn() {
 }
 ```
-
-## Don't write abbreviations
-Write full descriptive words.
-
-**Right:**
-```css
-.button {}
-```
-```javascript
-function superAwesomeFunction() {
-}
-```
-
-
-**Wrong:**
-```css
-.btn {}
-```
-```javascript
-function sprWsmFnctn() {
-}
-```
