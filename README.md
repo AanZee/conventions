@@ -3,9 +3,9 @@ Styleguides
 
 [Aan Zee](http://www.aanzee.nl)'s (opiniated) styleguides for creating web stuff, and doing it in style.
 
-* [General](general/README.md)
-* [Styling languages](styling/README.md)
-* [JavaScript](/JavaScript/README.md)
+- [General](general/README.md)
+- [Styling languages](styling/README.md)
+- [JavaScript](/JavaScript/README.md)
 
 
 Contributing
