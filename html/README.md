@@ -111,7 +111,7 @@ When you want to target HTML in JavaScript use attributes prefixed with js-, don
     <h1 component-title>Title</h1>
 ```
 
-## Only use lists for lists that looks like lists
+## Only use lists for simple lists
 Don't use lists as container for a lot of data, only for simple lists.
 
 **Right:**
