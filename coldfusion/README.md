@@ -12,7 +12,7 @@
 <cfif a eq 1 or b eq 2>
 ```
 
-## Don't write cfif in HTML tags
+## Don't write cfif's in HTML tags
 
 **Right:**
 ```html
