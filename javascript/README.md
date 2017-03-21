@@ -16,3 +16,19 @@ let a = 'a';
 ```javascript
 let a = "a";
 ```
+
+## Target dom elements with a js- prefixed attribute
+
+**Right:**
+```javascript
+document.querySelectorAll('[js-component]');
+```
+
+**Wrong:**
+```javascript
+document.querySelectorAll('.component');
+
+document.querySelectorAll('[data-component]');
+
+document.querySelectorAll('[component]');
+```
