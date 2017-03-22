@@ -1,23 +1,22 @@
 # CSS and CSS Preprocessor Conventions
 
-The goal of these conventions are to create reusable stylesheets and to keep them maintainable, transparent, readable, and scalable. And to make it as painless as possible to work with.
-
-Although Less is used for the examples, it does not matter if you use Less, Sass, or even plain CSS. Choose a language based on the nature of your project. Each language has its own strengths.
+The goal of these conventions are to create reusable style sheets and to keep them maintainable, transparent, readable, and scalable. And to make it as painless as possible to work with. Although SCSS and CSS is used for the examples, it does not matter if you use Less, SCSS, or even plain CSS. Choose a language based on the nature of your project. Each language has its own strengths.
 
 For these conventions a [CSScomb config file is available](configs/csscomb.json).
 
 ## Table of Contents
-- [CSS Terminology](#css-terminology)
+- [Terminology](#terminology)
 - [Grouping and Ordering](#grouping-and-ordering)
-- [Spacing](#spacing)
+- [Code spacing](#code-spacing)
 - [Naming](#naming)
 - [Selectors](#selectors)
 - [Nesting](#nesting)
 - [Declarations](#declarations)
 - [Values](#values)
 - [Comments](#comments)
+- [Specific Techniques](#specific-techniques)
 
-## CSS Terminology
+## Terminology
 
 This document assumes you are familiar with the terminology for CSS and CSS preprocessors. A short refresher:
 
@@ -32,7 +31,7 @@ This document assumes you are familiar with the terminology for CSS and CSS prep
 - **Declaration block** = All the declarations within a rule.
 
 **Rule:**
-```
+```CSS
 selector,
 simple-selector > simple-selector {
 	property: value;
@@ -45,8 +44,10 @@ simple-selector > simple-selector {
 
 ### Rules should be ordered based on specificity
 
-- If you use Less or Sass you should create different directories for each group.
-- Avoid sub-folders to group files within a group.
+- If you use Less or SCSS, you should divide your code across multiple files and organize it in different directories. The groups and order can be found in the list below.
+- With Less or SCSS, never divide a rule group (e.g. BEM block) across different files.
+- With Less or SCSS, never combine different rule groups (e.g. BEM blocks) in one file.
+- Never use sub-folders to group files within a group.
 - Rules within vendors, utilities, or layout are [immutable](http://csswizardry.com/2015/03/immutable-css/).
 
 **Order should be:**
@@ -57,17 +58,15 @@ simple-selector > simple-selector {
 4. **utilities** (e.g. your mixins, functions, and tools)
 5. **vendor-overrides** (to re-declare some vendor CSS with help of settings and utilities, if needed)
 6. **reset** (e.g. [Reset CSS](http://meyerweb.com/eric/tools/css/reset/) or [normalize.css](http://necolas.github.io/normalize.css/), and [box-sizing](http://www.paulirish.com/2012/box-sizing-border-box-ftw/))
-7. **layout** (immutable cosmetic-free objects, e.g. grid, body with a sticky footer)
+7. **layout** (immutable objects, e.g. grid, body with a sticky footer, views)
 8. **typography** (e.g. headings, text, code, lists, quotes)
-9. **controls** (e.g. buttons, segmented-controls, pull-down-menus, text-inputs)
-10. **components** (designed interface blocks: bars, dialogs, indicators, views)
-11. **pages** (page specific styles. Before you add page specific styles, consider modified components)
+9. **controls** (e.g. buttons, segmented-control, drop-down-menu, pop-up-menu, text-inputs)
+10. **components** (designed interface blocks: bars, dialogs, indicators)
+11. **pages** (page specific styles. Before you add page specific styles, consider modified components. Also note that components that can only be found on one page but still could be used on other pages should be placed in 'components')
 12. **themes** (for many projects non-existent)
 13. **overrides** (hacks and things you are not proud of)
 
 See [The Specificity Graph](http://csswizardry.com/2014/10/the-specificity-graph/) and [CSS Specificity Graph Generator](http://jonassebastianohlsson.com/specificity-graph/) for more information about CSS specificity.
-
-### For Less or Sass, use separate files for different rule groups
 
 **File names should be:**
 
@@ -78,11 +77,11 @@ See [The Specificity Graph](http://csswizardry.com/2014/10/the-specificity-graph
 5. **vendor-overrides**: same as vendor's directories or file names.
 6. **reset**: original file name or function name.
 7. **layout**: name of container or function.
-8. **typography**: name of typography group.
+8. **typography**: name of typographical group.
 9. **controls**: name of control.
 10. **components**: name of block.
 11. **pages**: name of page or template.
-12. **themes**: name of the theme.
+12. **themes**: name of theme.
 13. **overrides**: depends on type.
 
 ### Do not use @import for CSS files
@@ -93,7 +92,7 @@ See [The Specificity Graph](http://csswizardry.com/2014/10/the-specificity-graph
 ### Properties should be ordered based on functionality
 
 - Increases readability, understanding, and the ability to find duplicate properties.
-- Sass or Less includes should be placed first, before all declarations within a rule. This is to improve readability and to assure declarations from includes cannot override specific declarations.
+- SCSS or Less includes should be placed first, before all declarations within a rule. This is to improve readability and to assure declarations from includes cannot override specific declarations.
 
 **Order should be:**
 
@@ -157,7 +156,7 @@ Only rules applicable to all media queries should be placed outside a media quer
 }
 ```
 
-## Spacing
+## Code Spacing
 
 ### Indents should be done with one tab, not spaces
 
@@ -344,17 +343,22 @@ SELECTOR_NAME {}
 
 See ['CSS: CamelCase Seriously Sucks!'](http://csswizardry.com/2010/12/css-camel-case-seriously-sucks/) for further reading.
 
-### Names of selectors or variables should follow 'BEM Methodology' honed by Nicolas Gallagher
+### Selector names should follow 'BEM Methodology' honed by Nicolas Gallagher
 
 - Enables you to write modular based CSS, which makes it easier to manage larger projects that last a while.
-- Name of an element is a combination of the surrounding block and element, divided with two underscores '\_\_'.
-- Name of a modified block or element is a combination between the name and the modifier, divided with two hyphens '--'.
+- BEM is an acronym for Block, Element and Modifier.
+- Blocks are independent and can be used in different situations.
+- The name of a block should be well thought out. Take your time. Always use UI dictionaries or Human Interface Guidelines from Apple, Google or Microsoft as reference for a semantically correct name.
+- The name of an element, a part of a block, is a combination of the surrounding block and the element, divided with two underscores '\_\_'.
+- The name of a modified block or modified element is a combination between the complete name and the modifier, divided with two hyphens '--'.
 - Modification means a different version of a block or element.
 - Modifiers are timeless. Use 'states' if a 'different version' is temporarily.
-- A block can be nested within another block if that block is often used by itself. The nested block has at least two class names in this order: (1) as an element of the surrounding block and (2) the block name itself. This is called a 'mix'. The element class should only define contextual positioning, never styling.
+- A block can be nested within an element from another block if that block is often used by itself.
 - A class does not reflect the full trail of the DOM. Only one block or element is allowed within a class name.
-- When is a block a modified block or a complete new block? Is it '.small-project' or 'project--small'? A modified block still inherits a lot of styling from the original block. A new block is completely independent from the original block. You determine the tipping point, but if in doubt create a new block.
-- It is not allowed to give an element two block classes or two element classes.
+- A modified block or element still inherits a lot of styling from the original block or element. A new block or element is completely independent from the original block or element. You determine the tipping point, but if in doubt create a new block or element.
+- Don't create unnecessary blocks, make sure a block has a clear purpose and can be used in different situations. If this is not the case, keep it as an element within its block.
+- Never set a margin on a block. A block does not determine the space around itself. This is done by the parent element from the parent block.
+- It is not allowed to give a block or element two BEM classes.
 - It is not allowed to place an element class from a block in another block.
 
 **Right:**
@@ -414,10 +418,10 @@ See [Modular CSS typography](http://thesassway.com/advanced/modular-css-typograp
 - Large variants get the modifiers '200', '300',…
 - A modifier that removes paddings or height from a block can be written as '0', for example pane--0 is a section without padding-top and padding-bottom.
 - Numbers don't resemble exact size ratios, because that would be descriptive naming: button--200 is not necessary twice as large as button--100.
-- City block sizes for Less or Sass variables should be written as part of the name (right: '@line-height-200') and should not be written as BEM modifiers (wrong: '@line-height--200').
+- City block sizes for Less or SCSS variables should be written as part of the name (right: '$line-height-200') and should not be written as BEM modifiers (wrong: '$line-height--200').
 
 **Right:**
-```CSS
+```SCSS
 
 .button {
 	property: value;
@@ -437,7 +441,7 @@ See [Modular CSS typography](http://thesassway.com/advanced/modular-css-typograp
 ```
 
 **Wrong:**
-```CSS
+```SCSS
 .button--small {
 	property: value;
 }
@@ -505,8 +509,7 @@ Depending on the 'grow value' (default is 1) and the amount of elements within a
 
 - Don't shorten selector or variable names.
 - Shorter selector names could lead to misunderstandings.
-- Shorter selector names don't affect file size that much, because of GZIP.
-- You may use an abbreviation for selectors if it is already used as an official HTML element, e.g. '.nav' instead of '.navigation', or '.h1' instead of '.heading-1'. An exception is 'ui'. You may use 'ui' instead of 'user-interface'.
+- Shorter selector names don't affect file size that much, because of how GZIP works.
 
 **Right:**
 ```CSS
@@ -527,41 +530,41 @@ Depending on the 'grow value' (default is 1) and the amount of elements within a
 - Makes it easier to group them and to use autocomplete in development tools.
 
 **Right:**
-```Less
-@font-family-monospace: ;
-@color-blue: ;
+```SCSS
+$font-family-monospace: ;
+$color-blue: ;
 ```
 
 **Wrong:**
-```Less
-@monospace-font-family: ;
-@blue-color: ;
+```SCSS
+$monospace-font-family: ;
+$blue-color: ;
 ```
 
 ### Names of variables for colors should be written both descriptive and functional
 
 - Start with descriptive variables, followed by the functional variables.
-- City block sizes may be used for functional names. Higher number means darker, lower number means lighter. You can use Less or Sass functions to control the variants. It is also possible to use descriptive names for variants.
-- Use variables even for black or white, because black and white could contain, depending on the styleguide, a tint.
+- City block sizes may be used for functional names. Higher number means darker, lower number means lighter. You can use Less or SCSS functions to control the variants. It is also possible to use descriptive names for variants.
+- Use variables even for black or white, because black and white could contain, depending on the style guide, a subtle tint.
 - Good functional colors are: color-ui; color-ui-accent; color-heading; color-subheading; color-text; color-text-diap; color-cta; color-primary; color-secondary; color-tertiary; color-error; color-success; color-select; color-focus;
 
 **Right:**
-```Less
+```SCSS
 // Descriptive colors
 
-@color-silver: rgb(50, 50, 50);
+$color-silver: rgb(50, 50, 50);
 
 // Functional colors
 
-@color-primary: @color-silver;
-@color-primary-90: lighten(@color-primary-100, 10%)
-@color-primary-100: @color-primary;
-@color-primary-200: darken(@color-primary-100, 10%)
+$color-primary: $color-silver;
+$color-primary-90: lighten($color-primary-100, 10%)
+$color-primary-100: $color-primary;
+$color-primary-200: darken($color-primary-100, 10%)
 ```
 
 **Wrong:**
-```Less
-@color-primary: rgb(50, 50, 50);
+```SCSS
+$color-primary: rgb(50, 50, 50);
 ```
 
 See ['Name that Color'](http://chir.ag/projects/name-that-color/) for example for finding descriptive names.
@@ -569,15 +572,15 @@ See ['Name that Color'](http://chir.ag/projects/name-that-color/) for example fo
 ### Local variables should start with the name of the block and end with a property
 
 - Local variables are written directly above the block rule in the same file.
-- Local variables may only be used in the block it is created for. Local variables written above the block rule are technically not local in Sass or Less and can be used everywhere. You should never do this.
+- Local variables may only be used in the block it is created for. Local variables written above the block rule are technically not local in SCSS or Less and can be used everywhere. You should never do this.
 - Local variables should function as 'settings' for a block.
 - For local variables, combine name of the block and, in some cases, the element with the property. Only use hyphens as delimiters. Do not use the BEM notation for variables.
 - Make as few settings as possible, and try to use block settings for elements. For example border colors are not always set on a block but on different elements within a block. If the border color should be the same for all these elements, create only one block variable.
 - Use local variables mostly for colors.
 - Use global functional colors, not descriptive colors, to set local variables.
-- Within Sass, local variables are set as default variables with '!default'.
+- Within SCSS, local variables are set as default variables with '!default'.
 
-Example written for Sass:
+Example written for SCSS:
 
 **Right:**
 ```SCSS
@@ -597,38 +600,59 @@ $border-color-button: $color-secondary-200;
 - Major ranges should be based on the context of a device.
 - Minor ranges (a.k.a. tweak points) are based on size differences within major ranges.
 - Breakpoints should only be used if the content requires it.
+- Use 'media' mixin for setting ranges.
+- Use '0' and 'false' in the media mixin to set the outer ranges.
 
 **Visual presentation of ranges:**
 ```
----palm--|--hand--|--lap--|--desk---
+|--palm--|--hand--|--lap--|--desk--|
 ```
 
 **Right:**
-```Less
-@range-palm:      ~"only screen and (max-width:440px)";
-@range-palm-s:    ~"only screen and (max-width:320px)";
-@range-palm-m:    ~"only screen and (min-width:321px) and (max-width:360px)";
-@range-palm-l:    ~"only screen and (min-width:361px) and (max-width:440px)";
-@range-hand:      ~"only screen and (min-width:441px) and (max-width:680px)";
-@range-hand-s:    ~"only screen and (min-width:441px) and (max-width:520px)";
-@range-hand-m:    ~"only screen and (min-width:521px) and (max-width:600px)";
-@range-hand-l:    ~"only screen and (min-width:601px) and (max-width:680px)";
-@range-lap:       ~"only screen and (min-width:681px) and (max-width:1040px)";
-@range-lap-s:     ~"only screen and (min-width:681px) and (max-width:800px)";
-@range-lap-m:     ~"only screen and (min-width:801px) and (max-width:920px)";
-@range-lap-l:     ~"only screen and (min-width:921px) and (max-width:1040px)";
-@range-desk:      ~"only screen and (min-width:1041px)";
-@range-desk-s:    ~"only screen and (min-width:1041px) and (max-width:1280px)";
-@range-desk-m:    ~"only screen and (min-width:1281px) and (max-width:1600px)";
-@range-desk-l:    ~"only screen and (min-width:1601px)";
+```SCSS
+$range-palm   : ( 320,  440);
+$range-palm-s : ( 320,  360);
+$range-palm-m : ( 361,  400);
+$range-palm-l : ( 401,  440);
+
+$range-hand   : ( 441,  680);
+$range-hand-s : ( 441,  520);
+$range-hand-m : ( 521,  600);
+$range-hand-l : ( 601,  680);
+
+$range-lap    : ( 681, 1040);
+$range-lap-s  : ( 681,  800);
+$range-lap-m  : ( 801,  920);
+$range-lap-l  : ( 921, 1040);
+
+$range-desk   : (1041, false);
+$range-desk-s : (1041, 1280);
+$range-desk-m : (1281, 1640);
+$range-desk-l : (1641, 2560);
+
+.selector {
+
+	@include media(0, $range-palm) {
+		property: value;
+	}
+
+	@include media($range-hand, $range-lap) {
+		property: value;
+	}
+
+	@include media($range-desk, false) {
+		property: value;
+	}
+
+}
 ```
 
 **Wrong:**
-```Less
-@breakpoint-small: ;
-@breakpoint-smedium: ;
-@breakpoint-medium: ;
-@breakpoint-large: ;
+```SCSS
+$breakpoint-small:   440px;
+$breakpoint-smedium: 680px;
+$breakpoint-medium:  920px;
+$breakpoint-large:   1040px;
 ```
 
 See ['Responsive grid systems; a solution?'](http://csswizardry.com/2013/02/responsive-grid-systems-a-solution/) and ['Tweakpoints'](http://adactio.com/journal/6044/) for further reading.
@@ -637,14 +661,13 @@ See ['Responsive grid systems; a solution?'](http://csswizardry.com/2013/02/resp
 
 ### Name selectors with reusability in mind
 
-- When you write a selector name for a new object, ask yourself if you could not only use this object multiple times in your current project but also in future projects.
-- Avoid names describing content or styling.
+- The name of a block or element should be well thought out. Take your time. Always use UI dictionaries or Human Interface Guidelines from Apple, Google or Microsoft as reference for a semantically correct name.
+- Ask yourself if you could use the selector name multiple times in your project as well as other projects.
 
 **Right:**
 ```CSS
-.menu-item {}
+.menu__item {}
 .is-highlighted {}
-.page-row {}
 .sheet {}
 ```
 
@@ -685,45 +708,126 @@ See['Don't use IDs in CSS selectors?'](http://oli.jp/2011/ids/) for further read
 
 - States differ from modifiers. Modifiers are timeless, states are temporarily.
 - States never contain global styling. Style states always in combination with other selectors. This makes it easier to reuse components in different projects.
-- States are allowed to be nested with Less or Sass. Usage is similar to pseudo-classes and pseudo-elements.
+- States are allowed to be nested with Less or SCSS. Usage is similar to pseudo-classes and pseudo-elements.
 - States always start with 'is'.
-- Preferred state names are listed below.
 
 **Right:**
-```CSS
-selector.is-visible {}
-selector.is-hidden {}
-selector.is-added {}
-selector.is-removed {}
-selector.is-active {}
-selector.is-disabled {}
-selector.is-collapsed {}
-selector.is-expanded {}
-selector.is-highlighted {}
-selector.is-invalid {}
-selector.is-valid {}
-selector.is-touched {}
-selector.is-untouched {}
-selector.is-pristine {}
-selector.is-dirty {}
-selector.is-dragging {}
-selector.is-dropped {}
-selector.is-selected {}
-selector.is-filled {}
-selector.is-empty {}
-selector.is-updating {}
-selector.is-loaded {}
-selector.is-loading {}
+```SCSS
+.selector {
+
+	&.is-visible {
+		property: value;
+	}
+
+	&.is-hidden {
+		property: value;
+	}
+	
+	&.is-added {
+		property: value;
+	}
+	
+	&.is-removed {
+		property: value;
+	}
+	
+	&.is-active {
+		property: value;
+	}
+	
+	&.is-disabled {
+		property: value;
+	}
+	
+	&.is-collapsed {
+		property: value;
+	}
+	
+	&.is-expanded {
+		property: value;
+	}
+	
+	&.is-highlighted {
+		property: value;
+	}
+	
+	&.is-invalid {
+		property: value;
+	}
+	
+	&.is-valid {
+		property: value;
+	}
+	
+	&.is-dragging {
+		property: value;
+	}
+	
+	&.is-dropped {
+		property: value;
+	}
+	
+	&.is-selected {
+		property: value;
+	}
+	
+	&.is-filled {
+		property: value;
+	}
+	
+	&.is-empty {
+		property: value;
+	}
+	
+	&.is-updating {
+		property: value;
+	}
+	
+	&.is-loaded {
+		property: value;
+	}
+	
+	&.is-loading {
+		property: value;
+	}
+	
+}
 ```
 
 **Wrong:**
-```CSS
+```SCSS
 .is-hidden {
 	display: none;
 }
 
 .hidden {
 	display: none;
+}
+```
+
+### Use CSS3 syntax for pseudo-elements
+
+- Use two colons for pseudo-elements and one colon for pseudo-classes. Pseudo-elements are new virtual elements created by CSS, such as 'before' and 'after'. These elements do not exist otherwise. Pseudo-classes select existing elements that cannot be selected using other simple selectors. Examples are 'first-child', 'last-child', and 'hover'.
+
+**Right:**
+```SCSS
+selector
+
+	&::before {
+		property: value;
+	}
+
+}
+```
+
+**Wrong:**
+```CSS
+selector {
+
+	&:before {
+		property: value;
+	}
+
 }
 ```
 
@@ -747,45 +851,48 @@ selector.is-loading {}
 }
 ```
 
-### Do not nest rules with Less or Sass
+### Do not nest blocks, elements or modifiers with Less or SCSS
 
-- Nesting rules with Less or Sass makes it more difficult to optimize your CSS.
+- Nesting blocks, elements or modifiers with Less or SCSS makes it more difficult to optimize your CSS.
 
 **Right:**
 ```CSS
-simple-selector {
+simple-selector-1 {
 	property: value;
 }
 
-simple-selector simple-selector {
+simple-selector-1 simple-selector-2 {
 	property: value;
 }
 ```
 
 **Wrong:**
-```Less
-simple-selector {
+```SCSS
+simple-selector-1 {
 	property: value;
-	simple-selector {
+
+	& simple-selector-2 {
 		property: value;
 	}
+
 }
 ```
 
-### Do nest pseudo-classes, pseudo-elements, media queries, states, and BEM block modifiers with Less or Sass
+### Do nest pseudo-classes, pseudo-elements, media queries, states, and block modifiers for elements with Less or SCSS
 
 - Makes sure style and behavior of the same selector are grouped.
-- Also BEM block modifiers (not BEM element modifiers) are nested within BEM elements. This makes it easier for block modifiers to influence different elements at the same time and keep the behavior of an element contained within the Less or Sass.
+- Also BEM block modifiers (not BEM element modifiers) are nested within BEM elements. This makes it easier for block modifiers to influence different elements and to keep the behavior of an element contained within the Less or SCSS.
 - Nested pseudo-classes, pseudo-elements, media queries, states, or BEM block modifiers should also be separated by an empty line.
 - The behavior of a pseudo-element should be grouped. Place media queries with rules for a pseudo-element within that pseudo-element. As a result, you don't have to repeat the pseudo-element per media query.
 - They way you nest pseudo-elements and pseudo-classes is very different. Pseudo-classes should be nested within media queries when its styling is different per media query. That means you have to repeat pseudo-classes for every media query. The styling of a pseudo-class is related to the styling of the selector per media query. Read [Pseudo-classes vs pseudo-elements](http://www.growingwiththeweb.com/2012/08/pseudo-classes-vs-pseudo-elements.html) to learn more about the difference between pseudo elements and pseudo classes.
+- Order media queries based on their ranges.
 
 **Right:**
-```Less
-selector {
+```SCSS
+.selector {
 	property: value;
 
-	@media @range-lap {
+	@include media($range-lap) {
 		property: value;
 
 		&:last-child {
@@ -794,7 +901,7 @@ selector {
 
 	}
 
-	@media @range-desk {
+	@include media($range-desk) {
 		property: value;
 
 		&:last-child {
@@ -807,12 +914,12 @@ selector {
 	&::after {
 		property: value;
 
-		@media @range-lap {
+		@include media($range-lap) {
 			property: value;
 			property: value;
 		}
 
-		@media @range-desk {
+		@include media($range-desk) {
 			property: value;
 		}
 	}
@@ -827,12 +934,61 @@ selector {
 - Makes it easier to reorder or add declarations.
 - Removing the last semi-colon is needles optimization. Automate this with a compiler or script.
 
+### Avoid shorthand declarations
+
+- It makes it more difficult to overrule a value with a modifier.
+- It makes the result of a declaration less predictable and less clear because you often have to set all values, including the values you are not interested in, such as the margins of other sides.
+
+**Right:**
+```SCSS
+.selector {
+	margin-top: 10px;
+	background-color: $color-background;
+}
+```
+
+**Wrong:**
+```SCSS
+.selector {
+	margin: 10px 0 0 0;
+	background: $color-background;
+}
+```
+
+### Use mixins only for prefixes when support is needed
+
+- Use flexbox mixin or other mixins from bourbon or other libraries when you should support browsers which require prefixes.
+- Always compare support requirements in the definition of done with browser support via [caniuse.com](http://caniuse.com/) to check if prefixes and mixins are needed.
+
 ## Values
+
+### Use variables set in settings as much as possible for values
+
+- Before setting values manually, check variables in settings and use correct variables, for example do not use $color-text for backgrounds even when you need the same color.
+- Variables should be available for colors, font-sizes, line-heights, border-radii, borders, font-families, media-queries.
+
+**Right:**
+```SCSS
+.selector {
+	background-color: $color-background-200;
+	color: $color-text-90;
+	font-size: $font-size-100;
+}
+```
+
+**Wrong:**
+```SCSS
+.selector {
+	background-color: $color-text-diap;
+	color: red;
+	font-size: 16px;
+}
+```
 
 ### Color units should be written in 'HSL' or 'HSLa'
 
 - HSL or HSLa makes changing color values much easier.
-- Less or Sass should convert HSL to hex color codes to reduce file size.
+- Less or SCSS should convert HSL to hex color codes to reduce file size.
 
 **Right:**
 ```SCSS
@@ -854,11 +1010,20 @@ rgba(50, 50, 50, 0.5);
 - A 'CSS px' is a reference pixel intended to scale in size depending on the 'typical' distance of an observer from the display.
 - Web browsers scale a design in pixels the same way they scale designs in ems or rems. Zooming even triggers media queries based on pixels. Essentially, web browsers make the reference pixel larger or smaller.
 - Makes it easier to integrate images or other media formats based on pixels in your layout.
-- Makes sure you don't get nummers like '0.29310344827586204em' (this is an actual used number).
+- Makes sure you don't get numbers like '0.29310344827586204em' (this is an actual used number).
 - Sizing in pixels reduces development time.
 - Sizes in ems or rems are allowed, but only when it should actually be based on the font-size. For example a max width of 30 ems to make sure lines never get too long.
 
 See ['W3C Recommendations about lengths'](http://www.w3.org/TR/CSS21/syndata.html#length-units) for further reading.
+
+### Use the 8-Point Grid as much as possible for pixel values
+
+- Popular screen sizes are divisible by 8.
+- Popular icon sizes are divisible by 8.
+- Can be easily divided and multiplied to create useful sizes.
+- Apple iOS and Google Material Design already use 4- or 8-point system.
+
+See ['The 8-Point Grid'](https://spec.fm/specifics/8-pt-grid) and ['Intro to the 8-Point Grid System'](https://builttoadapt.io/intro-to-the-8-point-grid-system-d2573cde8632) for further reading.
 
 ### Z-indexes are limited to 12 levels
 
@@ -939,33 +1104,33 @@ selector {
 
 ## Comments
 
-### Use Less/Sass commenting style '//' for comments pointless for debugging
+### Use Less/SCSS commenting style '//' for comments pointless for debugging
 
-- Applicable for commenting code not visible in CSS, such as mixins, or variables. It assures you don't have loose comments floating around in dev version: Less/Sass style comments are always compiled out.
+- Applicable for commenting code not visible in CSS, such as mixins, or variables. It assures you don't have loose comments floating around in dev version: Less/SCSS style comments are always compiled out.
 - Comments outside rules should be separated by a single empty line.
 - Do not add extra dividers to mark a comment. If needed, change your code coloring to identify comment blocks.
 - Use markdown within comments.
 - Do not add line breaks for wrapping.
 
 **Right:**
-```Less
+```SCSS
 // # Colors
 
-@color-blue: rgb(0, 0, 255); // #0000ff
+$color-blue: rgb(0, 0, 255); // #0000ff
 ```
 
 **Wrong:**
-```Less
+```SCSS
 /* -- colors -- */
 
-@color-blue: rgb(0, 0, 255); /* #0000ff */
+$color-blue: rgb(0, 0, 255); /* #0000ff */
 ```
 
 ### Use CSS commenting style '/* */' for comments useful for debugging
 
 - Applicable for commenting code visible in CSS, such as rules, selectors, properties, or values.
-- Preserve CSS style comments during compiling Less or Sass code for dev versions.
-- CSS style comments should be removed during compiling Less or Sass code for live versions.
+- Preserve CSS style comments during compiling Less or SCSS code for dev versions.
+- CSS style comments should be removed during compiling Less or SCSS code for live versions.
 - Comments outside rules should be separated by a single empty line.
 - For comments outsides rules, start and end syntaxes should be on a separate line. Even for single line comments, because of consistency and making transitions between single and multi line (adding and removing lines) easier.
 - Comments inside rules (a.k.a. inline comments) can be written as 'single line comment': syntaxes and comment on the same line.
@@ -1070,6 +1235,13 @@ Style guide: components - buttons
 ```
 
 See [KSS](https://github.com/kneath/kss), [KSS-node](https://github.com/kss-node/kss-node), and [SC5](https://github.com/SC5/sc5-styleguide) for further reading.
+
+## Specific Techniques
+
+### Implement icons for user interface elements with CSS, place icons related to content in HTML
+
+- Icons for user interface elements should be defined by CSS and not placed in the HTML structure. Icons for user interface elements can change based on the status and classes. This can be solved easily with CSS. Defining icons for user interface elements in CSS also makes sure icons are consistent throughout your website or application. You cannot mistakenly use different icons for the same user interface element in different views. Some developers argue these icons are not part of the DOM which reduces accessibility or the ability to add alt text. For user interface elements this should not be an issue. Affordance for user interface elements should never depend on icons and always depend on its shape and visible text or 'hidden text' accessible for screen readers.
+- Icons for content, such as icons illustrating product features, should be placed in the HTML. This makes changing your content and icons easier. Furthermore, you don't have to create a new class for every new icon, you only have to change the HTML.
 
 ## Acknowledgements and Further Reading
 
