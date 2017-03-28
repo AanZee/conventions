@@ -2,7 +2,7 @@
 [Aan Zee](http://www.aanzee.nl)'s (opinionated) styleguides for creating web stuff, and doing it in style.
 
 - [General](general/README.md)
-- [Styling languages](styling/README.md)
+- [CSS (Preprocessors)](css/README.md)
 - [JavaScript](javascript/README.md)
 - [ColdFusion](coldfusion/README.md)
 - [HTML](html/README.md)
