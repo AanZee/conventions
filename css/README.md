@@ -54,7 +54,7 @@ simple-selector > simple-selector {
 
 1. **vendors** (e.g. Bourbon, Bootstrap, jQuery UI)
 2. **fonts** (font-facing)
-3. **settings** (variables and configs, e.g. colors, fonts families, font sizes, line heights)
+3. **settings** (variables and configs, e.g. colors, fonts families, font sizes, line heights, animations variables)
 4. **utilities** (e.g. your mixins, functions, and tools)
 5. **vendor-overrides** (to re-declare some vendor CSS with help of settings and utilities, if needed)
 6. **reset** (e.g. [Reset CSS](http://meyerweb.com/eric/tools/css/reset/) or [normalize.css](http://necolas.github.io/normalize.css/), and [box-sizing](http://www.paulirish.com/2012/box-sizing-border-box-ftw/))
@@ -1208,7 +1208,7 @@ img {
 **Right:**
 ```CSS
 selector {
-	property: value; /* HACK: for Internet Explorer 9 */
+	property: value; /* HACK: For Internet Explorer 9 */
 	property: red; /* TODO 2015 04 04: Change value to blue */
 }
 ```
@@ -1243,7 +1243,7 @@ See [KSS](https://github.com/kneath/kss), [KSS-node](https://github.com/kss-node
 - Icons for user interface elements should be defined by CSS and not placed in the HTML structure. Icons for user interface elements can change based on the status and classes. This can be solved easily with CSS. Defining icons for user interface elements in CSS also makes sure icons are consistent throughout your website or application. You cannot mistakenly use different icons for the same user interface element in different views. Some developers argue these icons are not part of the DOM which reduces accessibility or the ability to add alt text. For user interface elements this should not be an issue. Affordance for user interface elements should never depend on icons and always depend on its shape and visible text or 'hidden text' accessible for screen readers.
 - Icons for content, such as icons illustrating product features, should be placed in the HTML. This makes changing your content and icons easier. Furthermore, you don't have to create a new class for every new icon, you only have to change the HTML.
 
-## Acknowledgements and Further Reading
+## Acknowledgments and Further Reading
 
 - [sass-guideline.es](http://sass-guidelin.es/#syntax--formatting)
 - [cssguidelin.es](http://cssguidelin.es)
