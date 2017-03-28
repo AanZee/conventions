@@ -11,7 +11,7 @@ Use tabs instead of spaces when possible in your language. Everyone can use diff
 Persons will be switching projects, clients and jobs. You can better use GIT, humans.txt or a README file.
 
 ## Be consistent in naming components
-Name your files like your components. A SCSS component selector e.g. .blog {} will have the filename _blog.scss. A SCSS mixin beautifulGradient will have the filename _beautiful-gradient.scss. 
+Name your files like your components. A SCSS component selector e.g. .blog {} will have the filename _blog.scss. A SCSS mixin beautifulGradient will have the filename _beautiful-gradient.scss.
 
 ## Naming
 Use the right naming style per language. We prefer camelCase, PascalCase or dashes.
@@ -66,6 +66,12 @@ function foo(parameter1,parameter2,parameter3) {
 foo(parameter1,parameter2,parameter3);
 ```
 
+## There should be no trailing white spaces.
+Turn on 'show invisibles' to find and remove trailing white spaces/tabs.
+
+## Every file should end with an empty line.
+You can add a plugin to your IDE that does this for you.
+
 ## Indent source code not output code
 In some (template) languages you will have a different indention in your output code than source code. Always write readable source code so it is easier to maintain.
 
@@ -101,7 +107,7 @@ if (index < maxItems) {
 **Wrong:**
 ```javascript
 if (index < 3) {
-	
+
 }
 ```
 
