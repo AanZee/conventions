@@ -1,3 +1,0 @@
-# Styling
-
-- [CSS](CSS.md)
