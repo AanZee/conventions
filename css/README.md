@@ -1158,13 +1158,6 @@ img {
 }
 ```
 
-### Never limit comment lines to 80 characters
-
-- Some guidelines advice to limit lines to 80 characters for readability. Don't do this.
-- Line breaks have or should have semantic value.
-- Manually limiting line length adds unnecessary extra time for editing comments.
-- Set your editor to wrap lines instead.
-
 ### Use special tags to mark comments
 
 - Using consistent tags such as 'TODO' makes sure they can be easily found with text search.
