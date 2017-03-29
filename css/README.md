@@ -1168,7 +1168,7 @@ selector {
 ```
 ```SCSS
 selector {
-	property: red; /* TODO: 2015 04 04: Change value to blue */
+	property: red; // TODO: 2015 04 04: Change value to blue
 }
 ```
 
