@@ -5,7 +5,8 @@
 - [Angular 2](angular-2.md)
 - [jQuery](jquery.md)
 
-## Use single quotes
+## Quotes
+Strings should be quoted with a single quote.
 
 **Right:**
 ```javascript

@@ -16,19 +16,6 @@ three = 3;
 var four = 4;
 ```
 
-## Quotes
-Strings should be quoted with a single quote.
-
-**Right:**
-```
-let text = 'this is an example';
-```
-
-**Wrong:**
-```
-let text = "this is an example";
-```
-
 ## Naming
 
 ### What does it do/represent?
