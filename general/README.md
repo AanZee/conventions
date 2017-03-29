@@ -38,6 +38,21 @@ Use the right naming style per language. We prefer camelCase, PascalCase or dash
 - CSS selectors
 - Angular template translation labels
 
+### Use special tags to mark comments
+- Using consistent tags such as 'TODO' makes sure they can be easily found with text search.
+- For TODOs include a date when it should be done if possible.
+- Always start TODOs with a verb.
+- Move TODOs as soon as possible to your backlog.
+
+**Available tags**
+- NOTE: a explanation to other developers.
+- TODO: a task that should be done in the near future.
+- BUG: something that should be done as soon as possible.
+- HACK: fix for a specific web browser or situation.
+- DEBUG: A temporary comment.
+- IDEA: Possible improvement.
+- ???: Unclear, needs a better description.
+- CRED: Credits for someone.
 
 **Right:**
 ```javascript
