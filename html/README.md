@@ -1,7 +1,7 @@
 # HTML
 
 ## BEM
-To structure our components we use the [BEM](https://en.bem.info/method/naming-convention/) methodology.
+Structure your components with the [BEM methodology](https://en.bem.info/method/naming-convention/). See [the CSS conventions part](/css/README.md#selector-names-should-follow-bem-methodology-honed-by-nicolas-gallagher) for some of the advantages.
 
 ## HTML alignment
 
