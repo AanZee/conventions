@@ -87,10 +87,10 @@ function foo(parameter1,parameter2,parameter3) {
 foo(parameter1,parameter2,parameter3);
 ```
 
-## There should be no trailing white spaces.
+## There should be no trailing white spaces
 Turn on 'show invisibles' to find and remove trailing white spaces/tabs.
 
-## Every file should end with an empty line.
+## Every file should end with an empty line
 You can add a plugin to your IDE that does this for you.
 
 ## Indent source code not output code
