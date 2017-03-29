@@ -1161,11 +1161,13 @@ img {
 ### Use special tags to mark comments
 
 **Right:**
+CSS
 ```CSS
 selector {
 	property: value; /* HACK: For Internet Explorer 9 */
 }
 ```
+SCSS
 ```SCSS
 selector {
 	property: red; // TODO: 2015 04 04: Change value to blue
