@@ -321,10 +321,6 @@ Tools like [CSScomb](http://csscomb.com), in combination with [a CSScomb config 
 
 ## Naming
 
-### Write selectors in US English
-
-- CSS is also written in US English, e.g. color (US English) instead of colour (British English).
-
 ### Write selectors in lower-case and use hyphen-delimited syntax
 
 - CSS is a hyphen-delimited syntax.

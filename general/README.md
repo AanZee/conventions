@@ -2,7 +2,7 @@
 This conventions are best practices in all our programming languages.
 
 ## Write in US English
-Write your code in US English instead of British English.
+Write your code in US English instead of British English. E.g. color instead of colour.
 
 ## Use tabs instead of spaces
 Use tabs instead of spaces when possible in your language. Everyone can use different tab widths in there own editor.
