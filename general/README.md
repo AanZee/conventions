@@ -125,7 +125,9 @@ console.log(a);
 ```
 
 ## Don't write abbreviations
-Write full descriptive words.
+- Write full descriptive words.
+- Shorter names could lead to misunderstandings.
+- Shorter names don't affect file size that much, because of how GZIP works.
 
 **Right:**
 ```css

@@ -505,26 +505,6 @@ Depending on the 'grow value' (default is 1) and the amount of elements within a
 }
 ```
 
-### Names of selectors or variables should be written out in full
-
-- Don't shorten selector or variable names.
-- Shorter selector names could lead to misunderstandings.
-- Shorter selector names don't affect file size that much, because of how GZIP works.
-
-**Right:**
-```CSS
-.button {
-	property: value;
-}
-```
-
-**Wrong:**
-```CSS
-.btn {
-	property: value;
-}
-```
-
 ### Names of variables should start with the property or type
 
 - Makes it easier to group them and to use autocomplete in development tools.
