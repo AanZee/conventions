@@ -8,7 +8,8 @@
 ## Unit testing
 - [Unit testing](unit-testing.md)
 
-## Use single quotes
+## Quotes
+Strings should be quoted with a single quote.
 
 **Right:**
 ```javascript
@@ -121,7 +122,7 @@ const someValue = (someCondition === 'that') ? 'those' : 'these';
 **Very bad:**
 ```js
 const someValue = (someCondition !== anotherCondition ? 'this' : 'that') === 'that' ? 'those' : 'these'; // say what?
-		
+
 ```
 
 ### Destructuring vs declaring many, many variables
