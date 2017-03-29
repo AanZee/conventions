@@ -2,7 +2,7 @@
 
 The goal of these conventions are to create reusable style sheets and to keep them maintainable, transparent, readable, and scalable. And to make it as painless as possible to work with. Although SCSS and CSS is used for the examples, it does not matter if you use Less, SCSS, or even plain CSS. Choose a language based on the nature of your project. Each language has its own strengths.
 
-For these conventions a [CSScomb config file is available](configs/csscomb.json).
+For these conventions a [CSScomb config file is available](attachments/.csscomb.json).
 
 ## Table of Contents
 - [Terminology](#terminology)
@@ -54,7 +54,7 @@ simple-selector > simple-selector {
 
 1. **vendors** (e.g. Bourbon, Bootstrap, jQuery UI)
 2. **fonts** (font-facing)
-3. **settings** (variables and configs, e.g. colors, fonts families, font sizes, line heights)
+3. **settings** (variables and configs, e.g. colors, fonts families, font sizes, line heights, animations variables)
 4. **utilities** (e.g. your mixins, functions, and tools)
 5. **vendor-overrides** (to re-declare some vendor CSS with help of settings and utilities, if needed)
 6. **reset** (e.g. [Reset CSS](http://meyerweb.com/eric/tools/css/reset/) or [normalize.css](http://necolas.github.io/normalize.css/), and [box-sizing](http://www.paulirish.com/2012/box-sizing-border-box-ftw/))
@@ -105,7 +105,7 @@ See [The Specificity Graph](http://csswizardry.com/2014/10/the-specificity-graph
 7. Visual properties
 8. Print
 
-Tools like [CSScomb](http://csscomb.com), in combination with [a CSScomb config file](configs/csscomb.json) based on these conventions, can be used to automate ordering.
+Tools like [CSScomb](http://csscomb.com), in combination with [a CSScomb config file](attachments/.csscomb.json) based on these conventions, can be used to automate ordering.
 
 ### Place rules in media queries, unless applicable for all media queries
 
@@ -317,13 +317,9 @@ selector {
 - Trim trailing spaces or tabs.
 - Add an empty line at end of file.
 
-Tools like [CSScomb](http://csscomb.com), in combination with [a CSScomb config file](.csscomb.json) based on these conventions, can be used to automate spacing.
+Tools like [CSScomb](http://csscomb.com), in combination with [a CSScomb config file](attachments/.csscomb.json) based on these conventions, can be used to automate spacing.
 
 ## Naming
-
-### Write selectors in US English
-
-- CSS is also written in US English, e.g. color (US English) instead of colour (British English).
 
 ### Write selectors in lower-case and use hyphen-delimited syntax
 
@@ -415,7 +411,7 @@ See [Modular CSS typography](http://thesassway.com/advanced/modular-css-typograp
 - The standard variant of a pattern gets the modifier '100'.
 - There are two standard variants: with and without a number. Especially useful when you start patterns without variants and you have to add variants later on in a project. You don't want to change all the names in your project.
 - Smaller variants get the modifiers '90', '80', '70',…
-- Large variants get the modifiers '200', '300',…
+- Larger variants get the modifiers '200', '300',…
 - A modifier that removes paddings or height from a block can be written as '0', for example pane--0 is a section without padding-top and padding-bottom.
 - Numbers don't resemble exact size ratios, because that would be descriptive naming: button--200 is not necessary twice as large as button--100.
 - City block sizes for Less or SCSS variables should be written as part of the name (right: '$line-height-200') and should not be written as BEM modifiers (wrong: '$line-height--200').
@@ -502,26 +498,6 @@ Depending on the 'grow value' (default is 1) and the amount of elements within a
 
 .class--3 {
 	flex-grow: 3;
-}
-```
-
-### Names of selectors or variables should be written out in full
-
-- Don't shorten selector or variable names.
-- Shorter selector names could lead to misunderstandings.
-- Shorter selector names don't affect file size that much, because of how GZIP works.
-
-**Right:**
-```CSS
-.button {
-	property: value;
-}
-```
-
-**Wrong:**
-```CSS
-.btn {
-	property: value;
 }
 ```
 
@@ -1182,36 +1158,22 @@ img {
 }
 ```
 
-### Never limit comment lines to 80 characters
-
-- Some guidelines advice to limit lines to 80 characters for readability. Don't do this.
-- Line breaks have or should have semantic value.
-- Manually limiting line length adds unnecessary extra time for editing comments.
-- Set your editor to wrap lines instead.
-
 ### Use special tags to mark comments
 
-- Using consistent tags such as 'TODO' makes sure they can be easily found with text search.
-- For TODOs include a date when it should be done.
-- Always start TODOs with a verb.
-- Move TODOs as soon as possible to your backlog.
-
-**Available tags**
-- TODO: a task that should be done in the near future.
-- BUG: something that should be done as soon as possible.
-- HACK: fix for a specific web browser or situation.
-- DEBUG: A temporary comment.
-- IDEA: Possible improvement.
-- ???: Unclear, needs a better description.
-- CRED: Credits for someone.
-
 **Right:**
+CSS
 ```CSS
 selector {
-	property: value; /* HACK: for Internet Explorer 9 */
-	property: red; /* TODO 2015 04 04: Change value to blue */
+	property: value; /* HACK: For Internet Explorer 9 */
 }
 ```
+SCSS
+```SCSS
+selector {
+	property: red; // TODO: 2015 04 04: Change value to blue
+}
+```
+
 
 ### Use KSS for documenting CSS components
 
@@ -1243,7 +1205,7 @@ See [KSS](https://github.com/kneath/kss), [KSS-node](https://github.com/kss-node
 - Icons for user interface elements should be defined by CSS and not placed in the HTML structure. Icons for user interface elements can change based on the status and classes. This can be solved easily with CSS. Defining icons for user interface elements in CSS also makes sure icons are consistent throughout your website or application. You cannot mistakenly use different icons for the same user interface element in different views. Some developers argue these icons are not part of the DOM which reduces accessibility or the ability to add alt text. For user interface elements this should not be an issue. Affordance for user interface elements should never depend on icons and always depend on its shape and visible text or 'hidden text' accessible for screen readers.
 - Icons for content, such as icons illustrating product features, should be placed in the HTML. This makes changing your content and icons easier. Furthermore, you don't have to create a new class for every new icon, you only have to change the HTML.
 
-## Acknowledgements and Further Reading
+## Acknowledgments and Further Reading
 
 - [sass-guideline.es](http://sass-guidelin.es/#syntax--formatting)
 - [cssguidelin.es](http://cssguidelin.es)

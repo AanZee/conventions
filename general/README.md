@@ -2,10 +2,19 @@
 This conventions are best practices in all our programming languages.
 
 ## Write in US English
-Write your code in US English instead of British English.
+Write your code in US English instead of British English. E.g. color instead of colour.
 
 ## Use tabs instead of spaces
 Use tabs instead of spaces when possible in your language. Everyone can use different tab widths in there own editor.
+
+## Never limit comment lines to X characters
+- Some guidelines advice to limit lines to 80 characters for readability. Don't do this.
+- Line breaks have or should have semantic value.
+- Manually limiting line length adds unnecessary extra time for editing comments.
+- Set your editor to wrap lines instead.
+
+## Naming booleans
+Prefix booleans always with: is, has or should.
 
 ## Don't use author comments
 Persons will be switching projects, clients and jobs. You can better use GIT, humans.txt or a README file.
@@ -29,9 +38,21 @@ Use the right naming style per language. We prefer camelCase, PascalCase or dash
 - CSS selectors
 - Angular template translation labels
 
+### Use special tags to mark comments
+- Using consistent tags such as 'TODO' makes sure they can be easily found with text search.
+- For TODOs include a date when it should be done if possible.
+- Always start TODOs with a verb.
+- Move TODOs as soon as possible to your backlog.
 
-## Naming booleans
-Prefix booleans always with: is, has or should.
+**Available tags**
+- NOTE: a explanation to other developers.
+- TODO: a task that should be done in the near future.
+- BUG: something that should be done as soon as possible.
+- HACK: fix for a specific web browser or situation.
+- DEBUG: A temporary comment.
+- IDEA: Possible improvement.
+- ???: Unclear, needs a better description.
+- CRED: Credits for someone.
 
 **Right:**
 ```javascript
@@ -131,7 +152,9 @@ console.log(a);
 ```
 
 ## Don't write abbreviations
-Write full descriptive words.
+- Write full descriptive words.
+- Shorter names could lead to misunderstandings.
+- Shorter names don't affect file size that much, because of how GZIP works.
 
 **Right:**
 ```css
