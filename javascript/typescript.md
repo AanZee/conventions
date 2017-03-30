@@ -1,6 +1,4 @@
-# TypeScript conventions
-## Spacing
-### Types
+# TypeScript
 Type definitions are always preceded by a space (the semicolon connects to the method/variable).
 
 ## Functions
