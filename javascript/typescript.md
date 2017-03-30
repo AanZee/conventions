@@ -1,5 +1,15 @@
 # TypeScript
+
+## Type definition
 Type definitions are always preceded by a space (the semicolon connects to the method/variable).
+**Right:**
+```typescript
+let a: string[] = ['a','b','c'];
+```
+**Wrong:**
+```typescript
+let a : string[] = ['a','b','c'];
+```
 
 ## Functions
 Use 'fat-arrow' functions for callbacks etc.
