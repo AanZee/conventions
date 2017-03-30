@@ -56,6 +56,20 @@ let a = 1,
     d = 4;
 ```
 
+## Variables in camelCase
+When const and let are available use camelCase for both.
+
+**Right:**
+```javascript
+let willChange = 1;
+const maxItems = 3;
+```
+**Wrong:**
+```javascript
+let will_change = 1;
+const MAX_ITEMS = 3;
+```
+
 ## Naming
 
 ### Descriptive names
