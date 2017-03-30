@@ -13,9 +13,6 @@ Use tabs instead of spaces when possible in your language. Everyone can use diff
 - Manually limiting line length adds unnecessary extra time for editing comments.
 - Set your editor to wrap lines instead.
 
-## Naming booleans
-Prefix booleans always with: is, has or should.
-
 ## Don't use author comments
 Persons will be switching projects, clients and jobs. You can better use GIT, humans.txt or a README file.
 
@@ -38,7 +35,7 @@ Use the right naming style per language. We prefer camelCase, PascalCase or dash
 - CSS selectors
 - Angular template translation labels
 
-### Use special tags to mark comments
+## Use special tags to mark comments
 - Using consistent tags such as 'TODO' makes sure they can be easily found with text search.
 - For TODOs include a date when it should be done if possible.
 - Always start TODOs with a verb.
@@ -53,6 +50,9 @@ Use the right naming style per language. We prefer camelCase, PascalCase or dash
 - IDEA: Possible improvement.
 - ???: Unclear, needs a better description.
 - CRED: Credits for someone.
+
+## Naming booleans
+Prefix booleans always with: is, has or should.
 
 **Right:**
 ```javascript
