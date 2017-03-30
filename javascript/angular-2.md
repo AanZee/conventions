@@ -39,25 +39,16 @@ Write a ngIf tag as second HTML attribute after the class attribute. Or as first
 
 **Right:**
 ```html
-<div *ngIf="true"
-    id="component"
->
+<template [ngIf]="true">
     <h1>Component</h1>
-</div>
+</template>
+
+<h1 *ngIf="true">Component</h1>
 ```
 
 **Wrong:**
 ```html
-<div id="component"
-    *ngIf="true"
-    class="component"
->
-    <h1>Component</h1>
-</div>
-
-<div id="component"
-    *ngIf="true"
->
+<div *ngIf="true">
     <h1>Component</h1>
 </div>
 ```
