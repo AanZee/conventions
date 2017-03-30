@@ -1,4 +1,4 @@
-# General conventions
+# General
 These conventions are best practices in all our programming languages.
 
 ## Write in US English

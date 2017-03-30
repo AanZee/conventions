@@ -1,4 +1,4 @@
-# CSS and CSS Preprocessor Conventions
+# CSS and CSS Preprocessors
 
 The goals of these conventions are to create reusable style sheets and to keep them maintainable, transparent, readable, and scalable. Although SCSS and CSS is used for the examples, it does not matter if you use Less, SCSS, or even plain CSS. Choose a language based on the nature of your project. Each language has its own strengths.
 
