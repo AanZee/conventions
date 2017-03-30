@@ -4,8 +4,25 @@ These conventions are best practices in all our programming languages.
 ## Write in US English
 Write your code in US English instead of British English. E.g. color instead of colour.
 
-## Use tabs instead of spaces
-Use tabs instead of spaces when possible in your language. Everyone can use different tab widths in there own editor.
+### Indents should be done with tabs instead of spaces
+Use tabs instead of spaces when possible in your language.
+- Tabs allow developers with different preferences in indentation size to change how the code looks.
+- It is impossible to half-indent with tabs.
+- Requires less interaction.
+
+**Right:**
+```CSS
+selector {
+	property: value;
+}
+```
+
+**Wrong:**
+```CSS
+selector {
+ property: value;
+}
+```
 
 ## Never break code lines
 - Some guidelines advice to break lines after 80 characters for readability. Don't do this.
