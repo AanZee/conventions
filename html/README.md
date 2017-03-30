@@ -31,7 +31,7 @@ Structure your components with the [BEM methodology](https://en.bem.info/method/
 <h1 class="component" id="component">Title</h1>
 ```
 
-## Every attribute on an own line
+## Every attribute on a new line
 
 **Right:**
 ```html
@@ -75,7 +75,7 @@ Structure your components with the [BEM methodology](https://en.bem.info/method/
     Title
 </h1>
 
-    <h1
+<h1
     class="component"
     id="component"
 >
@@ -83,7 +83,7 @@ Structure your components with the [BEM methodology](https://en.bem.info/method/
 </h1>
 ```
 
-## Add type to button element
+## Add type to button elements
 Always add a type to a button to prevent accidentally submitting forms
 
 **Right:**
@@ -126,25 +126,25 @@ Don't use lists as container for a lot of data, only for simple lists.
 
 **Wrong:**
 ```html
-<h1>Components</h1>
+<h1>Component</h1>
 <ul class="component">
-<li class="component__item">
-    <div class="component__item-inner">
-        <h1 class="component__item-title">Component 1</h1>
-        <p class="component__item-text">Component description</p>
-    </div>
-</li>
-<li class="component__item">
-    <div class="component__item-inner">
-        <h1 class="component__item-title">Component 2</h1>
-        <p class="component__item-text">Component description</p>
-    </div>
-</li>
-<li class="component__item">
-    <div class="component__item-inner">
-        <h1 class="component__item-title">Component 3</h1>
-        <p class="component__item-text">Component description</p>
-    </div>
-</li>
+    <li class="component__item">
+        <div class="component__item-inner">
+            <h1 class="component__item-title">Component 1</h1>
+            <p class="component__item-text">Component description</p>
+        </div>
+    </li>
+    <li class="component__item">
+        <div class="component__item-inner">
+            <h1 class="component__item-title">Component 2</h1>
+            <p class="component__item-text">Component description</p>
+        </div>
+    </li>
+    <li class="component__item">
+        <div class="component__item-inner">
+            <h1 class="component__item-title">Component 3</h1>
+            <p class="component__item-text">Component description</p>
+        </div>
+    </li>
 </ul>
 ```
