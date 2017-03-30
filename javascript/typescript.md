@@ -11,29 +11,13 @@ let a: string[] = ['a','b','c'];
 let a : string[] = ['a','b','c'];
 ```
 
-## Functions
-Use 'fat-arrow' functions for callbacks etc.
-
-**Right:**
-```
-getItem().then((value: any) => {
-	console.log(value);
-});
-```
-**Wrong:**
-```
-getItem().then(function(value: any) {
-	console.log(value);
-});
-```
-
 ## Privates/Publics
 Always define whether a class variable or method is private or public. In Angular2 a private variable/method can be accessed by the template.
 
 Don't do this for variables and methods that are not properties of your class.
 
 **Right:**
-```
+```typescript
 private list: any[] = [];
 public addItemToList(value: any): void {
 	let item: any = value;
@@ -41,7 +25,7 @@ public addItemToList(value: any): void {
 };
 ```
 **Wrong:**
-```
+```typescript
 list: any[] = [];
 addItemToList(value: any): void {
 	let item: any = value;
@@ -54,14 +38,14 @@ Wherever applicable, define variable types as specific as possible.
 Do this for all variables, parameters and return types.
 
 **Right:**
-```
+```typescript
 public getItem(index: number): any {
 	let item: any = itemList[index];
 	return item;
 };
 ```
 **Wrong:**
-```
+```typescript
 public getItem(index) {
 	let item = itemList[index];
 	return item;
@@ -71,18 +55,18 @@ public getItem(index) {
 Exceptions:
 
 A constructor doesn't have to return a type.
-```
+```typescript
 constructor() {}
 ```
 
 Type definition is not possible in a `for in` loop.
-```
+```typescript
 for (let key in object) {
 }
 ```
 
 Type definition is not possible for the return value in a `setter` method.
-```
+```typescript
 public set message(value: string) {
 	this._message = value;
 }
@@ -90,7 +74,7 @@ public set message(value: string) {
 
 ### Comments
 Define types in the comments
-```
+```typescript
 /**
  * Method description
  * @param  {string} options [description]
@@ -111,7 +95,7 @@ Private and public class methods can be defined in order of usage (for example, 
 
 
 ## Example code
-```
+```typescript
 import { Injectable } from '@angular/core';
 
 @Injectable()

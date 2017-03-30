@@ -173,3 +173,23 @@ function superAwesomeFunction() {
 function sprWsmFnctn() {
 }
 ```
+
+## Descriptive naming
+Use names that explain the functionality or data format.
+
+**Right:**
+```javascript
+let itemList = [];
+
+function getItemList() {
+	return itemList;
+}
+```
+**Wrong:**
+```javascript
+let someName = [];
+
+function doSomething() {
+	return someName;
+}
+```

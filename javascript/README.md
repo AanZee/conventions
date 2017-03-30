@@ -53,7 +53,7 @@ let a = 1,
     d = 4;
 ```
 
-## Variables in camelCase
+## Write variables in camelCase
 When const and let are available use camelCase for both.
 
 **Right:**
@@ -67,26 +67,20 @@ let will_change = 1;
 const MAX_ITEMS = 3;
 ```
 
-## Naming
-
-### Descriptive names
-Use names that explain the functionality or data format.
+## Fat arrow functions
+Use 'fat-arrow' functions when available.
 
 **Right:**
 ```javascript
-let itemList = [];
-
-function getItemList() {
-	return itemList;
-}
+getItem().then((value: any) => {
+	console.log(value);
+});
 ```
 **Wrong:**
 ```javascript
-let someName = [];
-
-function doSomething() {
-	return someName;
-}
+getItem().then(function(value: any) {
+	console.log(value);
+});
 ```
 
 ## Comments
