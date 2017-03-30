@@ -47,8 +47,8 @@ let a: string[] = ['a', 'b', 'c'];
 ```
 **Wrong:**
 ```typescript
-let a : string[] = ['a','b','c'];
-let b:string[] = ['a','b','c'];
+let a : string[] = ['a', 'b', 'c'];
+let b:string[] = ['a', 'b', 'c'];
 ```
 
 ## Privates/Publics
