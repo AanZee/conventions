@@ -100,16 +100,14 @@ let c = true;
 
 **Right:**
 ```javascript
-function foo(parameter1, parameter2, parameter3) {
-}
+function foo(parameter1, parameter2, parameter3) {}
 
 foo(parameter1, parameter2, parameter3);
 ```
 
 **Wrong:**
 ```javascript
-function foo(parameter1,parameter2,parameter3) {
-}
+function foo(parameter1,parameter2,parameter3) {}
 
 foo(parameter1,parameter2,parameter3);
 ```
@@ -189,8 +187,7 @@ console.log(a);
 .button {}
 ```
 ```javascript
-function superAwesomeFunction() {
-}
+function superAwesomeFunction() {}
 ```
 
 
@@ -199,8 +196,7 @@ function superAwesomeFunction() {
 .btn {}
 ```
 ```javascript
-function sprWsmFnctn() {
-}
+function sprWsmFnctn() {}
 ```
 
 ## Descriptive naming
