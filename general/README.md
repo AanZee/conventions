@@ -143,7 +143,7 @@ if (index < 3) {
 }
 ```
 
-## Remove code
+## Remove unused code
 When you want to remove some code, remove it. Don't disable it with a comment tag. To reverse the removal, you can use GIT.
 
 **Right:**
