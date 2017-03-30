@@ -1153,6 +1153,7 @@ img {
 ```
 
 ### Use special tags to mark comments
+See a list of available tags in our '[Use special tags to mark comments](../general/README.md#use-special-tags-to-mark-comments)' section in the general conventions.
 
 **Right:**
 CSS
