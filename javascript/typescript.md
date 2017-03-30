@@ -52,7 +52,7 @@ public getItem(index) {
 };
 ```
 
-Exceptions:
+### Exceptions
 
 A constructor doesn't have to return a type.
 ```typescript
@@ -72,7 +72,7 @@ public set message(value: string) {
 }
 ```
 
-### Comments
+## Comments
 Define types in the comments
 ```typescript
 /**
@@ -82,16 +82,10 @@ Define types in the comments
  */
 ```
 
-## Naming
-### Private class variables
-Private class variables always start with an underscore.
-
 ## Order
-Class variables are always declared at the top of the class above any class method.
-
-Private class variables are declared before public class variables
-
-Private and public class methods can be defined in order of usage (for example, a private method can be placed in between 2 public methods if it is only used by the above public method)
+- Class variables are always declared at the top of the class above any class method.
+- Private class variables are declared before public class variables
+- Private and public class methods can be defined in order of usage (for example, a private method can be placed in between 2 public methods if it is only used by the above public method)
 
 
 ## Example code
