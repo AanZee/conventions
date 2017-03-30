@@ -126,7 +126,7 @@ Don't use lists as container for a lot of data, only for simple lists.
 
 **Wrong:**
 ```html
-<h1>Component</h1>
+<h1>Components</h1>
 <ul class="component">
     <li class="component__item">
         <div class="component__item-inner">
