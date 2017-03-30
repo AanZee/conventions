@@ -1,6 +1,7 @@
 # JavaScript
 
 ## Framework specific
+- [TypeScript](typescript.md)
 - [Angular 2](angular-2.md)
 - [Angular 1 (by John Papa)](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md)
 - [jQuery](jquery.md)
