@@ -1,8 +1,8 @@
 # JavaScript
 
 ## Framework specific
-- [Angular 1 (by John Papa)](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md)
 - [Angular 2](angular-2.md)
+- [Angular 1 (by John Papa)](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md)
 - [jQuery](jquery.md)
 
 ## Quotes
@@ -72,13 +72,13 @@ Use 'fat-arrow' functions when available.
 
 **Right:**
 ```javascript
-getItem().then((value: any) => {
+getItem().then(value => {
 	console.log(value);
 });
 ```
 **Wrong:**
 ```javascript
-getItem().then(function(value: any) {
+getItem().then(function(value) {
 	console.log(value);
 });
 ```
