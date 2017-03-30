@@ -130,6 +130,7 @@ Don't use numbers in your code that don't tell directly what they will do.
 **Right:**
 ```javascript
 const maxItems = 3;
+
 if (index < maxItems) {
 
 }
