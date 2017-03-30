@@ -1,4 +1,4 @@
-# Angular
+# Angular 2
 
 ## Naming
 For components, directives, services, providers, helpers, reducers, interfaces etc., use the following naming conventions:
@@ -203,7 +203,7 @@ Write an ngIf tag as second HTML attribute after the class attribute. Or as firs
 ```html
 <div id="component"
     *ngIf="true"
-    class="component"    
+    class="component"
 >
     <h1>Component</h1>
 </div>
@@ -230,7 +230,7 @@ Write an ngIf tag as second HTML attribute after the class attribute. Or as firs
 ```html
 <div id="component"
     *ngIf="true"
-    class="component"    
+    class="component"
 >
     <h1>Component</h1>
 </div>
