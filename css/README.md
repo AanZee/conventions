@@ -158,26 +158,6 @@ Only rules applicable to all media queries should be placed outside a media quer
 
 ## Code Spacing
 
-### Indents should be done with one tab, not spaces
-
-- Tabs allow developers with different preferences in indentation size to change how the code looks.
-- It is impossible to half-indent with tabs.
-- Requires less interaction.
-
-**Right:**
-```CSS
-selector {
-	property: value;
-}
-```
-
-**Wrong:**
-```CSS
-selector {
- property: value;
-}
-```
-
 ### Rules should be separated by one empty line
 
 **Right:**
