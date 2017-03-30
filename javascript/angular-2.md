@@ -1,8 +1,6 @@
 # Angular
 
 ## Naming
-
-### Naming files
 For components, directives, services, providers, helpers, reducers, interfaces etc., use the following naming conventions:
 
 - For components: don't use `SomeComponent.ts` or `some-component.ts`, use `some.component.ts`
@@ -12,16 +10,36 @@ For components, directives, services, providers, helpers, reducers, interfaces e
 ## File ordering
 For components, store all the files that have to do with your component in their same respective directory. The same goes for directives, services, providers, helpers, reducers, interfaces etc.:
 
+**Right:**
 ```
 components/
- |---some-view
- |    └---header
+ |---some-view/
+ |    └---header/
  |         |---header.component.html
  |         |---header.component.spec.ts
  |         └---header.component.ts
  |---some-view.component.html
  |---some-view.component.spec.ts
  └---some-view.component.ts
+```
+
+**Wrong:**
+```
+|---components/
+|    |---some-view/
+|    |    └---some-view.component.ts
+|    └---header/
+|         └---header.component.ts
+|---templates/
+|    |---some-view/
+|    |    └---some-view.component.html
+|    └---header/
+|         └---header.component.html
+└---tests/
+     |---some-view/
+     |    └---some-view.component.spec.ts
+     └---header/
+          └---header.component.spec.ts
 ```
 
 ## Exports and imports
@@ -42,7 +60,7 @@ Leave an empty line between native Angular and native library imports and custom
 import { Component, Input, Output } from '@angular/core';
 import { Store } from '@ngrx/store';
 
-import { SomeService } from '../../serives';
+import { SomeService, AnotherService } from '../../services';
 import { SomeHelper } from '../../helpers';
 ```
 
