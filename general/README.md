@@ -1,5 +1,5 @@
-# General conventions
-This conventions are best practices in all our programming languages.
+# General
+These conventions are best practices in all our programming languages.
 
 ## Write in US English
 Write your code in US English instead of British English. E.g. color instead of colour.
@@ -7,20 +7,25 @@ Write your code in US English instead of British English. E.g. color instead of 
 ## Use tabs instead of spaces
 Use tabs instead of spaces when possible in your language. Everyone can use different tab widths in there own editor.
 
-## Never limit comment lines to X characters
-- Some guidelines advice to limit lines to 80 characters for readability. Don't do this.
+## Never break code lines
+- Some guidelines advice to break lines after 80 characters for readability. Don't do this.
 - Line breaks have or should have semantic value.
 - Manually limiting line length adds unnecessary extra time for editing comments.
 - Set your editor to wrap lines instead.
 
-## Naming booleans
-Prefix booleans always with: is, has or should.
+## Don't add author comments
+Persons will be switching projects, clients and jobs. You can better use GIT, humans.txt or a README file when you want to share contact information.
 
-## Don't use author comments
-Persons will be switching projects, clients and jobs. You can better use GIT, humans.txt or a README file.
+**Wrong:**
+```javascript
+/**
+ * Awesome code block
+ * @author Name <name@company.com>
+ */
+ ```
 
 ## Be consistent in naming components
-Name your files like your components. A SCSS component selector e.g. .blog {} will have the filename _blog.scss. A SCSS mixin beautifulGradient will have the filename _beautiful-gradient.scss. 
+Name your files like your components. A SCSS component selector e.g. .blog {} will have the filename _blog.scss. A SCSS mixin beautifulGradient will have the filename _beautiful-gradient.scss.
 
 ## Naming
 Use the right naming style per language. We prefer camelCase, PascalCase or dashes.
@@ -38,7 +43,7 @@ Use the right naming style per language. We prefer camelCase, PascalCase or dash
 - CSS selectors
 - Angular template translation labels
 
-### Use special tags to mark comments
+## Use special tags to mark comments
 - Using consistent tags such as 'TODO' makes sure they can be easily found with text search.
 - For TODOs include a date when it should be done if possible.
 - Always start TODOs with a verb.
@@ -54,6 +59,9 @@ Use the right naming style per language. We prefer camelCase, PascalCase or dash
 - ???: Unclear, needs a better description.
 - CRED: Credits for someone.
 
+## Naming booleans
+Prefix booleans always with: is, has or should.
+
 **Right:**
 ```javascript
 let isA = true;
@@ -68,8 +76,7 @@ let b = false;
 let c = true;
 ```
 
-## Spaces between function parameters
-Always split parameters by one space.
+## Comma-separated values should include a space after each comma
 
 **Right:**
 ```javascript
@@ -86,6 +93,12 @@ function foo(parameter1,parameter2,parameter3) {
 
 foo(parameter1,parameter2,parameter3);
 ```
+
+## There should be no trailing white spaces
+Turn on 'show invisibles' to find and remove trailing white spaces/tabs.
+
+## Every file should end with an empty line
+You can add a plugin to your IDE that does this for you.
 
 ## Indent source code not output code
 In some (template) languages you will have a different indention in your output code than source code. Always write readable source code so it is easier to maintain.
@@ -122,7 +135,7 @@ if (index < maxItems) {
 **Wrong:**
 ```javascript
 if (index < 3) {
-	
+
 }
 ```
 
@@ -166,5 +179,25 @@ function superAwesomeFunction() {
 ```
 ```javascript
 function sprWsmFnctn() {
+}
+```
+
+## Descriptive naming
+Use names that explain the functionality or data format.
+
+**Right:**
+```javascript
+let itemList = [];
+
+function getItemList() {
+	return itemList;
+}
+```
+**Wrong:**
+```javascript
+let someName = [];
+
+function doSomething() {
+	return someName;
 }
 ```

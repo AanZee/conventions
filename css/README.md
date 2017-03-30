@@ -1,6 +1,6 @@
-# CSS and CSS Preprocessor Conventions
+# CSS and CSS Preprocessors
 
-The goal of these conventions are to create reusable style sheets and to keep them maintainable, transparent, readable, and scalable. And to make it as painless as possible to work with. Although SCSS and CSS is used for the examples, it does not matter if you use Less, SCSS, or even plain CSS. Choose a language based on the nature of your project. Each language has its own strengths.
+The goals of these conventions are to create reusable style sheets and to keep them maintainable, transparent, readable, and scalable. Although SCSS and CSS is used for the examples, it does not matter if you use Less, SCSS, or even plain CSS. Choose a language based on the nature of your project. Each language has its own strengths.
 
 For these conventions a [CSScomb config file is available](attachments/.csscomb.json).
 
@@ -47,7 +47,7 @@ simple-selector > simple-selector {
 - If you use Less or SCSS, you should divide your code across multiple files and organize it in different directories. The groups and order can be found in the list below.
 - With Less or SCSS, never divide a rule group (e.g. BEM block) across different files.
 - With Less or SCSS, never combine different rule groups (e.g. BEM blocks) in one file.
-- Never use sub-folders to group files within a group.
+- Never use sub-folders to group files.
 - Rules within vendors, utilities, or layout are [immutable](http://csswizardry.com/2015/03/immutable-css/).
 
 **Order should be:**
@@ -109,7 +109,7 @@ Tools like [CSScomb](http://csscomb.com), in combination with [a CSScomb config 
 
 ### Place rules in media queries, unless applicable for all media queries
 
-Only rules applicable to all media queries should be placed outside a media query. All other rules should be written per media query. This makes sure you never have to overwrite rules in an other media query, the code is easier to read, and it [improves render performance](http://meiert.com/en/blog/20080419/reset-style-sheets-are-bad/). This means that you should not write CSS rules mobile first and change the rules for bigger viewports. You write CSS rules meant for a viewport only for that specific viewport. This does not mean you shouldn't design mobile first.
+Only rules applicable to all media queries should be placed outside a media query. All other rules should be written per media query. This makes sure you never have to overwrite rules in an other media query, the code is easier to read, and it [improves render performance](http://meiert.com/en/blog/20080419/reset-style-sheets-are-bad/). This means that you should not write CSS rules mobile first and change the rules for bigger viewports. You write CSS rules meant for a viewport only for that specific viewport. This doesn't mean you shouldn't design mobile first.
 
 **Right:**
 ```CSS
@@ -228,8 +228,6 @@ selector, simple-selector simple-selector, selector {
 
 ### Declarations should be on a separate line
 
-- Exception: when there is a large amount of selectors with similar properties. Only in this case it is allowed to place selectors and declarations on a single line.
-
 **Right:**
 ```CSS
 selector {
@@ -246,6 +244,23 @@ selector {
 
 	property: value;
 }
+```
+
+#### Exception
+In case of many selectors with similar properties it is allowed to place selectors and declarations on a single line.
+
+**Right:**
+```CSS
+.selector--m1 { background-color: red; }
+.selector--m2 { background-color: blue; }
+.selector--m3 { background-color: yellow; }
+```
+
+**Wrong:**
+```CSS
+.selector--m1 { font-size: 12px; background-color: red; }
+.selector--m2 { color: white; background-color: blue; }
+.selector--m3 { opacity: 0.5; background-color: yellow; }
 ```
 
 ### Strings should be quoted with a single quote
@@ -279,9 +294,9 @@ selector {
 	font-style: normal;
 	src: url('../fonts/SourceSansPro/SourceSansPro-Regular.eot');
 	src: url('../fonts/SourceSansPro/SourceSansPro-Regular.eot?#iefix') format('embedded-opentype'),
-		 url('../fonts/SourceSansPro/SourceSansPro-Regular.woff2') format('woff2'),
-		 url('../fonts/SourceSansPro/SourceSansPro-Regular.woff') format('woff'),
-		 url('../fonts/SourceSansPro/SourceSansPro-Regular.ttf') format('truetype');
+		url('../fonts/SourceSansPro/SourceSansPro-Regular.woff2') format('woff2'),
+		url('../fonts/SourceSansPro/SourceSansPro-Regular.woff') format('woff'),
+		url('../fonts/SourceSansPro/SourceSansPro-Regular.ttf') format('truetype');
 }
 
 selector {
@@ -309,7 +324,6 @@ selector {
 - No spaces between property and colon (':').
 - Add a space between colon (':') and value.
 - Comma-separated values should include a space after each comma.
-- Comma-separated values within parentheses ('()') should include a space after each comma.
 - Parentheses ('()') should not be padded with spaces.
 - Align prefixes.
 - Add a trailing semi-colon (';') after the last declaration.
@@ -453,7 +467,7 @@ See [Modular CSS typography](http://thesassway.com/advanced/modular-css-typograp
 
 See ['How to build the perfect pattern library'](http://www.slideshare.net/WolfBruening/how-to-build-the-perfect-pattern-libraryy) for further reading.
 
-### Fractions used for grids and modifiers should be written out in full
+### Fractions used for grids and modifiers should be spelled out in full
 
 City block sizes are used for rhythms, never for exact values or fractions. When you want to specify that an object should be exactly one third or two tenths of a width, add modifiers as: .class--one-third or .class--two-tenths. When you want to create a modifier for full width, use: .class--full.
 
@@ -698,75 +712,75 @@ See['Don't use IDs in CSS selectors?'](http://oli.jp/2011/ids/) for further read
 	&.is-hidden {
 		property: value;
 	}
-	
+
 	&.is-added {
 		property: value;
 	}
-	
+
 	&.is-removed {
 		property: value;
 	}
-	
+
 	&.is-active {
 		property: value;
 	}
-	
+
 	&.is-disabled {
 		property: value;
 	}
-	
+
 	&.is-collapsed {
 		property: value;
 	}
-	
+
 	&.is-expanded {
 		property: value;
 	}
-	
+
 	&.is-highlighted {
 		property: value;
 	}
-	
+
 	&.is-invalid {
 		property: value;
 	}
-	
+
 	&.is-valid {
 		property: value;
 	}
-	
+
 	&.is-dragging {
 		property: value;
 	}
-	
+
 	&.is-dropped {
 		property: value;
 	}
-	
+
 	&.is-selected {
 		property: value;
 	}
-	
+
 	&.is-filled {
 		property: value;
 	}
-	
+
 	&.is-empty {
 		property: value;
 	}
-	
+
 	&.is-updating {
 		property: value;
 	}
-	
+
 	&.is-loaded {
 		property: value;
 	}
-	
+
 	&.is-loading {
 		property: value;
 	}
-	
+
 }
 ```
 
