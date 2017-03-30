@@ -1,5 +1,5 @@
 # General conventions
-This conventions are best practices in all our programming languages.
+These conventions are best practices in all our programming languages.
 
 ## Write in US English
 Write your code in US English instead of British English. E.g. color instead of colour.
@@ -7,8 +7,8 @@ Write your code in US English instead of British English. E.g. color instead of 
 ## Use tabs instead of spaces
 Use tabs instead of spaces when possible in your language. Everyone can use different tab widths in there own editor.
 
-## Never limit comment lines to X characters
-- Some guidelines advice to limit lines to 80 characters for readability. Don't do this.
+## Never break code lines
+- Some guidelines advice to break lines after 80 characters for readability. Don't do this.
 - Line breaks have or should have semantic value.
 - Manually limiting line length adds unnecessary extra time for editing comments.
 - Set your editor to wrap lines instead.
@@ -68,8 +68,7 @@ let b = false;
 let c = true;
 ```
 
-## Spaces between function parameters
-Always split parameters by one space.
+## Comma-separated values should include a space after each comma
 
 **Right:**
 ```javascript
