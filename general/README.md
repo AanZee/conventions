@@ -13,8 +13,16 @@ Use tabs instead of spaces when possible in your language. Everyone can use diff
 - Manually limiting line length adds unnecessary extra time for editing comments.
 - Set your editor to wrap lines instead.
 
-## Don't use author comments
-Persons will be switching projects, clients and jobs. You can better use GIT, humans.txt or a README file.
+## Don't add author comments
+Persons will be switching projects, clients and jobs. You can better use GIT, humans.txt or a README file when you want to share contact information.
+
+**Wrong:**
+```javascript
+/**
+ * Awesome code block
+ * @author Name <name@company.com>
+ */
+ ```
 
 ## Be consistent in naming components
 Name your files like your components. A SCSS component selector e.g. .blog {} will have the filename _blog.scss. A SCSS mixin beautifulGradient will have the filename _beautiful-gradient.scss.
