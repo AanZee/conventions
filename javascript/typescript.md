@@ -40,17 +40,21 @@ public set message(value: string) {
 
 ### Spacing
 Type definitions are always preceded by a space (the semicolon connects to the method/variable).
+
 **Right:**
 ```typescript
-let a: string[] = ['a','b','c'];
+let a: string[] = ['a', 'b', 'c'];
 ```
 **Wrong:**
 ```typescript
 let a : string[] = ['a','b','c'];
+let b:string[] = ['a','b','c'];
 ```
 
 ## Privates/Publics
-Always define whether a class variable or method is private. In some frameworks a private variable/method can be accessed by the template, but this don't use this. Use private declarations only in your current file/scope. Don't do this for variables and methods that aren't properties of your class.
+Always define whether a class variable or method is private. Use private declarations only in your current file/scope. In some frameworks a private variable/method can be accessed by the template, however we decided to expose variables/methods as public to the template.
+
+Don't define private/public for variables and methods that aren't properties of your class.
 
 We don't know if we like to add the public keyword yet. Because everything in TypeScript (and JavaScript) is public by default:
 
