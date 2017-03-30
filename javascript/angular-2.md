@@ -1,4 +1,4 @@
-# Angular
+# Angular 2
 
 ## ngIf as second HTML attribute
 Write a ngIf tag as second HTML attribute after the class attribute. Or as first attribute when there is no class available.
@@ -23,7 +23,7 @@ Write a ngIf tag as second HTML attribute after the class attribute. Or as first
 ```html
 <div id="component"
     *ngIf="true"
-    class="component"    
+    class="component"
 >
     <h1>Component</h1>
 </div>
@@ -50,7 +50,7 @@ Write a ngIf tag as second HTML attribute after the class attribute. Or as first
 ```html
 <div id="component"
     *ngIf="true"
-    class="component"    
+    class="component"
 >
     <h1>Component</h1>
 </div>
