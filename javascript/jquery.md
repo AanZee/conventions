@@ -1,7 +1,7 @@
 # jQuery
 
 ## Prefix jQuery objects with dollar sign
-Prefix jQuery objects with dollar sign to recognize them in your code
+Prefix jQuery objects always with a dollar sign to recognize them in your code.
 
 **Right:**
 ```javascript
