@@ -28,7 +28,14 @@ Persons will be switching projects, clients and jobs. You can better use GIT, hu
 Name your files like your components. A SCSS component selector e.g. .blog {} will have the filename _blog.scss. A SCSS mixin beautifulGradient will have the filename _beautiful-gradient.scss.
 
 ## Naming
-Use the right naming style per language. We prefer camelCase, PascalCase or dashes.
+Use the right naming style per language. We prefer dashes, camelCase or PascalCase.
+
+### Dashes
+- CSS selectors
+- Angular template translation labels
+- GIT branches
+- File names
+- Folder names
 
 ### camelCase
 - JavaScript
@@ -38,10 +45,6 @@ Use the right naming style per language. We prefer camelCase, PascalCase or dash
 
 ### PascalCase
 - JavaScript classes
-
-### Dashes
-- CSS selectors
-- Angular template translation labels
 
 ## Use special tags to mark comments
 - Using consistent tags such as 'TODO' makes sure they can be easily found with text search.
