@@ -1,6 +1,6 @@
 # Unit testing
 
-## Test driven development
+## Test driven JavaScript development
 
 ### Why write unit tests?
 Good tests are the best way to prevent errors from ending up in the final product. In that sense, they are more important than linting and static analysis which only check for errors on the surface (typos, style errors etc.), not the actual logic of your code.
