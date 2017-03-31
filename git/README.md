@@ -1,6 +1,6 @@
 # GIT
 
-## [JIRA](https://www.atlassian.com/software/jira) ID
+## JIRA ID
 Prefix commit message with a [JIRA](https://www.atlassian.com/software/jira) ID surrounded by square brackets when available. Always use the ID of the main task and ignore sub task ID's.
 
 **Right:**
