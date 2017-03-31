@@ -1,7 +1,7 @@
 # Styleguides
 [Aan Zee](http://www.aanzee.nl)'s (opinionated) styleguides for creating web stuff, and doing it in style.
 
-## Languages
+## Contents
 - [General](general/README.md)
 - [CSS (Preprocessors)](css/README.md)
 - [HTML](html/README.md)
