@@ -21,13 +21,13 @@ Always write your tests first. Try to think of it as writing specs for your feat
 Consider the following example, in which we need a function that acts on strings provided to it:
 
 ```js
-// functions.spec.js
+// funny-functions.spec.js
 
 const nonsenseMethod = require('functions.js');
 
 describe('The nonsence function', () => {
 	it('should exist', () => {
-		expect(!!nonsenseMethod).toBe(true);
+		expect(typeof nonsenseMethod).not.toBe('undefined');
 	});
 
 	it('should always return true when provided with `Lorem ipsum`', () => {
@@ -49,16 +49,17 @@ These assertions will all fail inevitably, since the code you are testing (in th
 After writing your tests and seeing them fail, it's time to write your actual code. Let the tests run simultaneously to speed up development.
 
 ```js
-// functions.js
+// funny-functions.js
 
 /**
  * Check a string for lorem ipsum.
  * @param {string} parameter
  * @return {boolean}
  */
-function nonsenseMethod(parameter) {
+const nonsenseMethod = parameter => {
 	return parameter === 'Lorem ipsum';
-}
+};
+
 module.exports = nonsenseMethod;
 ```
 
