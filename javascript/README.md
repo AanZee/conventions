@@ -287,8 +287,10 @@ const roomWithOneBed = rooms.find(room => {
 });
 ```
 
-### Rather destructure than declare many, many variables
-Try to destruct objects if you need to use their properties in new variables, rather than declaring those variables separately. This mostly comes in hand when a function needs to do something with an object it receives:
+### Rather destructure objects and arrays than declare many, many variables
+Try to destruct objects and arrays if you need to use their properties or values in new variables, rather than declaring those variables separately in a seemingly ambiguous way.
+
+This mostly comes in handy when a function needs to do something with an object or array it receives:
 
 **Right:**
 ```js
@@ -310,9 +312,11 @@ function doSomething(room) {
 }
 ```
 
+Keep in mind that (deep level) desctructuring kan work against you if you have lots of variables and risk namespace clashing (e.g. with `booker.firstName` and `guest.firstName` within the same block scope, so use it wisely.
+
 ### Merging arrays using spread operators
 
-**Less good:**
+**Less right:**
 ```js
 const boysArray = ['Edgar', 'Raoul', 'Marvin'];
 const girlsArray = ['Colinda', 'Sophia', 'Romy'];
