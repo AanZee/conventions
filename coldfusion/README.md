@@ -1,6 +1,9 @@
 # ColdFusion
 
-## Write all condition separators in capitals
+## Ortus ColdFusion (CFML) Standards & Best Practices
+Along with the conventions reported below, we follow the [Ortus ColdFusion (CFML) Standards & Best Practices](https://github.com/Ortus-Solutions/coding-standards/blob/master/coldfusion.md) conventions.
+
+## Write all condition operators in capitals
 
 **Right:**
 ```html
@@ -16,14 +19,18 @@
 
 **Right:**
 ```html
-<cfif a eq 1>
-    <h1 class="component">A</h1>
+<cfif a EQ 1>
+    <cfset classNames="component">
 <cfelse>
-    <h1 clas="component component--modifier">A</h1>
+    <cfset classNames="component component--modifier">
 </cfif>
+
+<h1 class="#classNames#">A</h1>
 ```
 
 **Wrong:**
 ```html
-    <h1 class="component<cfif a eq 1> component--modifier</cfif>">A</h1>
+<h1 class="component<cfif a EQ 1> component--modifier</cfif>">A</h1>
+
+<h1 class="component #iif(a EQ 1, DE(''), DE('component--modifier'))#">A</h1>
 ```
