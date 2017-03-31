@@ -22,6 +22,21 @@ let a = 'a';
 let a = "a";
 ```
 
+## Operators
+Always use triple equality operators when comparing two operands.
+
+_Why?_ They will allways work the way you would expect. If the two operands are of the same type and have the same value, then `===` produces true and `!==` produces false.
+
+**Right:**
+```js
+if (0 === '') // false
+```
+
+**Wrong:**
+```js
+if (0 == '') // true
+```
+
 ## Target dom elements with a js- prefixed attribute
 
 **Right:**
@@ -38,7 +53,16 @@ document.querySelectorAll('[data-component]');
 document.querySelectorAll('[component]');
 ```
 
+**Exceptions**
+
+For [unit testing](unit-testing.md) dom elements, use `[test-id=""]` attributes in your HTML. In test assertions, you can target these accordingly.
+
+```js
+expect(!!document.querySelector('[test-id="my-element"]')).toBe(true);
+```
+
 ## Variables should be declared on a separate line
+_Why?_ Because maintaining readability and preventing errors is more important than saving extra lines.
 
 **Right:**
 ```javascript
@@ -58,7 +82,7 @@ let a = 1,
 ```
 
 ## Write variables in camelCase
-When const and let are available use camelCase for both.
+When `const` and `let` are available, use camelCase for both.
 
 **Right:**
 ```javascript
@@ -72,22 +96,71 @@ const MAX_ITEMS = 3;
 ```
 
 ## Fat arrow functions
-Use 'fat-arrow' functions when available.
+Use 'fat-arrow' functions when available, especially for non-method functions.
+
+_Why?_ They fit in well with the [functional programming pattern](#functional), are shorter, less verbose and do not bind to their own `this`, `arguments`, `super` etc.
 
 **Right:**
 ```javascript
 getItem().then(value => {
 	console.log(value);
 });
+
+const roomsWithTV = rooms.filter(room => room.hasTV);
 ```
 **Wrong:**
 ```javascript
 getItem().then(function(value) {
 	console.log(value);
 });
+
+var roomsWithTV = rooms.filter(function(room) {
+	return room.hasTV
+});
 ```
 
-## Comments
+### Use single parentheses when there is only one parameter
+
+***Right:***
+```js
+const reverseText = text => text.split().reverse().join('');
+```
+
+***Wrong:***
+```js
+const reverseText = (text) => text.split().reverse().join('');
+```
+
+However, if your function or method has no parameters, it requires parentheses nonetheless:
+
+```js
+const someFunction = () => someExpression;
+```
+
+## Documenting your code with comments and annotations
+Write annotations for all properties and methods.
+
+_Why?_ This is not only helpful for new developers joining the team, but is also a useful reminder of how your code works if you re-visit it after a long time. Besides, many IDEs and editors show annotations when you hover annotated method or function wherever it is used in your code, also showing you what types a method uses and why.
+
+**Right:**
+```js
+/**
+ * Set the loading state.
+ * @param {boolean} to - The new state
+ * @return {void}
+ */
+const setIsLoading = to => { // editor now also provides type and description for method, return variable and parameter
+	this.isLoading = to;
+};
+```
+
+**Wrong:**
+```js
+const setLoadingState = to => { // some editors only provide parameter names
+	this.isLoading = to;
+}
+```
+
 Write comments that comply to the following format.
 
 ### Single line comments
@@ -118,7 +191,8 @@ See a list of available tags in our '[Use special tags to mark comments](../gene
 ```javascript
 // TODO: Single line comment
 ```
-## Functional (declarative) programming versus imperative programming
+
+## Functional (declarative) programming versus imperative programming <a id="functional"></a>
 Whenever possible, try to use functional programming methods (such as `.map`, `.filter`, `.reduce` for arrays) and paradigms.
 
 _Why?_ This not only saves lots of lines of code and variable creation bloat, it is also a lot more readable and easier to comprehend at first sight.
@@ -197,10 +271,23 @@ if (someCondition) {
 ```
 
 ### Always use `.map()` over `.forEach()` over `for()`
-
 Some will argue that, for example using a `for`-loop is faster (be it only minor), but this is not the case anymore in the latest browsers and JavaScript engines (e.g. [Mozilla's SpiderMonkey](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey), which is now used in Firefox). Try to look further beyond micro optimizations, especially as code grows and scales.
 
-### Destructuring vs declaring many, many variables
+### Use shorter functions whenever possible
+
+***Right:***
+```js
+const roomWithOneBed = rooms.find(room => room.bedsAmount === 1;
+```
+
+***Wrong:***
+```js
+const roomWithOneBed = rooms.find(room => {
+	return room.bedsAmount === 1;
+});
+```
+
+### Rather destructure than declare many, many variables
 Try to destruct objects if you need to use their properties in new variables, rather than declaring those variables separately. This mostly comes in hand when a function needs to do something with an object it receives:
 
 **Right:**
@@ -421,29 +508,5 @@ const someMethod = (error, results) => {
 	} else {
 		handleError(error);
 	}
-}
-```
-
-## Documenting your code with comments and annotations
-Write annotations for all properties and methods.
-
-_Why?_ This is not only helpful for new developers joining the team, but is also a useful reminder of how your code works if you re-visit it after a long time. Besides, many IDEs and editors show annotations when you hover annotated method or function wherever it is used in your code, also showing you what types a method uses and why.
-
-**Right:**
-```js
-/**
- * Set the loading state.
- * @param {boolean} to - The new state
- * @return {void}
- */
-const setIsLoading = to => { // editor now also provides type and description for method, return variable and parameter
-	this.isLoading = to;
-};
-```
-
-**Wrong:**
-```js
-const setLoadingState = to => { // some editors only provide the name of the 'to' parameter
-	this.isLoading = to;
 }
 ```
