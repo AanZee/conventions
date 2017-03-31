@@ -13,62 +13,52 @@ In a nutshell, why bother testing?
 - **Continuous delivery assurance**: by writing good tests from the start, you automatically prevent broken builds from being deployed to production.
 
 ### Write tests first, and let them fail
-Always write your tests first. These will fail inevitable, since the code you are testing doesn't exist yet. Try to think of it as writing specs for your features first. Always ask yourself these two questions beforehand:
+Always write your tests first. Try to think of it as writing specs for your features first. Always ask yourself these two questions beforehand:
 
 1. **What part/component of our codebase do I want to test?** (e.g. testing the return value of a certain feature method)
 2. **What should my feature do?** (e.g. 'When we provide a certain parameter to someMethod() it should always return that same value')
 
-Consider the following example:
+Consider the following example, in which we need a function that acts on strings provided to it:
 
 ```js
-const component = require('my-future-component.js');
-describe('Components: My Future Component', () => {
-
-	// will fail, since component.method() doesn't exist yet
-	it('should do this and return that', () => {
-		const parameter = 'Lorem ipsum dolor sit amet';
-		expect(component.someMethod(parameter)).toBe(true);
+describe('The nonsence function', () => {
+	it('should exist', () => {
+		expect(!!nonsenseMethod).toBe(true);
 	});
 
-	// will fail too, for the same reason
-	it('should do that and return this', () => {
-		const condition = true;
-		expect(component.anotherMethod(condition)).toEqual({
-			property: 'value'
-		});
+	it('should always return true when provided with `Lorem ipsum`', () => {
+		const parameter = 'Lorem ipsum';
+		expect(nonsenseMethod(parameter)).toBe(true);
 	});
 
-	it('should render this and that', () => {});
-
-	it('should change that...', () => {});
-
-	// Etc.
+	it('should always return false when provided with something other than `Lorem ipsum`', () => {
+		const parameter = 'Dolor sit amet';
+		expect(nonsenseMethod(parameter)).not.toBe(true);
+		expect(nonsenseMethod(parameter))toBe(false);
+	});
 });
 ```
 
-These will fail inevitably for said reasons.
+These assertions will all fail inevitably, since the code you are testing (in this case, `nonsenseMethod(parameter: string): boolean`)doesn't exist yet.
 
 ### Develop your code to let the tests pass
 After writing your tests and seeing them fail, it's time to write your actual code. Let the tests run simultaneously to speed up development.
 
 ```js
-const someMethod = parameter => {
-	return parameter === 'Lorem ipsum dolor sit amet';
-};
-exports.method = method;
-
-const anotherMethod = condition => {
-	return condition
-		? { property: 'value' }
-		: { property: 'something else' };
-};
-exports.anotherMethod = anotherMethod;
+/**
+ * Check a string for lorem ipsum.
+ * @param {string} parameter
+ * @return {boolean}
+ */
+function nonsenseMethod(parameter) {
+	return parameter === 'Lorem ipsum';
+}
 ```
 
 The previously written tests should pass now. The benefits of this approach:
 
-- You now have tests guarding this code **from the very start**, wich clears up your mind from having to remember how it works
-- You now have **documentation for your feature** from the start, helping other developers whom are new to the project
+- You now have tests guarding the `nonsenseMethod` **from the very start**, wich clears up your mind from having to remember how it works
+- You now have **documentation for this feature** from the start, helping other developers whom are new to the project
 - You instantly see it if someone (that could be yourself in the long run) **breaks your code**
 - More importantly: this will keep working, and won't cause a build to break or worse: end up in production
 
