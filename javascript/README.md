@@ -119,7 +119,9 @@ See a list of available tags in our '[Use special tags to mark comments](../gene
 // TODO: Single line comment
 ```
 ## Functional (declarative) programming versus imperative programming
-Whenever possible, try to use functional programming methods (such as `.map`, `.filter`, `.reduce` and even the older `.forEach` for arrays) and paradigms. This not only saves lots of lines of code and variable creation bloat, it is also a lot more readable and easier to understand at first sight.
+Whenever possible, try to use functional programming methods (such as `.map`, `.filter`, `.reduce` for arrays) and paradigms.
+
+_Why?_ This not only saves lots of lines of code and variable creation bloat, it is also a lot more readable and easier to comprehend at first sight.
 
 **Right:**
 ```js
@@ -144,6 +146,8 @@ for (let index = 0; index++; index >= rooms.length) { // variable 4
 
 By using `Array.prototype.reduce` in the example above, we can define a variable and abstractly assign its logic in one go, thus saving 5 lines of code (whilst maintaining readability), an unneeded variable and a headache ahead.
 
+Note that we also assign variables once and **never change their values**, complying with the [functional immutability paradigm](#immutability) (as in: state is immutable, use copies instead), unlike within a `for`-loop or `.forEach` clause, which don't have return values and need to re-set other variables.
+
 Another example, using `Array.prototype.filter`:
 
 **Right:**
@@ -155,9 +159,9 @@ const roomsWithAnimals = rooms.filter(room => room.animalsAmount);
 ```js
 let roomsWithAnimals = [];
 for (let index = 0; index++; index >= rooms.length) {
-    if (rooms[index].animalsAmount > 0) {
-        roomsWithAnimals.push(rooms[index]);
-    }
+	if (rooms[index].animalsAmount > 0) {
+		roomsWithAnimals.push(rooms[index]);
+	}
 }
 ```
 
@@ -192,19 +196,9 @@ if (someCondition) {
 }
 ```
 
-This doesn't mean we can go beserk with doing as much as possible on 'one line' of code as possible, though. Thry this for maintaining both... maintainability and readability:
+### Always use `.map()` over `.forEach()` over `for()`
 
-**Better:**
-```js
-const someCondition = !anotherCondition ? 'this' : 'that';
-const someValue = (someCondition === 'that') ? 'those' : 'these';
-```
-
-**Very bad:**
-```js
-const someValue = (someCondition !== anotherCondition ? 'this' : 'that') === 'that' ? 'those' : 'these'; // say what?
-
-```
+Some will argue that, for example using a `for`-loop is faster (be it only minor), but this is not the case anymore in the latest browsers and JavaScript engines (e.g. [Mozilla's SpiderMonkey](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey), which is now used in Firefox). Try to look further beyond micro optimizations, especially as code grows and scales.
 
 ### Destructuring vs declaring many, many variables
 Try to destruct objects if you need to use their properties in new variables, rather than declaring those variables separately. This mostly comes in hand when a function needs to do something with an object it receives:
@@ -256,27 +250,14 @@ const personsWithAnMInTheName = [
 console.log(personsWithAnMInTheName); // [ ‘Marvin’, ‘Romy' ]
 ```
 
-## Immutability: once a value, always that value
-Try to keep the defining of new variables to an absolute minimum. This will keep memory garbage (and the need to clean it up) to a minimum as well. Also, less variables means less chance of errors.
+## Immutability: once a value, always that value <a id="immutability"></a>
+Always prevent the mutation of previously defined variables and data structures. Or at least keep mutations and value reassignments to an absolute minimum or better: none at all.
 
-**Right:**
-```js
-const arrayWithKeys = Object.keys(someObject);
-```
-
-**Wrong:**
-```js
-let arrayWithKeys = [];
-for (let key in someObject) {
-	arrayWithKeys.push(key);
-}
-```
-
-Try to prevent mutating of previously defined variables and data structures to a minimum or better: none at all. Why? Mutating data can produce code that is hard to read and error prone down the line. Also, by maintining the immutability pattern, your code becomes more predictable and is easier to (unit) test as well.
+_Why?_ Mutating data can produce code that is less predictable, hard to read and error prone down the line. Also, by maintining the immutability pattern, your code becomes more predictable and is [easier to (unit) test](unit-testing.md) as well.
 
 - Assign value to a variable once
 - Prevent assigning new values by reference
-- Create a new variable if you need to work with a new value
+- Create a copy of variable if you need to work with a new value
 
 **Right:**
 ```js
@@ -310,7 +291,23 @@ console.log(person); // { firstName: ‘John’, lastName: 'Rambo' }
 
 As you can see, thanks to the use of `Object.prototype.assign`, we prevent the mutation of the person object (which would otherwise be mutated by reference, since properties are passed by reference in objects (and arrays).
 
-### Immutability: copying/merging objects using object spread operators
+### Keep defining new variables to a minimum
+_Why?_ This will keep memory garbage (and the need to clean it up) to a minimum as well. Also, less variables means less chance of errors.
+
+**Right:**
+```js
+const arrayWithKeys = Object.keys(someObject);
+```
+
+**Wrong:**
+```js
+let arrayWithKeys = [];
+for (let key in someObject) {
+	arrayWithKeys.push(key);
+}
+```
+
+### An alternative for `Object.prototype.assign`: the object spread operator
 Using `Object.prototype.assign` to create a copy of an object with new or updated values like in the examples above is good practice, but its syntax is rather verbose and thus difficult to read (depending on the context). An alternative approach is to use the **object spread operator**, proposed for newer versions of JavaScript. This lets you use the spread (`...`) operator for objects, in a similar way to the array spread operator:
 
 ```ts
@@ -325,7 +322,7 @@ return { ...originalObject, newProperty: 'some value' };
 
 Since the object spread syntax is still a Stage 3 proposal for ECMAScript you'll need to use a transpiler such as Babel to use it in production. If you are using TypeScript for your project, you can already use the object spread operator if you are using version 2.1 or above.
 
-### Immutability: the use of `const` vs `let`
+### Immutability: the use of `const` vs `let` keywords
 Try to use `const` if you intend never to change the value or reference again. Use `let` if you must reassign references (for example, within a `for` loop) or better: just don't do that. By the way, block scoping is achieved by both `let` and `const`:
 
 ```js
@@ -428,7 +425,9 @@ const someMethod = (error, results) => {
 ```
 
 ## Documenting your code with comments and annotations
-Write annotations for all properties and methods. This is not only helpful for new developers joining the team, but is also a useful reminder of how your code works if you re-visit it after a long time. Besides, many IDEs and editors show annotations when you hover annotated method or function wherever it is used in your code, also showing you what types a method uses and why.
+Write annotations for all properties and methods.
+
+_Why?_ This is not only helpful for new developers joining the team, but is also a useful reminder of how your code works if you re-visit it after a long time. Besides, many IDEs and editors show annotations when you hover annotated method or function wherever it is used in your code, also showing you what types a method uses and why.
 
 **Right:**
 ```js
@@ -446,29 +445,5 @@ const setIsLoading = to => { // editor now also provides type and description fo
 ```js
 const setLoadingState = to => { // some editors only provide the name of the 'to' parameter
 	this.isLoading = to;
-}
-```
-
-Typescript example:
-```ts
-/**
- * This class does this and that.
- */
-class SomeClass extends AnotherClass implements SomeInterface {
-
-	/**
-	* @type {boolean} - Loading state
-	*/
-	public isLoading: boolean = false;
-
-	/**
-	* Set the loading state.
-	* @param {boolean} to - The new state
-	* @return {void}
-	*/
-	public setLoadingState(to: boolean): void {
-		this.isLoading = to;
-	}
-
 }
 ```
