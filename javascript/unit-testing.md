@@ -46,7 +46,7 @@ describe('The nonsence function', () => {
 These assertions will all fail inevitably, since the code you are testing (in this case, `nonsenseMethod(parameter: string): boolean`)doesn't exist yet.
 
 ### Develop your code to let the tests pass
-After writing your tests and seeing them fail, it's time to write your actual code. Let the tests run simultaneously to speed up development.
+After writing your tests and seeing them fail, it's time to write your actual code. **Keep it as simple as possible**, only catering the failing test assertions. Let the tests run simultaneously to speed up development.
 
 ```js
 // funny-functions.js
