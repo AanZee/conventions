@@ -1,12 +1,10 @@
 # JavaScript
 
-## Framework specific
+## Contents
 - [TypeScript](typescript.md)
 - [Angular 2](angular-2.md)
 - [Angular 1 (by John Papa)](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md)
 - [jQuery](jquery.md)
-
-## Unit testing
 - [Unit testing](unit-testing.md)
 
 ## Quotes
@@ -161,6 +159,7 @@ const setLoadingState = to => { // some editors only provide parameter names
 }
 ```
 
+## Comments
 Write comments that comply to the following format.
 
 ### Single line comments
