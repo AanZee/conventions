@@ -192,6 +192,8 @@ See a list of available tags in our '[Use special tags to mark comments](../gene
 ```
 
 ## Functional (declarative) programming versus imperative programming <a id="functional"></a>
+
+### Use functional programming methods whenever possible
 Whenever possible, try to use functional programming methods (such as `.map`, `.filter`, `.reduce` for arrays) and paradigms.
 
 _Why?_ This not only saves lots of lines of code and variable creation bloat, it is also a lot more readable and easier to comprehend at first sight.
@@ -221,7 +223,7 @@ By using `Array.prototype.reduce` in the example above, we can define a variable
 
 Note that we also assign variables once and **never change their values**, complying with the [functional immutability paradigm](#immutability) (as in: state is immutable, use copies instead), unlike within a `for`-loop or `.forEach` clause, which don't have return values and need to re-set other variables.
 
-Another example, using `Array.prototype.filter`:
+#### Another example, using `Array.prototype.filter`:
 
 **Right:**
 ```js
@@ -238,7 +240,7 @@ for (let index = 0; index++; index >= rooms.length) {
 }
 ```
 
-Another example, using `Array.prototype.find`:
+#### Another example, using `Array.prototype.find`:
 
 ```js
 const roomWithOnePerson = rooms.find(room => room.personsAmount === 1);
@@ -252,7 +254,7 @@ const roomWithPlantsAndOnePerson = rooms // A single variable, containing the on
 	.find(room => room.personsAmount === 1);
 ```
 
-Another example, regaring assigning logic to a variable in one go:
+#### Another example, regaring assigning logic to a variable in one go:
 
 **Right:**
 ```js
@@ -310,8 +312,9 @@ function doSomething(room) {
 	// ...
 }
 ```
+### Don't destructure objects and arrays for the sake of it
 
-Keep in mind that (deep level) desctructuring kan work against you if you have lots of variables and risk namespace clashing (e.g. with `booker.firstName` and `guest.firstName` within the same block scope, so use it wisely.
+Keep in mind that (deep level) desctructuring kan work against you if you have lots of variables and risk namespace clashing (e.g. with `booker.firstName` and `guest.firstName` within the same block scope), so use it wisely.
 
 ### Merging arrays using spread operators
 
