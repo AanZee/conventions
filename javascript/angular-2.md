@@ -37,7 +37,7 @@ app
 |  |   ├──some-view.component.html
 |  ├──header
 |  |  ├──header.component.html
-├──tests  |
+├──tests
 |  ├──some-view
 |  |  ├──some-view.component.spec.ts
 |  ├──header
