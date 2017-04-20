@@ -31,7 +31,7 @@ selector {
 - Set your editor to wrap lines instead.
 
 ## Don't add author comments
-Persons will be switching projects, clients and jobs. You can better use GIT, humans.txt or a README file when you want to share contact information.
+Persons will be switching projects, clients and jobs. You can better use Git, humans.txt or a README file when you want to share contact information.
 
 **Wrong:**
 ```javascript
@@ -50,7 +50,7 @@ Use the right naming style per language. We prefer dashes, camelCase or PascalCa
 ### Dashes
 - CSS selectors
 - Angular template translation labels
-- GIT branches
+- Git branches
 - File names
 - Folder names
 
@@ -159,7 +159,7 @@ if (index < 3) {
 ```
 
 ## Remove unused code
-When you want to remove some code, remove it. Don't disable it with a comment tag. To reverse the removal, you can use GIT.
+When you want to remove some code, remove it. Don't disable it with a comment tag. To reverse the removal, you can use Git.
 
 **Right:**
 ```javascript

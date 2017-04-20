@@ -7,7 +7,7 @@
 - [HTML](html/README.md)
 - [JavaScript](javascript/README.md)
 - [ColdFusion](coldfusion/README.md)
-- [GIT](git/README.md)
+- [Git](git/README.md)
 
 ## License
 Styleguides are © 2017 [Aan Zee](http://www.aanzee.nl). It is distributed under the [Creative Commons
