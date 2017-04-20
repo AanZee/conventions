@@ -117,7 +117,7 @@ var roomsWithTV = rooms.filter(function(room) {
 });
 ```
 
-### Use single parentheses when there is only one parameter
+### Use no parentheses when there is only one parameter
 
 ***Right:***
 ```js
@@ -278,7 +278,7 @@ Some will argue that, for example using a `for`-loop is faster (be it only minor
 
 ***Right:***
 ```js
-const roomWithOneBed = rooms.find(room => room.bedsAmount === 1;
+const roomWithOneBed = rooms.find(room => room.bedsAmount === 1);
 ```
 
 ***Wrong:***
