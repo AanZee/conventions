@@ -72,56 +72,6 @@ Only use the require statement to import a module if the dependency doesn't supp
 import { Component } from '@angular/core';
 const SomeLibrary = require('some-library'); // etc.
 ```
-## Public, private, protected etc.
-
-@Inputs, @Outputs, View or Content Child(ren), Hostbindings and any field you use from a template or annotate for Angular should be public:
-
-**Plain wrong:**
-```ts
-export class SomeComponent {
-	private @Input() someProperty: string = 'Give me some privacy';
-}
-```
-
-Do not use the public statement. Everything in TypeScript (and JavaScript) is public by default:
-
-**Right:**
-```ts
-export class SomeComponent {
-	someProperty: string = 'Welcome!';
-	private anotherProperty: string = 'Leave me alone';
-}
-```
-
-**Wrong:**
-```ts
-export class SomeComponent {
-	public someProperty: string = 'I was public anyway...';
-}
-```
-
-Always annotate the access level for private and protected properties and methods:
-
-```ts
-export class SomeComponent {
-
-	/**
-	 * @private
-	 * @type {boolean} - Property description here please
-	 */
-	private someProperty: boolean = false;
-
-	/**
-	 * Describe the following method over here.
-	 * @private
-	 * @param {sting} someParam - The text to log
-	 * @return {void}
-	 */
-	private logSomeText(someParam: string): void {
-		console.log(someParam);
-	}
-}
-```
 
 ## Components
 
