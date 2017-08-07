@@ -161,6 +161,7 @@ description-1.0rc1.js
 **Right:**
 ```
 description-draft.md
+description-signed.pdf
 ```
 
 ### Add language code only when different languages are available
