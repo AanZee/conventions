@@ -56,6 +56,12 @@ Examples:
 
 - checkout.payment-failed-text -> Try again or change payment method.
 
+## Labels for HTML content should end with 'content'
+
+Examples:
+
+- modal-window.error-content -> <p>Something went wrong.</p>
+
 ## Labels for form labels end with ‘label’
 
 Short description of what is expected from the user to fill in. These labels do not only contain labels that can be found in front of input fields, they can also contain labels found after radio buttons and checkboxes or in segmented controls.
