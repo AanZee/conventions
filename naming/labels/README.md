@@ -60,7 +60,7 @@ Examples:
 
 Examples:
 
-- modal-window.error-content -> <p>Something went wrong.</p>
+- modal-window.error-content -> `<p>Something went wrong.</p>`
 
 ## Labels for form labels end with ‘label’
 
