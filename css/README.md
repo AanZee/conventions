@@ -522,7 +522,7 @@ $blue-color: ;
 ```SCSS
 // Descriptive colors
 
-$color-silver: rgb(50, 50, 50);
+$color-silver: #323232;
 
 // Functional colors
 
@@ -534,7 +534,7 @@ $color-primary-200: darken($color-primary-100, 10%)
 
 **Wrong:**
 ```SCSS
-$color-primary: rgb(50, 50, 50);
+$color-primary: #323232;
 ```
 
 See ['Name that Color'](http://chir.ag/projects/name-that-color/) for example for finding descriptive names.
@@ -955,24 +955,24 @@ simple-selector-1 {
 }
 ```
 
-### Color units should be written in 'HSL' or 'HSLa'
+### Color units should be written in 'HEX', RGBA can be used for transparency
 
-- HSL or HSLa makes changing color values much easier.
-- Less or SCSS should convert HSL to hex color codes to reduce file size.
+- It's easier to transfer HEX colors to a project as digital design applications often use HEX colors
+- Do not abbreviate HEX colors as it decreases readability
 
 **Right:**
 ```SCSS
-hsl(120, 100%, 50%);
-hsla(120, 100%, 50%, 0.5);
+#ffffff;
+rgba(50, 50, 50, 0.5);
 ```
 
 **Wrong:**
 ```SCSS
-#fff;
-#ffffff;
+hsl(120, 100%, 50%);
+hsla(120, 100%, 50%, 0.5);
 white;
 rgb(50, 50, 50);
-rgba(50, 50, 50, 0.5);
+#fff;
 ```
 
 ### Absolute sizes should be written in pixels instead of ems or rems
@@ -1086,14 +1086,14 @@ selector {
 ```SCSS
 // # Colors
 
-$color-blue: rgb(0, 0, 255); // #0000ff
+$color-blue: #0000ff; // rgb(0, 0, 255)
 ```
 
 **Wrong:**
 ```SCSS
 /* -- colors -- */
 
-$color-blue: rgb(0, 0, 255); /* #0000ff */
+$color-blue: #0000ff; /* rgb(0, 0, 255) */
 ```
 
 ### Use CSS commenting style '/* */' for comments useful for debugging
