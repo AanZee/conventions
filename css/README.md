@@ -534,7 +534,7 @@ $color-primary-200: darken($color-primary-100, 10%)
 
 **Wrong:**
 ```SCSS
-$color-primary: #323232);
+$color-primary: #323232;
 ```
 
 See ['Name that Color'](http://chir.ag/projects/name-that-color/) for example for finding descriptive names.
@@ -955,7 +955,7 @@ simple-selector-1 {
 }
 ```
 
-### Color units should be written in 'HEX'
+### Color units should be written in 'HEX', RGBA can be used for transparency
 
 - It's easier to transfer HEX colors to a project as digital design applications often use HEX colors
 - Do not abbreviate HEX colors as it decreases readability
@@ -963,6 +963,7 @@ simple-selector-1 {
 **Right:**
 ```SCSS
 #ffffff;
+rgba(50, 50, 50, 0.5);
 ```
 
 **Wrong:**
@@ -971,7 +972,6 @@ hsl(120, 100%, 50%);
 hsla(120, 100%, 50%, 0.5);
 white;
 rgb(50, 50, 50);
-rgba(50, 50, 50, 0.5);
 #fff;
 ```
 
