@@ -48,6 +48,7 @@ simple-selector > simple-selector {
 - With Less or SCSS, never divide a rule group (e.g. BEM block) across different files.
 - With Less or SCSS, never combine different rule groups (e.g. BEM blocks) in one file.
 - Never use sub-folders to group files.
+- With Less or SCSS, each group should have an index file (e.g. '\_index.scss') which includes all the files from that directory. Only the indexes should be included in the main SCSS or Less file.
 - Rules within vendors, utilities, or layout are [immutable](http://csswizardry.com/2015/03/immutable-css/).
 
 **Order should be:**
