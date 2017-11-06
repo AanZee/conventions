@@ -48,6 +48,7 @@ simple-selector > simple-selector {
 - With Less or SCSS, never divide a rule group (e.g. BEM block) across different files.
 - With Less or SCSS, never combine different rule groups (e.g. BEM blocks) in one file.
 - Never use sub-folders to group files.
+- With Less or SCSS, each group should have an index file (e.g. '\_index.scss') which includes all the files from that directory. Only the indexes should be included in the main SCSS or Less file.
 - Rules within vendors, utilities, or layout are [immutable](http://csswizardry.com/2015/03/immutable-css/).
 
 **Order should be:**
@@ -59,12 +60,11 @@ simple-selector > simple-selector {
 5. **vendor-overrides** (to re-declare some vendor CSS with help of settings and utilities, if needed)
 6. **reset** (e.g. [Reset CSS](http://meyerweb.com/eric/tools/css/reset/) or [normalize.css](http://necolas.github.io/normalize.css/), and [box-sizing](http://www.paulirish.com/2012/box-sizing-border-box-ftw/))
 7. **layout** (immutable objects, e.g. grid, body with a sticky footer, views)
-8. **typography** (e.g. headings, text, code, lists, quotes)
-9. **controls** (e.g. buttons, segmented-control, drop-down-menu, pop-up-menu, text-inputs)
-10. **components** (designed interface blocks: bars, dialogs, indicators)
-11. **pages** (page specific styles. Before you add page specific styles, consider modified components. Also note that components that can only be found on one page but still could be used on other pages should be placed in 'components')
-12. **themes** (for many projects non-existent)
-13. **overrides** (hacks and things you are not proud of)
+8. **controls** (e.g. buttons, segmented-control, drop-down-menu, pop-up-menu, text-inputs)
+9. **components** (designed interface blocks: bars, dialogs, indicators, content)
+10. **pages** (page specific styles. Before you add page specific styles, consider modified components. Also note that components that can only be found on one page but still could be used on other pages should be placed in 'components')
+11. **themes** (for many projects non-existent)
+12. **overrides** (hacks and things you are not proud of)
 
 See [The Specificity Graph](http://csswizardry.com/2014/10/the-specificity-graph/) and [CSS Specificity Graph Generator](http://jonassebastianohlsson.com/specificity-graph/) for more information about CSS specificity.
 
@@ -77,12 +77,11 @@ See [The Specificity Graph](http://csswizardry.com/2014/10/the-specificity-graph
 5. **vendor-overrides**: same as vendor's directories or file names.
 6. **reset**: original file name or function name.
 7. **layout**: name of container or function.
-8. **typography**: name of typographical group.
-9. **controls**: name of control.
-10. **components**: name of block.
-11. **pages**: name of page or template.
-12. **themes**: name of theme.
-13. **overrides**: depends on type.
+8. **controls**: name of control.
+9. **components**: name of block.
+10. **pages**: name of page or template.
+11. **themes**: name of theme.
+12. **overrides**: depends on type.
 
 ### Do not use @import for CSS files
 
@@ -381,7 +380,7 @@ See [BEM](https://bem.info), [CSS Wizardry](http://csswizardry.com/2013/01/mindb
 
 ### Never style HTML elements directly, always use class names.
 
-- Also applies to typographic elements such as 'h1' and 'p'. For user content or other content containing only HTML elements without class names, use the class '.content' as a container.
+- Also applies to typographic elements such as 'h1' and 'p'. For user content or other content containing only HTML elements without class names, use the class '.content' as a container. The 'content block' should be placed in the components folder.
 - Exception applies to rules in reset folder.
 
 **Right:**
@@ -522,7 +521,7 @@ $blue-color: ;
 ```SCSS
 // Descriptive colors
 
-$color-silver: rgb(50, 50, 50);
+$color-silver: #323232;
 
 // Functional colors
 
@@ -534,7 +533,7 @@ $color-primary-200: darken($color-primary-100, 10%)
 
 **Wrong:**
 ```SCSS
-$color-primary: rgb(50, 50, 50);
+$color-primary: #323232;
 ```
 
 See ['Name that Color'](http://chir.ag/projects/name-that-color/) for example for finding descriptive names.
@@ -955,24 +954,24 @@ simple-selector-1 {
 }
 ```
 
-### Color units should be written in 'HSL' or 'HSLa'
+### Color units should be written in 'HEX', RGBA can be used for transparency
 
-- HSL or HSLa makes changing color values much easier.
-- Less or SCSS should convert HSL to hex color codes to reduce file size.
+- It's easier to transfer HEX colors to a project as digital design applications often use HEX colors
+- Do not abbreviate HEX colors as it decreases readability
 
 **Right:**
 ```SCSS
-hsl(120, 100%, 50%);
-hsla(120, 100%, 50%, 0.5);
+#ffffff;
+rgba(50, 50, 50, 0.5);
 ```
 
 **Wrong:**
 ```SCSS
-#fff;
-#ffffff;
+hsl(120, 100%, 50%);
+hsla(120, 100%, 50%, 0.5);
 white;
 rgb(50, 50, 50);
-rgba(50, 50, 50, 0.5);
+#fff;
 ```
 
 ### Absolute sizes should be written in pixels instead of ems or rems
@@ -1086,14 +1085,14 @@ selector {
 ```SCSS
 // # Colors
 
-$color-blue: rgb(0, 0, 255); // #0000ff
+$color-blue: #0000ff; // rgb(0, 0, 255)
 ```
 
 **Wrong:**
 ```SCSS
 /* -- colors -- */
 
-$color-blue: rgb(0, 0, 255); /* #0000ff */
+$color-blue: #0000ff; /* rgb(0, 0, 255) */
 ```
 
 ### Use CSS commenting style '/* */' for comments useful for debugging

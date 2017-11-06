@@ -97,6 +97,12 @@ Define types in the comments
 - Private class variables are declared before public class variables
 - Private and public class methods can be defined in order of usage (for example, a private method can be placed in between 2 public methods if it is only used by the above public method)
 
+## Naming
+- Just like in [javascript](README.md#write-variables-in-camelcase), variables of any type are written in lower camelCase.
+- Classes, Interfaces and Enums are written in upper CamelCase (e.g. 'ProductInterface').
+- Classes get a suffix for what type of class it is (e.g. 'AppModule', 'AccountService' or 'CartComponent').
+- Interfaces get a 'Interface' suffix (e.g. 'ProductInterface')
+
 ## Example code
 ```typescript
 export class SomeClass {
