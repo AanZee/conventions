@@ -1067,6 +1067,32 @@ selector {
 - 800 = black (or heavy)
 - 900 = ultra
 
+### Write durations in milliseconds
+- Writing durations in CSS/SCSS for timing functions in milliseconds so durations in javascript and CSS/SCSS are the same, since javascript internally uses milliseconds.
+
+**Right:**
+```scss
+.selector {
+    opacity: 0;
+    transition: opacity 300ms linear;
+
+    &:hover {
+         opacity: 1;
+    }
+}
+```
+**Wrong:**
+```scss
+.selector {
+    opacity: 0;
+    transition: opacity 0.3s linear;
+
+    &:hover {
+         opacity: 1;
+    }
+}
+```
+
 ### Only use '!important' when you know up front it should always override a style
 
 - Never use '!important' to fix an existing problem.
