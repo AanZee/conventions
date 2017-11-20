@@ -995,6 +995,22 @@ See ['W3C Recommendations about lengths'](http://www.w3.org/TR/CSS21/syndata.htm
 
 See ['The 8-Point Grid'](https://spec.fm/specifics/8-pt-grid) and ['Intro to the 8-Point Grid System'](https://builttoadapt.io/intro-to-the-8-point-grid-system-d2573cde8632) for further reading.
 
+- Use a spacing variable in the SCSS settings, to force consistent spacing.
+- When an exception to the 8 point grid is needed, the spacing variable is used to calculate the amount of pixels. This means that the largest value possible is calculated by a division or multiplication of the spacing variable and the remaining pixels are substracted or added with hard values.
+
+**Right**
+```SCSS
+$spacing: 8px;
+margin: $spacing;
+margin: $spacing * 2;
+margin: ($spacing * 3) - 2;
+```
+
+**Wrong**
+```SCSS
+margin: 5px;
+```
+
 ### Z-indexes are limited to 12 levels
 
 - The z-index starts at -100 and is limited to 1000. Steps are 100.
