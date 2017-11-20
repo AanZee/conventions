@@ -1003,7 +1003,7 @@ See ['The 8-Point Grid'](https://spec.fm/specifics/8-pt-grid) and ['Intro to the
 $spacing: 8px;
 margin: $spacing;
 margin: $spacing * 2;
-margin: ($spacing * 3) - 2;
+margin: ($spacing * 3) - 2px;
 ```
 
 **Wrong**
