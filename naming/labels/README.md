@@ -16,12 +16,12 @@ Examples:
 - components.notifications.idle-message-text -> Your session has expired because you were longer than %time% inactive. Please renew your selection.
 - pages.login.password-label -> Your password
 
-## Categorize labels used in different components or pages in ‘general’
+## Categorize labels used in different components or pages in ‘global’
 
 Examples:
 
-- general.edit-action -> Edit
-- general.optional-lowercase -> optional
+- global.edit-action -> Edit
+- global.optional-lowercase -> optional
 
 ## Labels containing ‘exact translations’ should contain only the exact words and end with the type of capitalization
 
@@ -29,9 +29,9 @@ The descriptions for capitalization is borrowed from CSS’s text-transform. Alt
 
 Examples:
 
-- general.monday-capitalize -> Monday
-- general.monday-lowercase -> monday
-- general.monday-uppercase -> MONDAY
+- global.monday-capitalize -> Monday
+- global.monday-lowercase -> monday
+- global.monday-uppercase -> MONDAY
 
 ## Labels which are a abbreviations end with ‘short’
 
@@ -39,7 +39,7 @@ Capitalization type is added after the term ‘short’.
 
 Examples:
 
-- general.friday-short-capitalize -> Fr.
+- global.friday-short-capitalize -> Fr.
 
 ## Labels for a title end with ‘title’
 
@@ -94,7 +94,7 @@ File names should not include the format of the document. This should be added b
 
 Examples:
 
-- general.general-conditions-file-name -> general-conditions
+- global.general-conditions-file-name -> general-conditions
 
 ## Labels for buttons, links or actions end with action
 
@@ -102,4 +102,4 @@ The labels for buttons often differ in style per language, for example Dutch lab
 
 Examples:
 
-- general.close-action -> Close
+- global.close-action -> Close
