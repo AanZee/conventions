@@ -112,38 +112,37 @@ When you want to target HTML in JavaScript use attributes prefixed with js-, don
 ```
 
 ## Only use lists for simple lists
-Don't use lists as container for a lot of data, only for simple lists.
+- Don't use lists as container for a lot of data, only for simple lists.
+- Use HTML lists only for bullet or numbered lists in for example content area's. Don't use it for components that don't look like a list, such as a menu or a collection of cards. A lot of front-end developers still use 'ul' and 'li' to structure collections such as toolbar items or menu items. [This makes it harder for users with screen readers to navigate through your website](https://css-tricks.com/navigation-in-lists-to-be-or-not-to-be/). Components don't require additional structure to make it clear to users with screen readers, HTML is already structured and 'the additional structure' creates only more noise.
 
 **Right:**
 ```html
-<h1>Components</h1>
 <ul>
-    <li>Component 1</li>
-    <li>Component 2</li>
-    <li>Component 3</li>
+    <li>List item</li>
+    <li>List item</li>
+    <li>List item</li>
 </ul>
 ```
 
 **Wrong:**
 ```html
-<h1>Components</h1>
-<ul class="component">
-    <li class="component__item">
-        <div class="component__item-inner">
-            <h1 class="component__item-title">Component 1</h1>
-            <p class="component__item-text">Component description</p>
+<ul class="collection">
+    <li class="collection__item">
+        <div class="card">
+            <h1 class="card__title">Title</h1>
+            <p class="card__text">Description</p>
         </div>
     </li>
-    <li class="component__item">
-        <div class="component__item-inner">
-            <h1 class="component__item-title">Component 2</h1>
-            <p class="component__item-text">Component description</p>
+    <li class="collection__item">
+        <div class="card">
+            <h1 class="card__title">Title</h1>
+            <p class="card__text">Description</p>
         </div>
     </li>
-    <li class="component__item">
-        <div class="component__item-inner">
-            <h1 class="component__item-title">Component 3</h1>
-            <p class="component__item-text">Component description</p>
+    <li class="collection__item">
+        <div class="card">
+            <h1 class="card__title">Title</h1>
+            <p class="card__text">Description</p>
         </div>
     </li>
 </ul>
