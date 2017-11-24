@@ -6,16 +6,17 @@
 
 When hyphens are not possible because of specific code language or framework use camelCase.
 
-## Categorize labels with the name of the front-end component
+## Categorize labels with name of component or page
 
-Make sure the name of the front-end component is well thought before categorizing labels.
+- Make sure the name of the component or page is well thought before categorizing labels.
+- Categorize component in 'components' and page in 'pages'.
 
 Examples:
 
-- notifications.idle-message-text -> Your session has expired because you were longer than %time% inactive. Please renew your selection.
-- login.password-label -> Your password
+- components.notifications.idle-message-text -> Your session has expired because you were longer than %time% inactive. Please renew your selection.
+- pages.login.password-label -> Your password
 
-## Categorize labels used in different components in ‘global’
+## Categorize labels used in different components or pages in ‘global’
 
 Examples:
 
