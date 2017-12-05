@@ -4,12 +4,12 @@ These conventions are best practices in all our programming languages.
 ## Write in US English
 Write your code in US English instead of British English. E.g. color instead of colour.
 
-### Use .editorconfig
+## Use .editorconfig
 EditorConfig helps developers define and maintain consistent coding styles between different editors and IDEs. An [editorconfig](.editorconfig) file with our defined conventions can be found in this folder.
 
 A list of [available plugins](http://editorconfig.org/#download) for almost all editors can be found online.
 
-### Indents should be done with tabs instead of spaces
+## Indents should be done with tabs instead of spaces
 Use tabs instead of spaces when possible in your language.
 - Tabs allow developers with different preferences in indentation size to change how the code looks.
 - It is impossible to half-indent with tabs.
