@@ -1,4 +1,4 @@
-# Label Conventions
+# Translation labels
 
 ## Write labels in US English
 
