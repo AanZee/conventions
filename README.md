@@ -8,8 +8,7 @@
 - [JavaScript](javascript/README.md)
 - [ColdFusion](coldfusion/README.md)
 - [Git](git/README.md)
-- [Translation labels](naming/labels/README.md)
-- [File names](naming/files/README.md)
+- [Naming](naming/README.md)
 
 ## License
 Styleguides are © 2017 [Aan Zee](http://www.aanzee.nl). It is distributed under the [Creative Commons
