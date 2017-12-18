@@ -1001,13 +1001,17 @@ See ['The 8-Point Grid'](https://spec.fm/specifics/8-pt-grid) and ['Intro to the
 **Right**
 ```SCSS
 $spacing: 8px;
+
 margin: $spacing;
 margin: $spacing * 2;
-margin: ($spacing * 3) - 2px;
+margin-left: $spacing - 3px; //NOTE: Needed for specific styling of element
+padding: ($spacing * 2) ($spacing * 3);
+padding-right: ($spacing * 2) + 32px; //NOTE: 32px added to account for extra component
 ```
 
 **Wrong**
 ```SCSS
+margin: 8px;
 margin: 5px;
 ```
 
