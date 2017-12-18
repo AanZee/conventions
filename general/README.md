@@ -223,3 +223,23 @@ function doSomething() {
 	return someName;
 }
 ```
+
+## Trailing commas
+When possible, use trailing commas in arrays and objects
+
+**Right:**
+```javascript
+let someList = [
+	1,
+	2,
+	3,
+];
+```
+**Wrong:**
+```javascript
+let someList = [
+	1,
+	2,
+	3
+];
+```
