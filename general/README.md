@@ -225,7 +225,7 @@ function doSomething() {
 ```
 
 ## Trailing commas
-When possible, use trailing commas in arrays and objects.
+Use trailing commas in arrays and objects when this is a valid syntax in your language.
 
 **Right:**
 ```javascript
