@@ -225,7 +225,7 @@ function doSomething() {
 ```
 
 ## Trailing commas
-Use trailing commas in arrays and objects when this is a valid syntax in your language.
+Use trailing commas in arrays, objects, functions, methods, imports and exports when valid syntax in your language.
 
 **Right:**
 ```javascript
@@ -234,6 +234,12 @@ let someList = [
 	2,
 	3,
 ];
+
+function getList(
+	parameter1,
+	parameter2,
+	parameter3,
+) {}
 ```
 **Wrong:**
 ```javascript
@@ -242,4 +248,10 @@ let someList = [
 	2,
 	3
 ];
+
+function getList(
+	parameter1,
+	parameter2,
+	parameter3
+) {}
 ```
