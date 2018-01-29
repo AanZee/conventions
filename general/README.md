@@ -225,3 +225,35 @@ function doSomething() {
 	return someName;
 }
 ```
+
+## Trailing commas
+Use trailing commas in arrays, objects, functions, methods, imports and exports when valid syntax in your language.
+
+**Right:**
+```javascript
+let someList = [
+	1,
+	2,
+	3,
+];
+
+function getList(
+	parameter1,
+	parameter2,
+	parameter3,
+) {}
+```
+**Wrong:**
+```javascript
+let someList = [
+	1,
+	2,
+	3
+];
+
+function getList(
+	parameter1,
+	parameter2,
+	parameter3
+) {}
+```
