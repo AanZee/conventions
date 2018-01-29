@@ -85,13 +85,14 @@ Use the right naming style per language. We prefer dashes, camelCase or PascalCa
 - CRED: Credits for someone.
 
 ## Naming booleans
-Prefix booleans always with: is, has or should.
+Prefix booleans always with: is, has, should or can.
 
 **Right:**
 ```javascript
 let isA = true;
 let hasB = false;
 let shouldC = true;
+let canD = true;
 ```
 
 **Wrong:**
@@ -99,6 +100,7 @@ let shouldC = true;
 let a = true;
 let b = false;
 let c = true;
+let d = true;
 ```
 
 ## Comma-separated values should include a space after each comma
