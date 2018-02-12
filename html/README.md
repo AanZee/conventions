@@ -55,6 +55,23 @@ Structure your components with the [BEM methodology](https://en.bem.info/method/
     Title
 </h1>
 ```
+### Textarea exception
+For textarea tags, do not place the closing tag </textarea> on a new line, as it adds spaces within the input.
+
+**Right:**
+```html
+<textarea class="component"
+    id="component"
+></textarea>
+```
+
+**Wrong::**
+```html
+<textarea class="component"
+    id="component"
+>
+</textarea>
+```
 
 ## CSS classes as first attribute on the first line
 
