@@ -77,7 +77,7 @@ ended
 ```
 
 So, the second syntax is the equivalent of <cf_demo></cf_demo>.
-* *Source: https://stackoverflow.com/a/7544785* *
+*Source: https://stackoverflow.com/a/7544785*
 
 **Right:**
 ```html
