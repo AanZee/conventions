@@ -4,7 +4,12 @@ These conventions are best practices in all our programming languages.
 ## Write in US English
 Write your code in US English instead of British English. E.g. color instead of colour.
 
-### Indents should be done with tabs instead of spaces
+## Use .editorconfig
+EditorConfig helps developers define and maintain consistent coding styles between different editors and IDEs. An [editorconfig](.editorconfig) file with our defined conventions can be found in this folder.
+
+A list of [available plugins](http://editorconfig.org/#download) for almost all editors can be found online.
+
+## Indents should be done with tabs instead of spaces
 Use tabs instead of spaces when possible in your language.
 - Tabs allow developers with different preferences in indentation size to change how the code looks.
 - It is impossible to half-indent with tabs.
@@ -80,13 +85,14 @@ Use the right naming style per language. We prefer dashes, camelCase or PascalCa
 - CRED: Credits for someone.
 
 ## Naming booleans
-Prefix booleans always with: is, has or should.
+Prefix booleans always with: is, has, should or can.
 
 **Right:**
 ```javascript
 let isA = true;
 let hasB = false;
 let shouldC = true;
+let canD = true;
 ```
 
 **Wrong:**
@@ -94,6 +100,7 @@ let shouldC = true;
 let a = true;
 let b = false;
 let c = true;
+let d = true;
 ```
 
 ## Comma-separated values should include a space after each comma
@@ -217,4 +224,36 @@ let someName = [];
 function doSomething() {
 	return someName;
 }
+```
+
+## Trailing commas
+Use trailing commas in arrays, objects, functions, methods, imports and exports when valid syntax in your language.
+
+**Right:**
+```javascript
+let someList = [
+	1,
+	2,
+	3,
+];
+
+function getList(
+	parameter1,
+	parameter2,
+	parameter3,
+) {}
+```
+**Wrong:**
+```javascript
+let someList = [
+	1,
+	2,
+	3
+];
+
+function getList(
+	parameter1,
+	parameter2,
+	parameter3
+) {}
 ```
