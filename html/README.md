@@ -165,3 +165,16 @@ Don't use lists as container for a lot of data, only for simple lists.
     </li>
 </ul>
 ```
+
+## Use the <button> element for buttons
+Don't use the input element for this.
+
+**Right:**
+```html
+<button type="button">Click me!</button>
+```
+
+**Wrong:**
+```html
+<input type="button" value="Click me!">
+```
