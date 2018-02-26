@@ -34,3 +34,19 @@ Along with the conventions reported below, we follow the [Ortus ColdFusion (CFML
 
 <h1 class="component #iif(a EQ 1, DE(''), DE('component--modifier'))#">A</h1>
 ```
+
+## Close self-closing tags with a forward slash
+
+**Right:**
+```html
+<cfset var test = "test"/>
+
+<cfdump var="#test#"/>
+```
+
+**Wrong:**
+```html
+<cfset var test = "test">
+
+<cfdump var="#test#">
+```
