@@ -474,20 +474,20 @@ Range specific modifiers should end with 'range-and-up' or 'range-and-lower'.
 
 **Right:**
 ```CSS
-.{{ class-name }}--lap-and-up {}
-.{{ class-name }}--desk-l-and-up {}
+.component--modifier-lap-and-up {}
+.component--modifier-desk-l-and-up {}
 
-.{{ class-name }}--hand-and-lower {}
-.{{ class-name }}--lap-m-and-lower {}
+.component--modifier-hand-and-lower {}
+.component--modifier-lap-m-and-lower {}
 ```
 
 **Wrong:**
 ```CSS
-.{{ class-name }}--lap-and-higher {}
-.{{ class-name }}--desk-l-and-more {}
+.component--modifier-lap-and-higher {}
+.component--modifier-desk-l-and-more {}
 
-.{{ class-name }}--hand-and-less {}
-.{{ class-name }}--lap-m-and-under {}
+.component--modifier-hand-and-less {}
+.component--modifier-lap-m-and-under {}
 ```
 
 ### Modifiers for different flex-grows should be written out in full
