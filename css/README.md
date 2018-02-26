@@ -1059,7 +1059,7 @@ block {
 	z-index: $block-z-index;
 }
 block__element {
-	z-index: $component-z-index + 1;
+	z-index: $block-z-index + 1;
 }
 ```
 
