@@ -992,12 +992,12 @@ See ['W3C Recommendations about lengths'](http://www.w3.org/TR/CSS21/syndata.htm
 
 **Right**
 ```SCSS
-$line-height-100: 1.5 !default;
+$line-height-100: 1.5;
 ```
 
 **Wrong**
 ```SCSS
-$line-height-100: 1.5em !default;
+$line-height-100: 1.5em;
 ```
 
 ### Use the 8-Point Grid as much as possible for pixel values
