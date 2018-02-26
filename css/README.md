@@ -1258,7 +1258,7 @@ See [KSS](https://github.com/kneath/kss), [KSS-node](https://github.com/kss-node
 - When you use the :focus pseudo-class you can highlight items when they receive focus. This is useful for when the user tabs through a form for example. The :focus styling should be prominent to let a user know where to look. The problem with browsers, such as Google Chrome, is that they also apply the :focus styling when, for example, a button is clicked or touched. In this case the :focus styling is unnecessary noise and should be avoided. Browsers such as Apple Safari don't use :focus styling when a button is clicked or touched. A workaround for the behaviour found in Google Chrome is to use a combination of :focus and :hover pseudo-classes. Override the :focus styling with :focus:hover styling. Because you are always hovering the element when you click on it, it will show the overridden style.
 
 **Example:**
-```html
+```CSS
 .block__element {
     &:focus {
         box-shadow: 0 0 2px -2px $color-focus;
