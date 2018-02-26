@@ -257,3 +257,16 @@ function getList(
 	parameter3
 ) {}
 ```
+
+
+## Spaces
+When working with variables between parantheses, always seperate them by adding spaces. 
+
+**Right:**
+```javascript
+{{ variables }}
+```
+**Wrong:**
+```javascript
+{{variables}}
+```
