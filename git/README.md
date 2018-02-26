@@ -11,6 +11,11 @@ Prefix commit message with a [JIRA](https://www.atlassian.com/software/jira) ID 
 - JIRA-123 Add Git conventions
 - Add Git conventions (JIRA-123)
 
+## Commit messages
+- Commit messages should be clear and concise in describing the content of the commit
+- Commit messages should be written in English
+- Commit messages should not include emojis
+
 ## Branch names
 Prefix branches with a [JIRA](https://www.atlassian.com/software/jira) ID followed by a descriptive name. Always use dashes to split words. When you have multiple ID's for one feature you can combine them with a dash.
 
