@@ -1045,7 +1045,7 @@ selector {
 }
 ```
 
-### Z-indexes inside a component or block increases with 1
+### Increase Z-indexes inside a component or block with 1
 
 - When a z-index is required inside a component, create a z-index variable for your component.
 - The z-index variable can be -100 until 1000 and is a multiple of 100.
