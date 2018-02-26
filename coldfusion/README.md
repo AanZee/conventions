@@ -37,47 +37,7 @@ Along with the conventions reported below, we follow the [Ortus ColdFusion (CFML
 
 ## Close self-closing tags with a forward slash
 
-Always close self-closing tags with a forward slash. It makes the code more readable; you instantly see the tag is not a block of code. Also if you use custom tags there is a difference in behaviour:
-
-**Take this custom tag:**
-```html
-<cfif thisTag.ExecutionMode EQ "start">
-    started<br>
-</cfif>
-
-running<br>
-
-<cfif thisTag.ExecutionMode EQ "end">
-    ended<br>
-</cfif>
-```
-
-**This invocation:**
-```html
-<p>&lt;cf_demo&gt;</p>
-
-<cf_demo>
-
-<p>&lt;cf_demo /&gt;</p>
-
-<cf_demo />
-```
-
-**This is the output:**
-```html
-<cf_demo>
-started
-running
-
-<cf_demo />
-started
-running
-running
-ended
-```
-
-So, the second syntax is the equivalent of <cf_demo></cf_demo>.
-*Source: https://stackoverflow.com/a/7544785*
+Always close self-closing tags with a forward slash. It makes the code more readable; you instantly see the tag is not a block of code. Also, if you use custom tags, there is a difference in behaviour: https://stackoverflow.com/a/7544785.
 
 **Right:**
 ```html
