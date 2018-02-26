@@ -34,3 +34,21 @@ Along with the conventions reported below, we follow the [Ortus ColdFusion (CFML
 
 <h1 class="component #iif(a EQ 1, DE(''), DE('component--modifier'))#">A</h1>
 ```
+
+## Put HTML attributes inside a cfif on a new line
+
+**Right:**
+```html
+<div
+	<cfif test EQ "test">
+		data-test="test"
+	</cfif>
+>
+```
+
+**Wrong:**
+```html
+<div
+	<cfif test EQ "test">data-test="test"</cfif>
+>
+```
