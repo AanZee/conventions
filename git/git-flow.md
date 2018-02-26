@@ -47,7 +47,7 @@ Staging branches are never merged and must be removed when you have finished tes
 ## Branch naming
 `staging/ICCP-10-11-12-14`
 
-Keep your branch name short, lowercased, English and always prefix it with Jira ID's ( when applicable ). This will make sure that its always easy to see what feature and staging branches contain.
+Keep your branch name short, lowercased, US English and always prefix it with Jira ID's ( when applicable ). This will make sure that its always easy to see what feature and staging branches contain.
 
 Possible branch names are:
 master
