@@ -15,7 +15,7 @@ Along with the conventions reported below, we follow the [Ortus ColdFusion (CFML
 <cfif a eq 1 or b eq 2>
 ```
 
-## Don't write cfif's in HTML tags
+## Don't write cfif's inside HTML attributes
 
 **Right:**
 ```html
