@@ -1,6 +1,5 @@
-# Styleguides
-[Aan Zee](http://www.aanzee.nl)'s (opinionated) styleguides for creating web stuff, and doing it in style.
-
+# Conventions
+[Aan Zee](http://www.aanzee.nl)'s conventions for creating (web) applications and keeping them maintainable.
 ## Contents
 - [General](general/README.md)
 - [CSS (Preprocessors)](css/README.md)
@@ -12,5 +11,4 @@
 - [File names](naming/files/README.md)
 
 ## License
-Styleguides are © 2017 [Aan Zee](http://www.aanzee.nl). It is distributed under the [Creative Commons
-Attribution License](http://creativecommons.org/licenses/by/3.0/).
+[License](LICENSE.md)
