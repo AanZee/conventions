@@ -1045,6 +1045,34 @@ selector {
 }
 ```
 
+### Z-indexes inside a component or block increases with 1
+
+- When a z-index is required inside a component, create a z-index variable for your component.
+- The z-index variable can be -100 until 1000 and is a multiple of 100.
+- Increase the z-index variable inside your component with 1.
+
+**Right:**
+```SCSS
+$block-z-index: 300 !default;
+
+block {
+	z-index: $block-z-index;
+}
+block__element {
+	z-index: $component-z-index + 1;
+}
+```
+
+**Wrong:**
+```SCSS
+block {
+	z-index: 300;
+}
+
+block__element {
+	z-index: 400;
+}
+
 ### Avoid adding units to zero-values
 
 **Right:**
