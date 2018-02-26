@@ -42,13 +42,13 @@ Always close self-closing tags with a forward slash. It makes the code more read
 **Take this custom tag:**
 ```html
 <cfif thisTag.ExecutionMode EQ "start">
-    started<br/>
+    started<br>
 </cfif>
 
-running<br/>
+running<br>
 
 <cfif thisTag.ExecutionMode EQ "end">
-    ended<br/>
+    ended<br>
 </cfif>
 ```
 
