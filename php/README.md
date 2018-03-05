@@ -2,7 +2,12 @@
 
 ## PSR-2
 
-Om de leesbaarheid van alle code te vergroten is het een goed idee om richting een standaard te gaan waar we ons allemaal aan confirmeren. De PHP wereld heeft hier een mooie standaard voor ontwikkeld: De PSR-2 standaard. Ik zal hier voor de meest gebruikte IDE's een link te posten naar hoe je deze standaard kunt instellen.
+Om de leesbaarheid van alle code te vergroten is het een goed idee om richting een standaard te gaan waar we ons allemaal aan confirmeren. De PHP wereld heeft hier een mooie standaard voor ontwikkeld: De PSR-2 standaard. Ik zal hier voor de meest gebruikte IDE's een link te posten naar hoe je deze standaard kunt instellen:
+
+PHPStorm: https://confluence.jetbrains.com/display/PhpStorm/PHP+Code+Sniffer+in+PhpStorm
+
+Sublime: @todo
+
 
 ## Algemene styling tips
 
@@ -37,20 +42,20 @@ public function handle(ImportHelper $importHelper)
 ```
 
 ```php
- /**
-     * Parameter name for requesting an expand
-     */
-    const EXPAND = 'expand';
+/**
+* Parameter name for requesting an expand
+*/
+const EXPAND = 'expand';
 
-    /**
-     * Parameter name for requesting a limit
-     */
-    const LIMIT = 'limit';
+/**
+ * Parameter name for requesting a limit
+ */
+const LIMIT = 'limit';
 
-    /**
-     * Parameter name for requesting an offset
-     */
-    const OFFSET = 'offset';
+/**
+ * Parameter name for requesting an offset
+ */
+const OFFSET = 'offset';
 ```
 
 ```php
