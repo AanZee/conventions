@@ -1,0 +1,75 @@
+# PHP
+
+## PSR-2
+
+Om de leesbaarheid van alle code te vergroten is het een goed idee om richting een standaard te gaan waar we ons allemaal aan confirmeren. De PHP wereld heeft hier een mooie standaard voor ontwikkeld: De PSR-2 standaard. Ik zal hier voor de meest gebruikte IDE's een link te posten naar hoe je deze standaard kunt instellen.
+
+## Algemene styling tips
+
+**Doc block:**
+
+Elke class, method/functie, constante en property horen een beschrijving te krijgen wat deze doet. Idealiter in de vorm van een doc block. Tevens worden deze doc blocks door IDE's gebruikt om de programmeur te helpen in de vorm van code completion.
+
+```php
+/**
+ * Class UserFileReaderJob
+ *
+ * @package App\Jobs
+ *
+ * @author Kacper Kowalski kacper@aanzee.nl
+ */
+class UserFileReaderJob extends Job implements ShouldQueue
+{
+}
+```
+
+```php
+/**
+* Execute job
+*
+* @param ImportHelper $importHelper
+*
+* @throws Exception
+*/
+public function handle(ImportHelper $importHelper)
+{
+}
+```
+
+```php
+ /**
+     * Parameter name for requesting an expand
+     */
+    const EXPAND = 'expand';
+
+    /**
+     * Parameter name for requesting a limit
+     */
+    const LIMIT = 'limit';
+
+    /**
+     * Parameter name for requesting an offset
+     */
+    const OFFSET = 'offset';
+```
+
+```php
+/**
+* @var Closure $callback The function to execute when we have a full document
+*/
+private $callback;
+```
+
+**Type hinting:**
+
+Sinds PHP 7 type hinting (en return types) ondersteunt is het niet meer nodig om variabelen te prefixen met een data type. Deze kun je dus gewoon in camelcase specificeren. Bijvoorbeeld: $sQueryParam => $queryParam.
+
+```php
+/**
+* Modify the rules for a given query param
+*
+* @param string $queryParam
+* @param string $rules
+*/
+protected function updateQueryParamRules(string $queryParam, string $rules)
+```
