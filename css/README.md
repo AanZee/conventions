@@ -985,6 +985,21 @@ rgb(50, 50, 50);
 
 See ['W3C Recommendations about lengths'](http://www.w3.org/TR/CSS21/syndata.html#length-units) for further reading.
 
+### Use unitless value for line-height
+
+> Unitless line heights are recommended due to the fact that child elements will inherit the raw number value, rather than the computed value. With this, child elements can compute their line heights based on their computed font size, rather than inheriting an arbitrary value from a parent that is more likely to need overriding.
+-- [Sara Cope, 2015](https://css-tricks.com/almanac/properties/l/line-height/)
+
+**Right**
+```SCSS
+$line-height-100: 1.5;
+```
+
+**Wrong**
+```SCSS
+$line-height-100: 1.5em;
+```
+
 ### Use the 8-Point Grid as much as possible for pixel values
 
 - Popular screen sizes are divisible by 8.
