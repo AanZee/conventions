@@ -100,6 +100,19 @@ For textarea tags, do not place the closing tag </textarea> on a new line, as it
 </h1>
 ```
 
+## Always use a button element for buttons
+Never use an input element for buttons. A button element is more flexible. It can be part of a form, but doesn't have to. Useful for when a clickable element does not have a meaningful link. Also, a button element can contain other content, such as pseudo-elements.
+
+**Right:**
+```html
+<button type="button">Press me!</button>
+```
+
+**Wrong:**
+```html
+<input type="button" value="Press me!">
+```
+
 ## Add type to button elements
 Always add a type to a button to prevent accidentally submitting forms
 
@@ -164,17 +177,4 @@ Don't use lists as container for a lot of data, only for simple lists.
         </div>
     </li>
 </ul>
-```
-
-## Use the <button> element for buttons
-Don't use the input element for this.
-
-**Right:**
-```html
-<button type="button">Click me!</button>
-```
-
-**Wrong:**
-```html
-<input type="button" value="Click me!">
 ```
