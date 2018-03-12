@@ -1319,6 +1319,23 @@ See [KSS](https://github.com/kneath/kss), [KSS-node](https://github.com/kss-node
 - Icons for user interface elements should be defined by CSS and not placed in the HTML structure. Icons for user interface elements can change based on the status and classes. This can be solved easily with CSS. Defining icons for user interface elements in CSS also makes sure icons are consistent throughout your website or application. You cannot mistakenly use different icons for the same user interface element in different views. Some developers argue these icons are not part of the DOM which reduces accessibility or the ability to add alt text. For user interface elements this should not be an issue. Affordance for user interface elements should never depend on icons and always depend on its shape and visible text or 'hidden text' accessible for screen readers.
 - Icons for content, such as icons illustrating product features, should be placed in the HTML. This makes changing your content and icons easier. Furthermore, you don't have to create a new class for every new icon, you only have to change the HTML.
 
+### Overrule :focus style with :focus:hover
+
+- When you use the :focus pseudo-class you can highlight items when they receive focus. This is useful for when the user tabs through a form for example. The :focus styling should be prominent to let a user know where to look. The problem with browsers, such as Google Chrome, is that they also apply the :focus styling when, for example, a button is clicked or touched. In this case the :focus styling is unnecessary noise and should be avoided. Browsers such as Apple Safari don't use :focus styling when a button is clicked or touched. A workaround for the behaviour found in Google Chrome is to use a combination of :focus and :hover pseudo-classes. Override the :focus styling with :focus:hover styling. Because you are always hovering the element when you click on it, it will show the overridden style.
+
+**Example:**
+```CSS
+.block__element {
+    &:focus {
+        box-shadow: 0 0 2px -2px $color-focus;
+        
+        &:hover {
+            box-shadow: none;
+        }
+    }
+}
+```
+
 ## Acknowledgments and Further Reading
 
 - [sass-guideline.es](http://sass-guidelin.es/#syntax--formatting)
