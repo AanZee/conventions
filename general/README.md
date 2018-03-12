@@ -264,8 +264,10 @@ function getList(
 **Right:**
 ```javascript
 {{ variable }}
+{{ productPrice | price }}
 ```
 **Wrong:**
 ```javascript
 {{variable}}
+{{productPrice | price}}
 ```
