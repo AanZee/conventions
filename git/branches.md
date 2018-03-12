@@ -1,6 +1,6 @@
 # Branches
 
-## Branches
+## Names
 
 ### Master
 `master`

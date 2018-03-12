@@ -26,5 +26,5 @@ Prefix branches with a [JIRA](https://www.atlassian.com/software/jira) ID follow
 - update-conventions
 - JIRA-123_update_conventions
 
-## GIT flow
-Learn more about our [Git flow](git-flow.md).
+## Branches
+Learn more about our different [branches](branches.md).
