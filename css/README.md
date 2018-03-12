@@ -468,6 +468,28 @@ City block sizes are used for rhythms, never for exact values or fractions. When
 .column--100 {}
 ```
 
+### Range specific modifiers should end with specified suffix
+
+Range specific modifiers should end with 'range-and-up' or 'range-and-lower'.
+
+**Right:**
+```CSS
+.component--modifier-lap-and-up {}
+.component--modifier-desk-l-and-up {}
+
+.component--modifier-hand-and-lower {}
+.component--modifier-lap-m-and-lower {}
+```
+
+**Wrong:**
+```CSS
+.component--modifier-lap-and-higher {}
+.component--modifier-desk-l-and-more {}
+
+.component--modifier-hand-and-less {}
+.component--modifier-lap-m-and-under {}
+```
+
 ### Modifiers for different flex-grows should be written out in full
 
 Depending on the 'grow value' (default is 1) and the amount of elements within a flex container, an element takes more or less space within the flex container. Flex-grow doesn't dictate a fixed size or fraction, it is a unit-less value. For more about flex-grow and Flexbox Layout see ['A Complete Guide to Flexbox'](https://css-tricks.com/snippets/css/a-guide-to-flexbox/). These unit-less values should be written out in full.
