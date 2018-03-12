@@ -259,14 +259,13 @@ function getList(
 ```
 
 
-## Spaces
-When working with variables between parantheses, always seperate them by adding spaces. 
+## Add spaces between curly braces and variable names
 
 **Right:**
 ```javascript
-{{ variables }}
+{{ variable }}
 ```
 **Wrong:**
 ```javascript
-{{variables}}
+{{variable}}
 ```
