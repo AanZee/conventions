@@ -20,9 +20,9 @@ Along with the conventions reported below, we follow the [Ortus ColdFusion (CFML
 **Right:**
 ```html
 <cfif a EQ 1>
-	<cfset classNames="component">
+	<cfset classNames="component"/>
 <cfelse>
-	<cfset classNames="component component--modifier">
+	<cfset classNames="component component--modifier"/>
 </cfif>
 
 <h1 class="#classNames#">A</h1>
