@@ -9,7 +9,10 @@ PHPStorm: https://confluence.jetbrains.com/display/PhpStorm/PHP+Code+Sniffer+in+
 Sublime: @todo
 
 ## SOLID
-Blijf zo veel mogelijk SOLID. Dit zorgt ervoor dat de code begrijpelijk en onderhoudbaar blijft (bijvoorbeeld dus niet alles bij elkaar in een class gooien en het vervolgens een 'helper' noemen)
+Blijf zo veel mogelijk SOLID. Dit zorgt ervoor dat de code begrijpelijk en onderhoudbaar blijft, dus:
+
+1. Niet alles bij elkaar in een class gooien en het vervolgens een 'helper' noemen.
+2. Controllers zijn enkel bedoeld voor het afhandelen van input/output. En dus niet om diverse business logica in te gooien. Daar kun je bijvoorbeeld een service, repository (indien logica database gerelateerd, zoals een query) of desnoods een goed afgebakende helper voor gebruiken. 
 
 Leesvoer: https://scotch.io/bar-talk/s-o-l-i-d-the-first-five-principles-of-object-oriented-design
 
