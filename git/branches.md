@@ -5,17 +5,17 @@
 ### Master
 `master`
 
-Directly committing in the master branch is not allowed. Only a merge from develop or from a hotfix can be merged with master. The lastest version (tag) in the master branch is the version that is currently (or will soon be live). When merging a hotfix or develop with the master branch a version (tag)
+Directly committing in the master branch is not allowed. Only a merge from develop or from a hotfix can be merged with master. The lastest version (tag) in the master branch is the version that is currently (or will soon be live). When merging a hotfix or develop with the master branch a version (tag) should be created.
 
 ### Develop
 `develop`
 
-Iteration, hotfixes and feature branches are merged in develop. From this branch you can test how, for example, a release and a sprint branch work together. Please note that you may only merge to develop if your work has been tested, reviewed and ready to go live.
+Iteration, hotfixes and feature branches are merged in develop. From this branch you can test how, for example, a feature and a sprint branch work together. Please note that you may only merge to develop if your work has been tested, reviewed and ready to go live.
 
 ### Hotfixes
 `hotfix/my-super-fix`
 
-When there are bugs in the latest master branch that need to be fixed as soon as possible they can be fixed by an hotfix. Hotfixes are patches on live websites. They are always branched of the master branch. When the hotfix is finished and tested it can be merged directly into master. If there is a new version on develop this can also be pulled and merged before merging to master because the latest version of develop is always ready to go live.
+When there are bugs in the latest master branch that need to be fixed as soon as possible they can be fixed by a hotfix. Hotfixes are patches on live websites. They are always branched of the master branch. When the hotfix is finished and tested it can be merged directly into master and develop. If there is a new version on develop this should be pulled and merged before merging back, because the latest version of develop is always ready to go live.
 
 ### Iteration
 `iteration/sprint-7`
@@ -31,7 +31,7 @@ When you start a feature from an iteration, first make sure that the associated 
 
 Features are not bound to an iteration or develop. For example they can start in an iteration like 'sprint-1' but get merged into develop long after 'sprint-1' has been merged.
 
-When multiple user stories or release points have a lot of overlap then they can be developed in a feature branch. You can do this by putting multiple Jira IDs in the branch name, but it is more convenient for the overview to merge the issues in Jira when possible. Do not confuse this with the staging branch that is used for testing / visualizing feature branches together. It is up to the developer to determine at his own discretion when multiple features need to be picked up in one feature branch, but always consult with the customer.
+When multiple user stories or features have a lot of overlap then they can be developed in the same feature branch. You can do this by putting multiple Jira IDs in the branch name, but it is more convenient for the overview to merge the issues in Jira when possible. Do not confuse this with the staging branch that is used for testing / visualizing feature branches together. It is up to the developer to determine at his own discretion when multiple features need to be picked up in one feature branch, but always consult with the customer.
 
 ### Staging
 `staging/JIRA-10-11-12-14`

@@ -28,3 +28,6 @@ Prefix branches with a [JIRA](https://www.atlassian.com/software/jira) ID follow
 
 ## Branches
 Learn more about our different [branches](branches.md).
+
+## Remove branches directly after merging
+Remove your branch directly after merging a hotfix, feature, iteration or staging branch.
