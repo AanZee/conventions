@@ -8,6 +8,61 @@ PHPStorm: https://confluence.jetbrains.com/display/PhpStorm/PHP+Code+Sniffer+in+
 
 Sublime: @todo
 
+## SOLID
+Blijf zo veel mogelijk SOLID. Dit zorgt ervoor dat de code begrijpelijk en onderhoudbaar blijft (bijvoorbeeld dus niet alles bij elkaar in een class gooien en het vervolgens een 'helper' noemen)
+
+Leesvoer: https://scotch.io/bar-talk/s-o-l-i-d-the-first-five-principles-of-object-oriented-design
+
+## Testbaarheid
+Indien er bijvoorbeeld links en rechts BookingHelpers worden geïnstantieerd is een dergelijke class/functie niet afzonderlijk te testen. Je krijgt gratis al het extra spul erbij wat in de geïnstantieerde class zit. Daarom ALLE dependencies injecteren via de desbetreffende class constructor (ook facades dus zo veel mogelijk vermijden). Indien je dit doet kun je tijdens het testen eenvoudig een dergelijke dependency 'wegmocken'.
+
+
+Niet
+
+```php
+public function putArrivalAndDeparture(Request $oRequest)
+{
+    //...
+    $oBookingHelper = new BookingHelper();
+    //..
+}
+```
+
+Wel
+
+```php
+/**
+*
+* @var BookingHelper $bookingHelper 
+*/
+private $bookingHelper;
+
+/**
+* Constructor
+*
+* @param BookingHelper $bookingHelper
+*
+*/
+public function __construct(BookingHelper $bookingHelper){
+    $this->bookingHelper = $bookingHelper;
+}
+
+/**
+* Set the arrival and departure of a booking
+*
+* @param Request $request Pass the request
+*
+*/
+public function putArrivalAndDeparture(Request $request)
+{
+    //...
+    $bookingHelper = $this->bookingHelper;
+    //..
+}
+```
+
+Zie: https://jtreminio.com/2013/03/unit-testing-tutorial-part-4-mock-objects-stub-methods-dependency-injection/
+
 
 ## Algemene styling tips
 
