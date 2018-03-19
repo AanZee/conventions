@@ -15,7 +15,7 @@ Along with the conventions reported below, we follow the [Ortus ColdFusion (CFML
 <cfif a eq 1 or b eq 2>
 ```
 
-## Don't write cfif's in HTML tags
+## Don't write cfif's inside HTML attributes
 
 **Right:**
 ```html
@@ -33,4 +33,22 @@ Along with the conventions reported below, we follow the [Ortus ColdFusion (CFML
 <h1 class="component<cfif a EQ 1> component--modifier</cfif>">A</h1>
 
 <h1 class="component #iif(a EQ 1, DE(''), DE('component--modifier'))#">A</h1>
+```
+
+## Put HTML attributes inside a cfif on a new line
+
+**Right:**
+```html
+<div
+	<cfif test EQ "test">
+		data-test="test"
+	</cfif>
+>
+```
+
+**Wrong:**
+```html
+<div
+	<cfif test EQ "test">data-test="test"</cfif>
+>
 ```

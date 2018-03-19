@@ -3,6 +3,20 @@
 ## BEM
 Structure your components with the [BEM methodology](https://en.bem.info/method/naming-convention/). See [the CSS conventions part](/css/README.md#selector-names-should-follow-bem-methodology-honed-by-nicolas-gallagher) for some of the advantages.
 
+## HTML Head
+
+The following 2 meta tags *must* come first in the ```<head>``` to consistently ensure proper document rendering.
+
+**Right:**
+```html
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>Page Title</title>
+```
+
+A comprehensive guide to everything that can be placed in the ```<head>``` can be found on [gethead](https://gethead.info/).
+
 ## HTML alignment
 
 **Right:**
