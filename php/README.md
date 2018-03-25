@@ -2,25 +2,28 @@
 
 ## PSR-2
 
-Om de leesbaarheid van alle code te vergroten is het een goed idee om richting een standaard te gaan waar we ons allemaal aan confirmeren. De PHP wereld heeft hier een mooie standaard voor ontwikkeld: De PSR-2 standaard. Ik zal hier voor de meest gebruikte IDE's een link te posten naar hoe je deze standaard kunt instellen:
+To increase the readability of all the code, it is a good idea to go towards a standard that we all conform to. The PHP world has developed a nice standard for this: The PSR-2 standard. For the most used IDEs I will post a link here for how to set this up:
 
 PHPStorm: https://confluence.jetbrains.com/display/PhpStorm/PHP+Code+Sniffer+in+PhpStorm
 
 Sublime: @todo
 
 ## SOLID
-Blijf zo veel mogelijk SOLID. Dit zorgt ervoor dat de code begrijpelijk en onderhoudbaar blijft, dus:
 
-1. Niet alles bij elkaar in een class gooien en het vervolgens een 'helper' noemen.
-2. Controllers zijn enkel bedoeld voor het afhandelen van input/output. En dus niet om diverse business logica in te gooien. Daar kun je bijvoorbeeld een service, repository (indien logica database gerelateerd, zoals een query) of desnoods een goed afgebakende helper voor gebruiken. 
+Stay as much SOLID as possible. This ensures that the code remains understandable and maintainable, so:
 
-Leesvoer: https://scotch.io/bar-talk/s-o-l-i-d-the-first-five-principles-of-object-oriented-design
+1. Do not throw everything together in a class and then call it a 'helper'.
+2. Controllers are only intended for handling input / output. And not to throw in various business logic. You can, for example, use a service, repository (if code is database related, such as a query) or, if necessary, a well-defined helper.
 
-## Testbaarheid
+A good read: https://scotch.io/bar-talk/s-o-l-i-d-the-first-five-principles-of-object-oriented-design
+
+## Testability
+
 Indien er bijvoorbeeld links en rechts BookingHelpers worden geïnstantieerd is een dergelijke class/functie niet afzonderlijk te testen. Je krijgt gratis al het extra spul erbij wat in de geïnstantieerde class zit. Daarom ALLE dependencies injecteren via de desbetreffende class constructor (ook facades dus zo veel mogelijk vermijden). Indien je dit doet kun je tijdens het testen eenvoudig een dergelijke dependency 'wegmocken'.
 
+If, for example, BookingHelpers are instantiated on several places, such a class / function can not be tested separately. Every attempt will result in automatically testing the instantiated class. Therefore, inject ALL dependencies via the relevant class constructor (so avoid facades as much as possible). This way, when you start testing you can just inject mocked classes instead of the actual stuff.
 
-Niet
+Wrong
 
 ```php
 public function putArrivalAndDeparture(Request $oRequest)
@@ -31,7 +34,7 @@ public function putArrivalAndDeparture(Request $oRequest)
 }
 ```
 
-Wel
+Better
 
 ```php
 /**
@@ -67,11 +70,11 @@ public function putArrivalAndDeparture(Request $request)
 Zie: https://jtreminio.com/2013/03/unit-testing-tutorial-part-4-mock-objects-stub-methods-dependency-injection/
 
 
-## Algemene styling tips
+## General advice
 
 **Doc block:**
 
-Elke class, method/functie, constante en property horen een beschrijving te krijgen wat deze doet. Idealiter in de vorm van een doc block. Tevens worden deze doc blocks door IDE's gebruikt om de programmeur te helpen in de vorm van code completion.
+Every class, method / function, constant and property should have a description of what it does. Ideally in the form of a doc block. These doc blocks are also used by IDEs to help the programmer with code completion.
 
 ```php
 /**
@@ -125,7 +128,7 @@ private $callback;
 
 **Type hinting:**
 
-Sinds PHP 7 type hinting (en return types) ondersteunt is het niet meer nodig om variabelen te prefixen met een data type. Deze kun je dus gewoon in camelcase specificeren. Bijvoorbeeld: $sQueryParam => $queryParam.
+Since PHP 7 supports type hinting (and return types) it is no longer necessary to prefix variables with a data type. You can therefore simply specify these in camelcase. For example: $sQueryParam => $queryParam.
 
 ```php
 /**
