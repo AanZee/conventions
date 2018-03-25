@@ -2,27 +2,27 @@
 
 ##Stateless
 
-Tenzij we het hebben over een volledige applicatie houdt een API geen state bij. Zaken als bijvoorbeeld Redis ten behoeve van session storage dienen dus achterwege te blijven. Caching is in een aantal gevallen wel wenselijk. Bijvoorbeeld om per gebruiker id een lijst met autorisatie slugs* bij te houden. Hiermee voorkomen we dat we bij elke request opnieuw de database moeten raadplegen.
+Unless we are talking about a complete application, an API does not have a state. Caching for the benefit of session storage should be left out. Caching is desirable in a number of cases. For example, to keep a list of authorization slugs* per user. This prevents us from having to query the database on each request.
 
-*Een slug is een string die dient als identifier, bijvoorbeeld 'users.view' en 'users.modify'.
+*A slug is essentially just a string that serves as an identifier, for example 'users.view' and 'users.modify'.
 
-##Altijd HTTPS
+##Always use HTTPS
 
 ##Endpoint design
 
-**Gebruik zo veel mogelijk zelfstandige naamwoorden in meervound** 
+**Never use verbs and always use plural nouns** 
 
-**De juiste HTTP method** 
+**The right HTTP method** 
 
-**Query parameters voor specifiekere queries**
+**Use query parameters for more specific queries**
 
-Niet:
+Wrong:
 ```php
 /v1/allProducts
 /v1/productByName
 /v1/productsByClient
 ```
-Wel:
+Better:
 ```php
 GET /v1/products
 ```
@@ -35,15 +35,15 @@ GET /v1/products/1?name=
 GET /v1/products?client=
 ```
 
-Dit zorgt ervoor dat de API compact en overzichtelijk blijft maar ondertussen wel flexibel genoeg is om aan alle wensen te voldoen.
+This ensures that the API remains compact and well-organized, but at the same time is flexible enough to meet all requirements.
 
-##Consistente statuscodes
+##Consistent status codes
 
-Extra info: https://www.codetinkerer.com/2015/12/04/choosing-an-http-status-code.html
+More info: https://www.codetinkerer.com/2015/12/04/choosing-an-http-status-code.html
 
 ##Responses
 
-Idealiter retourneren we altijd JSON met daarin meta data welke extra informatie geeft over de specifieke aanroep. In zijn geheel ziet een succesvolle response er bijvoorbeeld zo uit:
+Ideally, we always return pretty JSON with meta data that gives extra information about the specific call. In general, a successful response looks something like this:
 
 ```php
 {
@@ -68,7 +68,7 @@ Idealiter retourneren we altijd JSON met daarin meta data welke extra informatie
 }
 ```
 
-In het geval van een fout willen we zo duidelijk mogelijk zijn:
+In case of an error, we want to be as clear as possible:
 
 
 
