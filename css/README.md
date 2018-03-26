@@ -468,6 +468,28 @@ City block sizes are used for rhythms, never for exact values or fractions. When
 .column--100 {}
 ```
 
+### Range specific modifiers should end with specified suffix
+
+Range specific modifiers should end with 'range-and-up' or 'range-and-lower'.
+
+**Right:**
+```CSS
+.component--modifier-lap-and-up {}
+.component--modifier-desk-l-and-up {}
+
+.component--modifier-hand-and-lower {}
+.component--modifier-lap-m-and-lower {}
+```
+
+**Wrong:**
+```CSS
+.component--modifier-lap-and-higher {}
+.component--modifier-desk-l-and-more {}
+
+.component--modifier-hand-and-less {}
+.component--modifier-lap-m-and-under {}
+```
+
 ### Modifiers for different flex-grows should be written out in full
 
 Depending on the 'grow value' (default is 1) and the amount of elements within a flex container, an element takes more or less space within the flex container. Flex-grow doesn't dictate a fixed size or fraction, it is a unit-less value. For more about flex-grow and Flexbox Layout see ['A Complete Guide to Flexbox'](https://css-tricks.com/snippets/css/a-guide-to-flexbox/). These unit-less values should be written out in full.
@@ -985,6 +1007,21 @@ rgb(50, 50, 50);
 
 See ['W3C Recommendations about lengths'](http://www.w3.org/TR/CSS21/syndata.html#length-units) for further reading.
 
+### Use unitless value for line-height
+
+> Unitless line heights are recommended due to the fact that child elements will inherit the raw number value, rather than the computed value. With this, child elements can compute their line heights based on their computed font size, rather than inheriting an arbitrary value from a parent that is more likely to need overriding.
+-- [Sara Cope, 2015](https://css-tricks.com/almanac/properties/l/line-height/)
+
+**Right**
+```SCSS
+$line-height-100: 1.5;
+```
+
+**Wrong**
+```SCSS
+$line-height-100: 1.5em;
+```
+
 ### Use the 8-Point Grid as much as possible for pixel values
 
 - Popular screen sizes are divisible by 8.
@@ -1042,6 +1079,35 @@ selector {
 
 selector {
 	z-index: 9999;
+}
+```
+
+### Increase Z-indexes inside a component or block with 1
+
+- When a z-index is required inside a component, create a z-index variable for your component.
+- The z-index variable can be -100 until 1000 and is a multiple of 100.
+- Increase the z-index variable inside your component with 1.
+
+**Right:**
+```SCSS
+$block-z-index: 300 !default;
+
+block {
+	z-index: $block-z-index;
+}
+block__element {
+	z-index: $block-z-index + 1;
+}
+```
+
+**Wrong:**
+```SCSS
+block {
+	z-index: 300;
+}
+
+block__element {
+	z-index: 400;
 }
 ```
 
@@ -1252,6 +1318,23 @@ See [KSS](https://github.com/kneath/kss), [KSS-node](https://github.com/kss-node
 
 - Icons for user interface elements should be defined by CSS and not placed in the HTML structure. Icons for user interface elements can change based on the status and classes. This can be solved easily with CSS. Defining icons for user interface elements in CSS also makes sure icons are consistent throughout your website or application. You cannot mistakenly use different icons for the same user interface element in different views. Some developers argue these icons are not part of the DOM which reduces accessibility or the ability to add alt text. For user interface elements this should not be an issue. Affordance for user interface elements should never depend on icons and always depend on its shape and visible text or 'hidden text' accessible for screen readers.
 - Icons for content, such as icons illustrating product features, should be placed in the HTML. This makes changing your content and icons easier. Furthermore, you don't have to create a new class for every new icon, you only have to change the HTML.
+
+### Overrule :focus style with :focus:hover
+
+- When you use the :focus pseudo-class you can highlight items when they receive focus. This is useful for when the user tabs through a form for example. The :focus styling should be prominent to let a user know where to look. The problem with browsers, such as Google Chrome, is that they also apply the :focus styling when, for example, a button is clicked or touched. In this case the :focus styling is unnecessary noise and should be avoided. Browsers such as Apple Safari don't use :focus styling when a button is clicked or touched. A workaround for the behaviour found in Google Chrome is to use a combination of :focus and :hover pseudo-classes. Override the :focus styling with :focus:hover styling. Because you are always hovering the element when you click on it, it will show the overridden style.
+
+**Example:**
+```CSS
+.block__element {
+    &:focus {
+        box-shadow: 0 0 2px -2px $color-focus;
+        
+        &:hover {
+            box-shadow: none;
+        }
+    }
+}
+```
 
 ## Acknowledgments and Further Reading
 

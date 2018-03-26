@@ -15,7 +15,7 @@ Along with the conventions reported below, we follow the [Ortus ColdFusion (CFML
 <cfif a eq 1 or b eq 2>
 ```
 
-## Don't write cfif's in HTML tags
+## Don't write cfif's inside HTML attributes
 
 **Right:**
 ```html
@@ -36,7 +36,6 @@ Along with the conventions reported below, we follow the [Ortus ColdFusion (CFML
 ```
 
 ## Close self-closing tags with a forward slash
-
 Always close self-closing tags with a forward slash. It makes the code more readable; you instantly see the tag is not a block of code. Also, if you use custom tags, there is a difference in behaviour: https://stackoverflow.com/a/7544785.
 
 **Right:**
@@ -51,4 +50,22 @@ Always close self-closing tags with a forward slash. It makes the code more read
 <cfset var test = "test">
 
 <cfdump var="#test#">
+```
+
+## Put HTML attributes inside a cfif on a new line
+
+**Right:**
+```html
+<div
+	<cfif test EQ "test">
+		data-test="test"
+	</cfif>
+>
+```
+
+**Wrong:**
+```html
+<div
+	<cfif test EQ "test">data-test="test"</cfif>
+>
 ```

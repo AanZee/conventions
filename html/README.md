@@ -3,6 +3,20 @@
 ## BEM
 Structure your components with the [BEM methodology](https://en.bem.info/method/naming-convention/). See [the CSS conventions part](/css/README.md#selector-names-should-follow-bem-methodology-honed-by-nicolas-gallagher) for some of the advantages.
 
+## HTML Head
+
+The following 2 meta tags *must* come first in the ```<head>``` to consistently ensure proper document rendering.
+
+**Right:**
+```html
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>Page Title</title>
+```
+
+A comprehensive guide to everything that can be placed in the ```<head>``` can be found on [gethead](https://gethead.info/).
+
 ## HTML alignment
 
 **Right:**
@@ -98,6 +112,19 @@ For textarea tags, do not place the closing tag </textarea> on a new line, as it
 >
     Title
 </h1>
+```
+
+## Always use a button element for buttons
+Never use an input element for buttons. A button element is more flexible. It can be part of a form, but doesn't have to. Useful for when a clickable element does not have a meaningful link. Also, a button element can contain other content, such as pseudo-elements.
+
+**Right:**
+```html
+<button type="button">Press me!</button>
+```
+
+**Wrong:**
+```html
+<input type="button" value="Press me!">
 ```
 
 ## Add type to button elements
