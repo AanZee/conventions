@@ -20,9 +20,9 @@ Along with the conventions reported below, we follow the [Ortus ColdFusion (CFML
 **Right:**
 ```html
 <cfif a EQ 1>
-    <cfset classNames="component">
+	<cfset classNames="component"/>
 <cfelse>
-    <cfset classNames="component component--modifier">
+	<cfset classNames="component component--modifier"/>
 </cfif>
 
 <h1 class="#classNames#">A</h1>
@@ -33,6 +33,23 @@ Along with the conventions reported below, we follow the [Ortus ColdFusion (CFML
 <h1 class="component<cfif a EQ 1> component--modifier</cfif>">A</h1>
 
 <h1 class="component #iif(a EQ 1, DE(''), DE('component--modifier'))#">A</h1>
+```
+
+## Close self-closing tags with a forward slash
+Always close self-closing tags with a forward slash. It makes the code more readable; you instantly see the tag is not a block of code. Also, if you use custom tags, there is a difference in behaviour: https://stackoverflow.com/a/7544785.
+
+**Right:**
+```html
+<cfset var test = "test"/>
+
+<cfdump var="#test#"/>
+```
+
+**Wrong:**
+```html
+<cfset var test = "test">
+
+<cfdump var="#test#">
 ```
 
 ## Put HTML attributes inside a cfif on a new line
