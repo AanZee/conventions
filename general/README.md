@@ -257,3 +257,17 @@ function getList(
 	parameter3
 ) {}
 ```
+
+
+## Add spaces between curly braces and variable names
+
+**Right:**
+```javascript
+{{ variable }}
+{{ productPrice | price }}
+```
+**Wrong:**
+```javascript
+{{variable}}
+{{productPrice | price}}
+```
