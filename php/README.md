@@ -8,6 +8,8 @@ PHPStorm: https://confluence.jetbrains.com/display/PhpStorm/PHP+Code+Sniffer+in+
 
 Sublime: @todo
 
+More info about the PSR-2 standard: https://www.php-fig.org/psr/psr-2/
+
 ## SOLID
 
 Stay as much SOLID as possible. This ensures that the code remains understandable and maintainable, so:
@@ -18,8 +20,6 @@ Stay as much SOLID as possible. This ensures that the code remains understandabl
 A good read: https://scotch.io/bar-talk/s-o-l-i-d-the-first-five-principles-of-object-oriented-design
 
 ## Testability
-
-Indien er bijvoorbeeld links en rechts BookingHelpers worden geïnstantieerd is een dergelijke class/functie niet afzonderlijk te testen. Je krijgt gratis al het extra spul erbij wat in de geïnstantieerde class zit. Daarom ALLE dependencies injecteren via de desbetreffende class constructor (ook facades dus zo veel mogelijk vermijden). Indien je dit doet kun je tijdens het testen eenvoudig een dergelijke dependency 'wegmocken'.
 
 If, for example, BookingHelpers are instantiated on several places, such a class / function can not be tested separately. Every attempt will result in automatically testing the instantiated class. Therefore, inject ALL dependencies via the relevant class constructor (so avoid facades as much as possible). This way, when you start testing you can just inject mocked classes instead of the actual stuff.
 
@@ -49,7 +49,8 @@ private $bookingHelper;
 * @param BookingHelper $bookingHelper
 *
 */
-public function __construct(BookingHelper $bookingHelper){
+public function __construct(BookingHelper $bookingHelper)
+{
     $this->bookingHelper = $bookingHelper;
 }
 
@@ -67,7 +68,7 @@ public function putArrivalAndDeparture(Request $request)
 }
 ```
 
-Zie: https://jtreminio.com/2013/03/unit-testing-tutorial-part-4-mock-objects-stub-methods-dependency-injection/
+More info: https://jtreminio.com/2013/03/unit-testing-tutorial-part-4-mock-objects-stub-methods-dependency-injection/
 
 
 ## General advice
