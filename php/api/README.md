@@ -25,13 +25,7 @@ Wrong:
 Better:
 ```php
 GET /v1/products
-```
-
-```php
 GET /v1/products/1?name=
-```
-
-```php
 GET /v1/products?client=
 ```
 
