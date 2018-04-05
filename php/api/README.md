@@ -16,20 +16,21 @@ Unless we are talking about a complete application, an API does not have a state
 
 **Use query parameters for more specific queries**
 
+This ensures that the API remains compact and well-organized, but at the same time is flexible enough to meet all requirements.
+
+
+Right:
+```php
+GET /v1/products
+GET /v1/products/1?name=
+GET /v1/products?client=
+```
 Wrong:
 ```php
 /v1/allProducts
 /v1/productByName
 /v1/productsByClient
 ```
-Better:
-```php
-GET /v1/products
-GET /v1/products/1?name=
-GET /v1/products?client=
-```
-
-This ensures that the API remains compact and well-organized, but at the same time is flexible enough to meet all requirements.
 
 ##Consistent status codes
 
@@ -62,9 +63,9 @@ Ideally, we always return pretty JSON with meta data that gives extra informatio
 }
 ```
 
+##Error responses
+
 In case of an error, we want to be as clear as possible:
-
-
 
 ```php
 {
