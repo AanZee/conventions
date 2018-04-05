@@ -23,19 +23,8 @@ A good read: https://scotch.io/bar-talk/s-o-l-i-d-the-first-five-principles-of-o
 
 If, for example, BookingHelpers are instantiated on several places, such a class / function can not be tested separately. Every attempt will result in automatically testing the instantiated class. Therefore, inject ALL dependencies via the relevant class constructor (so avoid facades as much as possible). This way, when you start testing you can just inject mocked classes instead of the actual stuff.
 
-Wrong
 
-```php
-public function putArrivalAndDeparture(Request $oRequest)
-{
-    //...
-    $oBookingHelper = new BookingHelper();
-    //..
-}
-```
-
-Better
-
+Right
 ```php
 /**
 *
@@ -67,6 +56,16 @@ public function putArrivalAndDeparture(Request $request)
     //..
 }
 ```
+Wrong
+```php
+public function putArrivalAndDeparture(Request $oRequest)
+{
+    //...
+    $oBookingHelper = new BookingHelper();
+    //..
+}
+```
+
 
 More info: https://jtreminio.com/2013/03/unit-testing-tutorial-part-4-mock-objects-stub-methods-dependency-injection/
 
@@ -83,7 +82,6 @@ Every class, method / function, constant and property should have a description 
  *
  * @package App\Jobs
  *
- * @author Kacper Kowalski kacper@aanzee.nl
  */
 class UserFileReaderJob extends Job implements ShouldQueue
 {
