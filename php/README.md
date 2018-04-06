@@ -2,13 +2,11 @@
 
 ## PSR-2
 
-To increase the readability of all the code, it is a good idea to go towards a standard that we all conform to. The PHP world has developed a nice standard for this: The PSR-2 standard. For the most used IDEs I will post a link here for how to set this up:
+To increase the readability of all the code, it is a good idea to go towards a standard that we all conform to. The PHP world has developed a nice standard for this: [The PSR-2 standard](https://www.php-fig.org/psr/psr-2). For the most used IDEs I will post a link here for how to set this up:
 
-PHPStorm: https://confluence.jetbrains.com/display/PhpStorm/PHP+Code+Sniffer+in+PhpStorm
+[PHPStorm code sniffer](https://confluence.jetbrains.com/display/PhpStorm/PHP+Code+Sniffer+in+PhpStorm)
 
 Sublime: @todo
-
-More info about the PSR-2 standard: https://www.php-fig.org/psr/psr-2/
 
 ## SOLID
 
