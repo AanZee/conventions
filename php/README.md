@@ -15,7 +15,7 @@ Stay as much SOLID as possible. This ensures that the code remains understandabl
 1. Do not throw everything together in a class and then call it a 'helper'.
 2. Controllers are only intended for handling input / output. And not to throw in various business logic. You can, for example, use a service, repository (if code is database related, such as a query) or, if necessary, a well-defined helper.
 
-A good read: https://scotch.io/bar-talk/s-o-l-i-d-the-first-five-principles-of-object-oriented-design
+[The first five principles of object oriented design](https://scotch.io/bar-talk/s-o-l-i-d-the-first-five-principles-of-object-oriented-design)
 
 ## Testability
 
@@ -65,7 +65,7 @@ public function putArrivalAndDeparture(Request $oRequest)
 ```
 
 
-More info: https://jtreminio.com/2013/03/unit-testing-tutorial-part-4-mock-objects-stub-methods-dependency-injection/
+[Unit testing tutorial](https://jtreminio.com/2013/03/unit-testing-tutorial-part-4-mock-objects-stub-methods-dependency-injection)
 
 
 ## General advice
