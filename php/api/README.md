@@ -1,14 +1,14 @@
-#REST
+# REST
 
-##Stateless
+## Stateless
 
 Unless we are talking about a complete application, an API does not have a state. Caching for the benefit of session storage should be left out. Caching is desirable in a number of cases. For example, to keep a list of authorization slugs* per user. This prevents us from having to query the database on each request.
 
 *A slug is essentially just a string that serves as an identifier, for example 'users.view' and 'users.modify'.
 
-##Always use HTTPS
+## Always use HTTPS
 
-##Endpoint design
+## Endpoint design
 
 **Never use verbs and always use plural nouns** 
 
@@ -19,24 +19,24 @@ Unless we are talking about a complete application, an API does not have a state
 This ensures that the API remains compact and well-organized, but at the same time is flexible enough to meet all requirements.
 
 
-Right:
+**Right**
 ```php
 GET /v1/products
 GET /v1/products/1?name=
 GET /v1/products?client=
 ```
-Wrong:
+**Wrong**
 ```php
 /v1/allProducts
 /v1/productByName
 /v1/productsByClient
 ```
 
-##Consistent status codes
+## Consistent status codes
 
 More info: https://www.codetinkerer.com/2015/12/04/choosing-an-http-status-code.html
 
-##Responses
+## Responses
 
 Ideally, we always return pretty JSON with meta data that gives extra information about the specific call. In general, a successful response looks something like this:
 
@@ -63,7 +63,7 @@ Ideally, we always return pretty JSON with meta data that gives extra informatio
 }
 ```
 
-##Error responses
+## Error responses
 
 In case of an error, we want to be as clear as possible:
 
