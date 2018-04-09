@@ -9,6 +9,7 @@
 - [ColdFusion](coldfusion/README.md)
 - [Git](git/README.md)
 - [Naming](naming/README.md)
+- [API](api/README.md)
 
 ## License
 Styleguides are © 2017 [Aan Zee](http://www.aanzee.nl). It is distributed under the [Creative Commons
