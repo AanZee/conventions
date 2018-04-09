@@ -17,7 +17,7 @@ The following 2 meta tags *must* come first in the ```<head>``` to consistently 
 
 A comprehensive guide to everything that can be placed in the ```<head>``` can be found on [gethead](https://gethead.info/).
 
-## HTML alignment
+## Write HTML and content on new lines
 
 **Right:**
 ```html
@@ -45,7 +45,25 @@ A comprehensive guide to everything that can be placed in the ```<head>``` can b
 <h1 class="component" id="component">Title</h1>
 ```
 
-## Every attribute on a new line
+### Textarea exception
+For textarea tags, do not place the closing tag </textarea> on a new line, as it adds spaces within the input.
+
+**Right:**
+```html
+<textarea class="component"
+    id="component"
+></textarea>
+```
+
+**Wrong:**
+```html
+<textarea class="component"
+    id="component"
+>
+</textarea>
+```
+
+## Write every attribute on a new line
 
 **Right:**
 ```html
@@ -69,25 +87,8 @@ A comprehensive guide to everything that can be placed in the ```<head>``` can b
     Title
 </h1>
 ```
-### Textarea exception
-For textarea tags, do not place the closing tag </textarea> on a new line, as it adds spaces within the input.
 
-**Right:**
-```html
-<textarea class="component"
-    id="component"
-></textarea>
-```
-
-**Wrong::**
-```html
-<textarea class="component"
-    id="component"
->
-</textarea>
-```
-
-## CSS classes as first attribute on the first line
+### Write CSS classes as first attribute on the first line
 
 **Right:**
 ```html
