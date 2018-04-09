@@ -6,8 +6,6 @@ To increase the readability of all the code, it is a good idea to go towards a s
 
 [PHPStorm code sniffer](https://confluence.jetbrains.com/display/PhpStorm/PHP+Code+Sniffer+in+PhpStorm)
 
-Sublime: @todo
-
 ## SOLID
 
 Stay as much SOLID as possible. This ensures that the code remains understandable and maintainable, so:
