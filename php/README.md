@@ -20,7 +20,7 @@ Stay as much SOLID as possible. This ensures that the code remains understandabl
 If, for example, BookingHelpers are instantiated on several places, such a class / function can not be tested separately. Every attempt will result in automatically testing the instantiated class. Therefore, inject ALL dependencies via the relevant class constructor (so avoid facades as much as possible). This way, when you start testing you can just inject mocked classes instead of the actual stuff.
 
 
-Right
+**Right**
 ```php
 /**
 *
@@ -52,7 +52,7 @@ public function putArrivalAndDeparture(Request $request)
     //..
 }
 ```
-Wrong
+**Wrong**
 ```php
 public function putArrivalAndDeparture(Request $oRequest)
 {
