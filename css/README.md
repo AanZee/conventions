@@ -1269,7 +1269,7 @@ Sometimes you only want to add a margin or border between horizontal items in a 
 .collection__item {
 	margin-bottom: 8px;
 
-	&:first-child {
+	&:last-child {
 		margin-bottom: 0;
 	}
 }
