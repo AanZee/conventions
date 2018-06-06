@@ -1251,26 +1251,40 @@ See [KSS](https://github.com/kneath/kss), [KSS-node](https://github.com/kss-node
 
 ### Prefer first-child over last-child selector
 
-Sometimes you only want to add a margin or border between horizontal items in a collection. This can be done by removing margin-bottom or border-bottom from the last item or removing margin-top or border-top from the first item. For browsers it is far more difficult to select the last-child compared to the first-child, because it has to reselect the last-child every time a new item is loaded/rendered. The first-child can be set immediately. Although it is more intuitive to change the styling of the last-child instead of the first-child. Don't do this, unless there is no other way.
+Sometimes you only want to add a margin or border between horizontal items in a collection. This can be done by removing margin-bottom or border-bottom from the last item or removing margin-top or border-top from the first item. Or you can use the `not` selector to skip the first item. For browsers it is far more difficult to select the last-child compared to the first-child, because it has to reselect the last-child every time a new item is loaded/rendered. The first-child can be set immediately. Although it is more intuitive to change the styling of the last-child instead of the first-child. Don't do this, unless there is no other way.
 
 **Right:**
 ```SCSS
-.collection__item {
-	margin-top: 8px;
+.layout__section {
+	margin-top: 40px;
 
 	&:first-child {
 		margin-top: 0;
+	}
+}
+
+.collection__item {
+
+	&:not(:first-child) {
+		margin-top: 8px;
 	}
 }
 ```
 
 **Wrong:**
 ```SCSS
-.collection__item {
-	margin-bottom: 8px;
+.layout__section {
+	margin-bottom: 40px;
 
 	&:last-child {
 		margin-bottom: 0;
+	}
+}
+
+.collection__item {
+
+	&:not(:last-child) {
+		margin-bottom: 40px;
 	}
 }
 ```
