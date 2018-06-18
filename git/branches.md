@@ -49,6 +49,3 @@ Staging branches are never merged and must be removed when you have finished tes
 - iteration/sprint-number or iteration/description (for example: iteration/sprint-7 or iteration/redesign-homepage)
 - feature/(Jira-id(s)-)description (for example: feature/JIRA-123-update-git-docs of feature/update-git-docs)
 - staging/(Jiri-ids-)description (for example: staging/JIRA-123-567-redesign-homepage of staging/redesign-homepage
-
-## Visual overview
-![GIT flow](attachments/git-flow-aan-zee.png)
