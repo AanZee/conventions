@@ -471,24 +471,26 @@ City block sizes are used for rhythms, never for exact values or fractions. When
 
 ### Range specific modifiers should end with specified suffix
 
-Range specific modifiers should end with 'range-and-up' or 'range-and-lower'.
+Range specific modifiers should end with 'range-and-larger' or 'range-and-smaller'.
 
 **Right:**
 ```CSS
-.component--modifier-lap-and-up {}
-.component--modifier-desk-l-and-up {}
+.component--modifier-lap-and-larger {}
+.component--modifier-desk-l-and-larger {}
 
-.component--modifier-hand-and-lower {}
-.component--modifier-lap-m-and-lower {}
+.component--modifier-hand-and-smaller {}
+.component--modifier-lap-m-and-smaller {}
 ```
 
 **Wrong:**
 ```CSS
 .component--modifier-lap-and-higher {}
 .component--modifier-desk-l-and-more {}
+.component--modifier-desk-l-and-up {}
 
 .component--modifier-hand-and-less {}
 .component--modifier-lap-m-and-under {}
+.component--modifier-lap-m-and-lower {}
 ```
 
 ### Modifiers for different flex-grows should be written out in full
