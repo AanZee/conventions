@@ -6,14 +6,23 @@ To increase the readability of all the code, it is a good idea to go towards a s
 
 [PHPStorm code sniffer](https://confluence.jetbrains.com/display/PhpStorm/PHP+Code+Sniffer+in+PhpStorm)
 
-## SOLID
+## Use the SOLID principle
+
+What is SOLID? It stands for:
++ S - Single-responsiblity principle
++ O - Open-closed principle
++ L - Liskov substitution principle
++ I - Interface segregation principle
++ D - Dependency Inversion Principle
+
+Each of the principles above is explained in detail in this article:
+[The first five principles of object oriented design](https://scotch.io/bar-talk/s-o-l-i-d-the-first-five-principles-of-object-oriented-design)
 
 Stay as much SOLID as possible. This ensures that the code remains understandable and maintainable, so:
 
-1. Do not throw everything together in a class and then call it a 'helper'.
+1. Do not throw everything together in a class and then call it a 'helper'. Divide your code using the SOLID principle.
 2. Controllers are only intended for handling input / output. And not to throw in various business logic. You can, for example, use a service, repository (if code is database related, such as a query) or, if necessary, a well-defined helper.
 
-[The first five principles of object oriented design](https://scotch.io/bar-talk/s-o-l-i-d-the-first-five-principles-of-object-oriented-design)
 
 ## Testability
 
@@ -61,7 +70,6 @@ public function putArrivalAndDeparture(Request $oRequest)
     //..
 }
 ```
-
 
 [Unit testing tutorial](https://jtreminio.com/2013/03/unit-testing-tutorial-part-4-mock-objects-stub-methods-dependency-injection)
 
