@@ -4,7 +4,7 @@
 When using SVG files in your project, optimize them according to the following standards:
 - Place SVG's on a 32px by 32px grid
 - Place vector points on the pixel grid as much as possible
-- Round coordinates and vectors up to two decimal places, for example 10.45132 becomes 10.45
+- Round coordinates and vectors to two decimal places, for example 10.45132 becomes 10.45
 - Remove width and height, when needed add this to HTML or CSS
 
 **Right:**
