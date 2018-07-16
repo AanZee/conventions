@@ -8,6 +8,7 @@
 - [ColdFusion](coldfusion/README.md)
 - [Git](git/README.md)
 - [Naming](naming/README.md)
+- [SVG](svg/README.md)
 
 ## Contribute
 Feel free to contribute by creating a pull request. To structure our conventions and to keep them readable we use the following standards:
