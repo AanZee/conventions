@@ -14,7 +14,7 @@ Iteration, hotfixes and feature branches are merged in develop. From this branch
 
 When there are bugs in the latest master branch that need to be fixed as soon as possible they can be fixed by a hotfix. Hotfixes are patches on live websites. They are always branched of the master branch. When the hotfix is finished and tested it can be merged directly into master and develop. If there is a new version on develop this should be pulled and merged before merging back, because the latest version of develop is always ready to go live.
 
-Don't forget to update the version numbers in files like the package.json before merging back to the master and develop branch.
+Don't forget to update the version number in files like the package.json before merging back to the master and develop branch.
 
 ### Iteration
 
@@ -32,7 +32,7 @@ When multiple user stories or features have a lot of overlap then they can be de
 
 ### Releases
 
-In release branches you prepare your releases for the develop and master branch. The branch is named to the minor version. After adding the new branch you can merge the iteration or feature branches and add a merge commit. In the release branch you can also add a changelog or update version numbers in files like the package.json.
+In release branches you prepare your releases for the develop and master branch. The branch is named to the next minor version. After adding the new branch you can merge the iteration or feature branches and add a merge commit. In the release branch you can also add a changelog or update the version number in files like the package.json.
 
 ### Staging
 
@@ -50,4 +50,4 @@ Staging branches are never merged and must be removed when you have finished tes
 - iteration/sprint-number or iteration/description (for example: iteration/sprint-7 or iteration/redesign-homepage)
 - feature/(Jira-id(s)-)description (for example: feature/JIRA-123-update-git-docs or feature/update-git-docs)
 - release/X.X.X (for example: release/1.1.0)
-- staging/(Jiri-ids-)description (for example: staging/JIRA-123-567-redesign-homepage or staging/redesign-homepage
+- staging/(Jira-ids-)description (for example: staging/JIRA-123-567-redesign-homepage or staging/redesign-homepage
