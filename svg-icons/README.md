@@ -1,7 +1,7 @@
-# SVG
+# SVG icons
 
 ## Optimize SVG code
-When using SVG files in your project, optimize them according to the following standards:
+When using SVG icons in your project, optimize them according to the following standards:
 - Place SVG's on a 32px by 32px grid
 - Place vector points on the pixel grid as much as possible
 - Round coordinates and vectors to two decimal places, for example 10.45132 becomes 10.45
