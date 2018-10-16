@@ -20,7 +20,7 @@ Prefix commit message with a uppercase [Jira](https://www.atlassian.com/software
 Learn more about our different [branches](branches.md).
 
 ### Naming
-Prefix branches with a uppercase [JIRA](https://www.atlassian.com/software/jira) ID followed by a descriptive name. Always use dashes to split words. When you have multiple ID's for one feature you can combine them with a dash.
+Prefix branches with an uppercased [JIRA](https://www.atlassian.com/software/jira) ID followed by a descriptive lowercased name. Always use dashes to split words. When you have multiple ID's for one feature you can combine them with a dash.
 
 **Right:**
 - JIRA-123-update-conventions
@@ -28,8 +28,11 @@ Prefix branches with a uppercase [JIRA](https://www.atlassian.com/software/jira)
 
 **Wrong:**
 - update-conventions
-- JIRA-123_update_conventions
 - jira-123-update-conventions
+- JIRA-123_update_conventions
+- JIRA-123-Update-conventions
+- JIRA-123-Update-Conventions
+- JIRA-123-updateConventions
 
 ### Remove branches directly after merging
 Remove your branch directly after merging a hotfix, feature, iteration or staging branch.
