@@ -8,7 +8,7 @@ Directly committing in the master branch is not allowed. Only a merge from devel
 
 ### Develop
 
-Iteration, hotfixes and feature branches are merged in develop. From this branch you can test how, for example, a feature and a sprint branch work together. Please note that you may only merge to develop if your work has been tested, reviewed and ready to go live.
+Iteration, hotfixes and feature branches are merged in develop. From this branch you can test how, for example, a feature and a iteration branch work together. Please note that you may only merge to develop if your work has been tested, reviewed and ready to go live.
 
 ### Hotfixes
 
@@ -42,12 +42,20 @@ When one feature needs to be removed from a staging branch, for whatever reason,
 
 Staging branches are never merged and must be removed when you have finished testing and when the customer has approved the staged features. If you want to have one feature approved by the customer, you obviously do not need a staging branch.
 
-## Possible names
+## Naming
 
-- master
-- develop
-- hotfix/(Jira-id-)description (for example: hotfix/JIRA-123-update-git-docs or hotfix/update-git-docs)
-- iteration/sprint-number or iteration/description (for example: iteration/sprint-7 or iteration/redesign-homepage)
-- feature/(Jira-id(s)-)description (for example: feature/JIRA-123-update-git-docs or feature/update-git-docs)
-- release/X.X.X (for example: release/1.1.0)
-- staging/(Jira-ids-)description (for example: staging/JIRA-123-567-redesign-homepage or staging/redesign-homepage
+| Type | Example |
+| --- | --- |
+| master | master |
+| develop | develop |
+| hotfix/{{ JIRA-id }}-{{ description }} | hotfix/JIRA-123-update-git-docs |
+| hotfix/{{ description }} | hotfix/update-git-docs |
+| hotfix/X.X.{{ number }} | hotfix/1.0.1 |
+| iteration/sprint-{{ number }} | iteration/sprint-7 |
+| iteration/sprint-week-{{ numbers }} | iteration/sprint-week-42-43 |
+| iteration/{{ description }} | iteration/redesign-homepage |
+| feature/{{ JIRA-id(s) }}-{{ description }} | feature/JIRA-123-update-git-docs |
+| feature/{{ description }} | feature/update-git-docs |
+| release/{{ number }}.{{ number }}.{{ number }} | release/1.1.0 |
+| staging/{{ JIRA-ids }}-{{ description }} | staging/JIRA-123-567-redesign-homepage |
+| staging/{{ description }} | staging/redesign-homepage |
