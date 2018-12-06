@@ -400,6 +400,29 @@ ul {}
 
 See [Modular CSS typography](http://thesassway.com/advanced/modular-css-typography) and [Side Effects in CSS](http://philipwalton.com/articles/side-effects-in-css/) for further reading.
 
+### Descriptive size names
+
+#### Max widths
+
+```text
+Large to small:
+
+- expanded
+- extended
+- wide
+- default
+- narrow
+- condensed
+- compressed
+```
+
+#### Resize
+
+```text
+- stretched (stretches to the size of it's parent)
+- fitting (resize to fit it's children)
+```
+
 ### Names of variants (within a rhythm) for selectors or variables should follow 'city block sizes'
 
 - The standard variant of a pattern gets the modifier '100'.
@@ -1373,7 +1396,7 @@ Sometimes you only want to add a margin or border between horizontal items in a 
 .block__element {
     &:focus {
         box-shadow: 0 0 2px -2px $color-focus;
-        
+
         &:hover {
             box-shadow: none;
         }
