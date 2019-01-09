@@ -403,10 +403,9 @@ See [Modular CSS typography](http://thesassway.com/advanced/modular-css-typograp
 ### Descriptive size names
 
 #### Max widths
-
-```text
 Large to small:
 
+```text
 - expanded
 - extended
 - wide
@@ -417,7 +416,6 @@ Large to small:
 ```
 
 #### Resize
-
 ```text
 - stretched (stretches to the size of it's parent)
 - fitting (resize to fit it's children)
