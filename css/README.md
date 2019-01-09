@@ -403,8 +403,8 @@ See [Modular CSS typography](http://thesassway.com/advanced/modular-css-typograp
 ### Descriptive size names
 
 #### Max widths
-Large to small:
 
+Large to small:
 ```text
 - expanded
 - extended
