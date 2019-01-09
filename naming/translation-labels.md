@@ -6,21 +6,21 @@
 
 When hyphens are not possible because of specific code language or framework use camelCase.
 
-## Categorize labels with name of component, page or website section
+## Categorize labels with name of component, page or website module
 
 - Make sure the name of the component or page is well thought before categorizing labels.
-- Categorize component in 'components', page in 'pages' and website section in 'sections'.
+- Categorize component in 'components', page in 'pages' and website module in 'modules'.
 
 Examples:
 
 - components.notifications.idle-message-text -> Your session has expired because you were longer than %time% inactive. Please renew your selection.
 - pages.login.password-label -> Your password
-- sections.checkout.payment-method-title -> Payment Method
+- modules.checkout.payment-method-title -> Payment Method
 
-## Categorize labels used in different components, pages or sections in ‘global’ or brand name
+## Categorize labels used in different components, pages or modules in ‘global’ or brand name
 
 - Category 'global' should result in a translation that is or can be used for different websites and brands.
-- If a website or brand wants to overrule a global translation, but still wants to use this translation for different components, pages or sections, the brand name can be used as category.
+- If a website or brand wants to overrule a global translation, but still wants to use this translation for different components, pages or modules, the brand name can be used as category.
 
 Examples:
 
@@ -53,14 +53,14 @@ The term ‘title’ gives important information about its context and how it sh
 Examples:
 
 - page.login.login-title -> Login
-- sections.checkout.payment-method-title -> Payment Method
-- sections.checkout.payment-failed-title -> Payment was Unsuccessful
+- modules.checkout.payment-method-title -> Payment Method
+- modules.checkout.payment-failed-title -> Payment was Unsuccessful
 
 ## Labels for longer texts end with ‘text’
 
 Examples:
 
-- sections.checkout.payment-failed-text -> Try again or change payment method.
+- modules.checkout.payment-failed-text -> Try again or change payment method.
 
 ## Labels for HTML content should end with 'content'
 
