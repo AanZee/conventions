@@ -52,6 +52,10 @@ Always close self-closing tags with a forward slash. It makes the code more read
 <cfdump var="#test#">
 ```
 
+### Exception
+Closing custom tags will be executed twice. For example closing the 'cfmodule' tag will insert the given template twice. Because of this we can't close these tags.
+https://groups.google.com/forum/#!topic/railo/tcZoBiZnDGU
+
 ## Put HTML attributes inside a cfif on a new line
 
 **Right:**
