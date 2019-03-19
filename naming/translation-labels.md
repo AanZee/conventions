@@ -93,13 +93,20 @@ Examples:
 File names should not include the format of the document. This should be added by the back-end.
 
 Examples:
-
 - global.general-conditions-file-name -> general-conditions
 
 ## Labels for buttons, links or actions end with action
 
-The labels for buttons often differ in style per language, for example Dutch labels are often written in ‘gebiedende wijs’.
-
 Examples:
-
 - global.close-action -> Close
+
+### Use imperative for direct actions
+The label in a button that directly performs the desired action must be written imperative. So 'Save' instead of 'To save'. In English, this is often done correctly, but for instance in Dutch these are often mixed up. In Dutch write 'Bewaar' instead of 'Bewaren'.
+
+### Use infinitive or imperative for indirect actions depending on language
+A button or link that refers to a page or form in which the action can be performed, must be written:
+- Infinitive in Dutch: write 'Reserveren' instead of 'Reserveer' for the reference to the reservation form. Titles of a form must also be written infinitive, so the title of the login form has the title 'Inloggen' and not 'Log in'.
+- Imperative in English: the same as direct actions.
+
+### Use ellipsis for changes on the page or view
+A button or link that does not refer to another page, but for example opens a popover or a modal window or brings up a new section, ends with an ellipse. However, as soon as this button or link has a directional icon (e.g. chevron, arrow) or visually sufficiently communicates the consequences, the ellipse should not be added. An ellipse will not be part of the label that can be entered by the content manager. It will have to be added by a developer to the codebase immediately after the label variable. This gives flexibility to replace an ellipse with, for example, a chevron without having to change the content or label type.
