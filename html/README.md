@@ -143,16 +143,16 @@ Always add a type to a button to prevent accidentally submitting forms
 ```
 
 ## Prefix JavaScript attributes
-When you want to target HTML in JavaScript use attributes prefixed with js-, don't use data-.
+When you want to target HTML in JavaScript use attributes prefixed with data-.
 
 **Right:**
 ```html
-<h1 js-component-title>Title</h1>
+<h1 data-component-title>Title</h1>
 ```
 
 **Wrong:**
 ```html
-<h1 data-component-title>Title</h1>
+<h1 js-component-title>Title</h1>
 <h1 component-title>Title</h1>
 ```
 

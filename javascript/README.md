@@ -35,18 +35,18 @@ if (0 === '') // false
 if (0 == '') // true
 ```
 
-## Target dom elements with a js- prefixed attribute
+## Target dom elements with a data- prefixed attribute
 
 **Right:**
 ```javascript
-document.querySelectorAll('[js-component]');
+document.querySelectorAll('[data-component]');
 ```
 
 **Wrong:**
 ```javascript
 document.querySelectorAll('.component');
 
-document.querySelectorAll('[data-component]');
+document.querySelectorAll('[js-component]');
 
 document.querySelectorAll('[component]');
 ```
