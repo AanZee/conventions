@@ -10,6 +10,7 @@
 - [Git](git/README.md)
 - [Naming](naming/README.md)
 - [SVG icons](svg-icons/README.md)
+- [Go](go/README.md)
 
 ## Contribute
 Feel free to contribute by creating a pull request. To structure our conventions and to keep them readable we use the following standards:
