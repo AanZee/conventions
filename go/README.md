@@ -18,20 +18,20 @@ globally installed dependencies."
 
 ## Project structure for an API / Web application
 
-root folder
-- holds various files for building
+Root folder
+- Holds various files for building
 /config
 main.go
 /dist
-- where the binary is placed
+- Where the binary is placed
 /src
 	init.go
-	- bootstrap of the application
-	- only needed for an application (not for a library)
-	- holds the start/stop/init/config
+	- Bootstrap of the application
+	- Only needed for an application (not for a library)
+	- Holds the start/stop/init/config
     /web holds the routing initialization
     /helpers
-	- project specific
+	- Project specific
 	/middlewares (if they exist in the project)
     /datamodels
 	/business (separation of concerns)
