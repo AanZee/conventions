@@ -66,7 +66,7 @@ A package name represents the content it houses. Inside there will be 1 or more 
 don't have the package name in front of it. Otherwise, when using a function, you get a stutter-effect,
 like this: database.DatabaseOpener(), while database.Opener() is enough.
 
-When importing an external library (from aan zee), make it clear by using an alias, like:
+When importing an external library (from Aan Zee), make it clear by using an alias, like:
 capilaErrors "bitbucket.org/aanzeeonline/capila/errors"
 libgoazConv "bitbucket.org/aanzeeonline/libgoaz/conv"
 libgoazCrypt "bitbucket.org/aanzeeonline/libgoaz/crypt"
@@ -78,19 +78,18 @@ a package that is more suitable.
 
 ## Imports
 
-order of imports
-
-- internal go packages
-- external packages (3rd party)
-- aanzee library packages
-- aanzee packages of current project
+Order of imports:
+- Internal go packages
+- External packages (3rd party)
+- Aan Zee library packages
+- Aan Zee packages of current project
 
 ## Variable declaration
 
 Top level order of declaration:
-- constants
-- types
-- variables
+- Constants
+- Types
+- Variables
 
 Global / package / function
 
@@ -105,51 +104,51 @@ Declare a function variable at the top of the function, or close to the first us
 You can house more than 1 function inside a file (inside a package).
 The file name represents the content it houses.
 
-- naming
-	- give the function a name it represent.
-	- Don't abbreviate.
+- Naming
+	- Give the function a name it represent
+	- Don't abbreviate
 	- Getters for retrieving data
     	- GetUsers, GetUser
-- no getters (the fact it begins with a capital and returns value, makes it a getter)
-- setters can be used
-- if crud, follow crud order inside source? (thoughts about this?)
-- global vs local
-  - first all global functions and methods (they start with capitals)
-  - local function below that (they start with lowercase)
-- return variables:
-  - when returning an error, it is always the last value that returns
+- No getters (the fact it begins with a capital and returns value, makes it a getter)
+- Setters can be used
+- If crud, follow crud order inside source? (thoughts about this?)
+- Global vs local
+  - First all global functions and methods (they start with capitals)
+  - Local function below that (they start with lowercase)
+- Return variables:
+  - When returning an error, it is always the last value that returns
 
 ## Testing
 
-- code coverage (100%, unless it's a project decision not to do so)
-- no '.' imports
+- Code coverage (100%, unless it's a project decision not to do so)
+- No '.' imports
 
-- Fuzzy testing on high level.
-- Handlers should only test the basic working.
-- Services should test every scenario possible and should be tested with 100% codecoverage.
-  - if there are model validations, these should be tested too.
-- Repositories should test every scenario possible and should be tested with 100% codecoverage.
+- Fuzzy testing on high level
+- Handlers should only test the basic working
+- Services should test every scenario possible and should be tested with 100% codecoverage
+  - If there are model validations, these should be tested too
+- Repositories should test every scenario possible and should be tested with 100% codecoverage
 
 ## Comments
 
-- package
-  - doc
+- Package
+  - Doc
     - Describes why the package exists
-    - it has the package format:
-      - Package the_name the_rest_of_the_text.
-- variable
-  - single line
-    - format of that:
-    // explain what it does and/or why it exists
+    - It has the package format:
+      - Package the_name the_rest_of_the_text
+- Variable
+  - Single line
+    - Format of that:
+    // Explain what it does and/or why it exists
 
-- function/method
-  - multi line
-    - if the function/method is public:
-      - first line is a complete sentence, starting with capital, ending with dot.
-    - if it is private:
-      - first line is a complete sentence, starting with lowercase, not ending with dot.
-    - is written in third-person singular with minimal 4 words
-     - format of that
+- Function/method
+  - Multi line
+    - If the function/method is public:
+      - First line is a complete sentence, starting with capital, ending with dot
+    - If it is private:
+      - First line is a complete sentence, starting with lowercase, not ending with dot
+    - Is written in third-person singular with minimal 4 words
+     - Format of that:
 	/*
 	YourFunction does something spectacular.
 	*/
@@ -158,7 +157,7 @@ The file name represents the content it houses.
 
 A variable name is always named after the thing it contains.
 
-in a loop, like in this example:
+In a loop, like in this example:
 for key,record := range records {
 	println("key:", key)
 	println("val:", record)
@@ -173,10 +172,10 @@ which is mostly used for checking if an element is present in a map.
 It's also common use, when a variable name holds an abbreviation, that the letters are all capitals, or all lowercase.
 like "SQLStatement" or "sqlStatement"
 
-## linting
+## Linting
 
 It is nice to start a linter now and then.
-make check, or make check2 will run the linters and will check your files for "mistakes".
+Make check, or make check2 will run the linters and will check your files for "mistakes".
 Try to improve your code with the hints you get from them.
 
 ## Code Quality
@@ -185,6 +184,6 @@ I wrote a lint tool, which also checks for cognitive complexity.
 If code is "too complex" (which is mostly caused by conditions, loops etc.), I will advice
 to refactor the code, because understandable code is easy to maintain in the future.
 
-## read :
+## Read
 https://golang.org/doc/effective_go.html
 https://github.com/golang/go/wiki/CodeReviewComments
