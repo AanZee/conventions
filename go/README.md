@@ -42,7 +42,7 @@ main.go
             /services
             /validators
 
-## 
+## Makefile
 
 Every project must have a makefile.
 (You can look at other projects for a universal working version.)
