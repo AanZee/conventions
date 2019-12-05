@@ -57,11 +57,11 @@ Examples:
 
 - checkout.payment-failed-text -> Try again or change payment method.
 
-## Labels for HTML content should end with 'content'
+## Labels for HTML content should end with 'rich-text'
 
 Examples:
 
-- modal-window.error-content -> `<p>Something went wrong.</p>`
+- modal-window.error-rich-text -> `<p>Something went wrong.</p>`
 
 ## Labels for form labels end with ‘label’
 
@@ -72,21 +72,21 @@ Examples:
 - personal-information.mister-short-label -> Mr.
 - personal-information.email-label -> Email
 
-## Labels for ‘form helper texts’ end with ‘helper’
+## Labels for ‘form helper texts’ end with ‘helper-text’
 
 Helper text are always visible directly below an input field. It helps the user to know what is expected and why it is needed.
 
 Examples:
 
-- personal-information.email-helper -> You will receive a confirmation by email.
+- personal-information.email-helper-text -> You will receive a confirmation by email.
 
-## Labels for ‘form feedback texts’ end with ‘feedback’
+## Labels for ‘form feedback texts’ end with ‘feedback-text’
 
 Feedback text gives feedback about why the data within an input field is incorrect and how the user can solve this. Feedback text is only visible after the user gets an error when submitting a form.
 
 Examples:
 
-- personal-information.email-empty-feedback -> Your email address is needed to finish your booking.
+- personal-information.email-empty-feedback-text -> Your email address is needed to finish your booking.
 
 ## Labels for file names end with ‘file-name’
 
@@ -103,10 +103,16 @@ Examples:
 ### Use imperative for direct actions
 The label in a button that directly performs the desired action must be written imperative. So 'Save' instead of 'To save'. In English, this is often done correctly, but for instance in Dutch these are often mixed up. In Dutch write 'Bewaar' instead of 'Bewaren'.
 
+Examples:
+- global.save-action -> Bewaar
+
 ### Use infinitive or imperative for indirect actions depending on language
 A button or link that refers to a page or form in which the action can be performed, must be written:
 - Infinitive in Dutch: write 'Reserveren' instead of 'Reserveer' for the reference to the reservation form. Titles of a form must also be written infinitive, so the title of the login form has the title 'Inloggen' and not 'Log in'.
 - Imperative in English: the same as direct actions.
+
+Examples:
+- global.to-save-action -> Bewaren
 
 ### Use ellipsis for changes on the page or view
 A button or link that does not refer to another page, but for example opens a popover or a modal window or brings up a new section, ends with an ellipse. However, as soon as this button or link has a directional icon (e.g. chevron, arrow) or visually sufficiently communicates the consequences, the ellipse should not be added. An ellipse will not be part of the label that can be entered by the content manager. It will have to be added by a developer to the codebase immediately after the label variable. This gives flexibility to replace an ellipse with, for example, a chevron without having to change the content or label type.
