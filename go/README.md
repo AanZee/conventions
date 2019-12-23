@@ -20,20 +20,26 @@ globally installed dependencies."
 
 Root folder
 - Holds various files for building
-/config
 main.go
+- the bootstrap of the application
+/config
 /dist
 - Where the binary is placed
 /src
-	init.go
+- the actual root of the software
+	start.go (*optional; can be a folder too)
 	- Bootstrap of the application
 	- Only needed for an application (not for a library)
 	- Holds the start/stop/init/config
-    /web holds the routing initialization
+    /web
+	- holds the routing initialization
+		/middlewares (if they exist in the project)
     /helpers
-	- Project specific
-	/middlewares (if they exist in the project)
-    /datamodels
+	- Project specific, can have subfolders
+    /database
+		/migrations
+		/seeds
+	/datamodels (*optional; can be a folder inside a domain too)
 	/business (separation of concerns)
     	/domain(s)
             /handlers
@@ -41,6 +47,7 @@ main.go
             /repositories
             /services
             /validators
+			/datamodels (*optional; can be a /src folder too)
 
 ## Makefile
 
@@ -48,17 +55,37 @@ Every project must have a makefile.
 (You can look at other projects for a universal working version.)
 
 Depending on the project (Application / Library), there should be a makefile in the root directory
+that shows help about the functions that are available.
+
 with the following functions:
-	update
+	install
+	- installs tools needed for the project
+  	update
+	- update mod-file (and sometimes the vendor directory which is project based)
 	check
+	- linting
 	check2
-	start	(only needed when it's an application)
-	migrate (only needed when a database is used)
+	- linting
+	check3
+	- linting
 	test
-	test-s
+	- run all tests
 	test-c
+	- run all tests with codecoverage
 	test-v
-	modd
+	- run all tests verbose
+	watch
+	- starts a watcher
+	doc
+	- look at documentation
+	migrate
+	- database migration (only needed when a database is used)
+	start
+	- runs application 	(only needed when it's an application)
+	build
+	- compile application (only needed when it's an application)
+
+Of course there can be more makefile functions, that are project specific.
 
 ## Package name
 
@@ -74,7 +101,7 @@ libgoazCrypt "bitbucket.org/aanzeeonline/libgoaz/crypt"
 Don't use a name that is meaningless, like: util, common, misc.
 There is one exception to this: helpers.
 We will use helpers to store various helper-functions and over time, we can decide to group them into
-a package that is more suitable.
+a package that is more suitable, of move them to Capila or Libgoaz.
 
 ## Imports
 
@@ -95,7 +122,7 @@ Global / package / function
 
 No Global Variables. Use getters for that.
 
-If a package variable is used in more than 1 file, put it in a base.go
+If a package variable or function is used in more than 1 file, put it in a base.go or a file starting with base.
 
 Declare a function variable at the top of the function, or close to the first usage.
 
@@ -107,14 +134,8 @@ The file name represents the content it houses.
 - Naming
 	- Give the function a name it represent
 	- Don't abbreviate
-	- Getters for retrieving data
-    	- GetUsers, GetUser
-- No getters (the fact it begins with a capital and returns value, makes it a getter)
-- Setters can be used
-- If crud, follow crud order inside source? (thoughts about this?)
-- Global vs local
-  - First all global functions and methods (they start with capitals)
-  - Local function below that (they start with lowercase)
+	- List / Get / Create / Update / Delete
+
 - Return variables:
   - When returning an error, it is always the last value that returns
 
@@ -142,32 +163,28 @@ The file name represents the content it houses.
     // Explain what it does and/or why it exists
 
 - Function/method
-  - Multi line
-    - If the function/method is public:
-      - First line is a complete sentence, starting with capital, ending with dot
-    - If it is private:
-      - First line is a complete sentence, starting with lowercase, not ending with dot
+  - Multi line / single line
     - Is written in third-person singular with minimal 4 words
      - Format of that:
 	/*
 	YourFunction does something spectacular.
 	*/
+	or:
+	// YourFunction does something spectacular.
 
 ## Variable naming
 
 A variable name is always named after the thing it contains.
 
 In a loop, like in this example:
-for key,record := range records {
-	println("key:", key)
-	println("val:", record)
+for userIndex,userRecord := range userRecords {
+	println("userIndex:", userIndex)
+	println("userRecord:", userRecord)
 }
 
 If it can hold a collection of things, name it plural, like "users".
 If it can only hold one value, name it singular, like "user".
-if it is a boolean var, start it with something like "has", or "is".
-In some checks, you will find a boolean variable like "ok",
-which is mostly used for checking if an element is present in a map.
+if it is a boolean var, start it with something like "has", "should", "would" ,"can", "could" or "is".
 
 It's also common use, when a variable name holds an abbreviation, that the letters are all capitals, or all lowercase.
 like "SQLStatement" or "sqlStatement"
@@ -177,12 +194,6 @@ like "SQLStatement" or "sqlStatement"
 It is nice to start a linter now and then.
 Make check, or make check2 will run the linters and will check your files for "mistakes".
 Try to improve your code with the hints you get from them.
-
-## Code Quality
-
-I wrote a lint tool, which also checks for cognitive complexity.
-If code is "too complex" (which is mostly caused by conditions, loops etc.), I will advice
-to refactor the code, because understandable code is easy to maintain in the future.
 
 ## Read
 https://golang.org/doc/effective_go.html
